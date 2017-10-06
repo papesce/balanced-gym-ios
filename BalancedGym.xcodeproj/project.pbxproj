@@ -10,6 +10,14 @@
 		46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */; };
 		46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */; };
 		46B5A2491F87C53000FC01DD /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2481F87C53000FC01DD /* Routine.swift */; };
+		46B5A2501F87D75700FC01DD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A24E1F87D75700FC01DD /* Interface.storyboard */; };
+		46B5A2521F87D75700FC01DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A2511F87D75700FC01DD /* Assets.xcassets */; };
+		46B5A2591F87D75700FC01DD /* BalancedGymWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 46B5A2581F87D75700FC01DD /* BalancedGymWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		46B5A25E1F87D75700FC01DD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A25D1F87D75700FC01DD /* InterfaceController.swift */; };
+		46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A25F1F87D75700FC01DD /* ExtensionDelegate.swift */; };
+		46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2611F87D75700FC01DD /* NotificationController.swift */; };
+		46B5A2641F87D75700FC01DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A2631F87D75700FC01DD /* Assets.xcassets */; };
+		46B5A2691F87D75700FC01DD /* BalancedGymWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */; };
 		46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF617E1F7DD71600DFA93F /* AppDelegate.swift */; };
 		46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF61801F7DD71600DFA93F /* ViewController.swift */; };
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
@@ -17,10 +25,63 @@
 		46BF61891F7DD71600DFA93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		46B5A25A1F87D75700FC01DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46BF61731F7DD71600DFA93F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46B5A2571F87D75700FC01DD;
+			remoteInfo = "BalancedGymWatch Extension";
+		};
+		46B5A2671F87D75700FC01DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46BF61731F7DD71600DFA93F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46B5A24B1F87D75700FC01DD;
+			remoteInfo = BalancedGymWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46B5A26F1F87D75700FC01DD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				46B5A2591F87D75700FC01DD /* BalancedGymWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46B5A2711F87D75700FC01DD /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				46B5A2691F87D75700FC01DD /* BalancedGymWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
 		46B5A2481F87C53000FC01DD /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedGymWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B5A24F1F87D75700FC01DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		46B5A2511F87D75700FC01DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46B5A2531F87D75700FC01DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46B5A2581F87D75700FC01DD /* BalancedGymWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BalancedGymWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B5A25D1F87D75700FC01DD /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		46B5A25F1F87D75700FC01DD /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		46B5A2611F87D75700FC01DD /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		46B5A2631F87D75700FC01DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46B5A2651F87D75700FC01DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		46BF617B1F7DD71600DFA93F /* BalancedGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF617E1F7DD71600DFA93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF61801F7DD71600DFA93F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		46B5A2551F87D75700FC01DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46BF61781F7DD71600DFA93F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +109,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46B5A24D1F87D75700FC01DD /* BalancedGymWatch */ = {
+			isa = PBXGroup;
+			children = (
+				46B5A24E1F87D75700FC01DD /* Interface.storyboard */,
+				46B5A2511F87D75700FC01DD /* Assets.xcassets */,
+				46B5A2531F87D75700FC01DD /* Info.plist */,
+			);
+			path = BalancedGymWatch;
+			sourceTree = "<group>";
+		};
+		46B5A25C1F87D75700FC01DD /* BalancedGymWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				46B5A25D1F87D75700FC01DD /* InterfaceController.swift */,
+				46B5A25F1F87D75700FC01DD /* ExtensionDelegate.swift */,
+				46B5A2611F87D75700FC01DD /* NotificationController.swift */,
+				46B5A2631F87D75700FC01DD /* Assets.xcassets */,
+				46B5A2651F87D75700FC01DD /* Info.plist */,
+				46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */,
+			);
+			path = "BalancedGymWatch Extension";
+			sourceTree = "<group>";
+		};
 		46BF61721F7DD71600DFA93F = {
 			isa = PBXGroup;
 			children = (
 				46BF617D1F7DD71600DFA93F /* BalancedGym */,
+				46B5A24D1F87D75700FC01DD /* BalancedGymWatch */,
+				46B5A25C1F87D75700FC01DD /* BalancedGymWatch Extension */,
 				46BF617C1F7DD71600DFA93F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				46BF617B1F7DD71600DFA93F /* BalancedGym.app */,
+				46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */,
+				46B5A2581F87D75700FC01DD /* BalancedGymWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +171,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		46B5A24B1F87D75700FC01DD /* BalancedGymWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46B5A2701F87D75700FC01DD /* Build configuration list for PBXNativeTarget "BalancedGymWatch" */;
+			buildPhases = (
+				46B5A24A1F87D75700FC01DD /* Resources */,
+				46B5A26F1F87D75700FC01DD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46B5A25B1F87D75700FC01DD /* PBXTargetDependency */,
+			);
+			name = BalancedGymWatch;
+			productName = BalancedGymWatch;
+			productReference = 46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		46B5A2571F87D75700FC01DD /* BalancedGymWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46B5A26E1F87D75700FC01DD /* Build configuration list for PBXNativeTarget "BalancedGymWatch Extension" */;
+			buildPhases = (
+				46B5A2541F87D75700FC01DD /* Sources */,
+				46B5A2551F87D75700FC01DD /* Frameworks */,
+				46B5A2561F87D75700FC01DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BalancedGymWatch Extension";
+			productName = "BalancedGymWatch Extension";
+			productReference = 46B5A2581F87D75700FC01DD /* BalancedGymWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		46BF617A1F7DD71600DFA93F /* BalancedGym */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46BF618D1F7DD71600DFA93F /* Build configuration list for PBXNativeTarget "BalancedGym" */;
@@ -83,10 +212,12 @@
 				46BF61771F7DD71600DFA93F /* Sources */,
 				46BF61781F7DD71600DFA93F /* Frameworks */,
 				46BF61791F7DD71600DFA93F /* Resources */,
+				46B5A2711F87D75700FC01DD /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				46B5A2681F87D75700FC01DD /* PBXTargetDependency */,
 			);
 			name = BalancedGym;
 			productName = BalancedGym;
@@ -103,6 +234,14 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Pablou;
 				TargetAttributes = {
+					46B5A24B1F87D75700FC01DD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					46B5A2571F87D75700FC01DD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					46BF617A1F7DD71600DFA93F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -123,11 +262,30 @@
 			projectRoot = "";
 			targets = (
 				46BF617A1F7DD71600DFA93F /* BalancedGym */,
+				46B5A24B1F87D75700FC01DD /* BalancedGymWatch */,
+				46B5A2571F87D75700FC01DD /* BalancedGymWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		46B5A24A1F87D75700FC01DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B5A2521F87D75700FC01DD /* Assets.xcassets in Resources */,
+				46B5A2501F87D75700FC01DD /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46B5A2561F87D75700FC01DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B5A2641F87D75700FC01DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46BF61791F7DD71600DFA93F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +299,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		46B5A2541F87D75700FC01DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */,
+				46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */,
+				46B5A25E1F87D75700FC01DD /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46BF61771F7DD71600DFA93F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,7 +323,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		46B5A25B1F87D75700FC01DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46B5A2571F87D75700FC01DD /* BalancedGymWatch Extension */;
+			targetProxy = 46B5A25A1F87D75700FC01DD /* PBXContainerItemProxy */;
+		};
+		46B5A2681F87D75700FC01DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46B5A24B1F87D75700FC01DD /* BalancedGymWatch */;
+			targetProxy = 46B5A2671F87D75700FC01DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		46B5A24E1F87D75700FC01DD /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46B5A24F1F87D75700FC01DD /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		46BF61821F7DD71600DFA93F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -175,6 +364,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		46B5A26A1F87D75700FC01DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				IBSC_MODULE = BalancedGymWatch_Extension;
+				INFOPLIST_FILE = BalancedGymWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		46B5A26B1F87D75700FC01DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				IBSC_MODULE = BalancedGymWatch_Extension;
+				INFOPLIST_FILE = BalancedGymWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		46B5A26C1F87D75700FC01DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				INFOPLIST_FILE = "BalancedGymWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		46B5A26D1F87D75700FC01DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				INFOPLIST_FILE = "BalancedGymWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 		46BF618B1F7DD71600DFA93F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +578,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		46B5A26E1F87D75700FC01DD /* Build configuration list for PBXNativeTarget "BalancedGymWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46B5A26C1F87D75700FC01DD /* Debug */,
+				46B5A26D1F87D75700FC01DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46B5A2701F87D75700FC01DD /* Build configuration list for PBXNativeTarget "BalancedGymWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46B5A26A1F87D75700FC01DD /* Debug */,
+				46B5A26B1F87D75700FC01DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46BF61761F7DD71600DFA93F /* Build configuration list for PBXProject "BalancedGym" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
