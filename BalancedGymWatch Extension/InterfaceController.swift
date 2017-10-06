@@ -12,15 +12,47 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    //MARK: Properties
+    var routines = [Routine]();
+    
+    @IBOutlet var routineTable: WKInterfaceTable!
+    
+    //MARK: Private Methods
+    private func loadSampleRoutines() {
+        
+        guard let routine1 = Routine(name: "Chest and Triceps", photo: "routine2") else {
+            fatalError("Unable to instantiate routine1")
+        }
+        
+        routines += [routine1]
+    }
+    
+    
+    func tableRefresh() {
+            routineTable.setNumberOfRows(routines.count, withRowType: "RoutineTableRowController")
+            for index in 0 ..< routineTable.numberOfRows {
+                let row = routineTable.rowController(at: index) as! RoutineTableRowController
+                row.label.setText(routines[index].name)
+                row.image.setImageNamed(routines[index].photo)
+
+            }
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        //Load sample data
+        loadSampleRoutines()
         // Configure interface objects here.
     }
+    
+    
+    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        tableRefresh()
     }
     
     override func didDeactivate() {

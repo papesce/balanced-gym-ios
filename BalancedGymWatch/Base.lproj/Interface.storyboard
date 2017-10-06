@@ -15,7 +15,26 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BalancedGymWatch" customModuleProvider="target">
                     <items>
                         <label alignment="left" text="Funciono" id="9fM-fj-WN5"/>
+                        <table alignment="left" id="Ikt-04-fni">
+                            <items>
+                                <tableRow identifier="RoutineTableRowController" id="cHm-YC-ymq" customClass="RoutineTableRowController" customModule="BalancedGymWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="gwf-8y-h93">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="left" image="routine1" id="0tS-re-wEt"/>
+                                            <label width="85" height="20" alignment="left" text="Label" id="ORA-hF-wZP"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="0tS-re-wEt" id="ceJ-rx-6ZO"/>
+                                        <outlet property="label" destination="ORA-hF-wZP" id="LnD-PF-Pcs"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="routineTable" destination="Ikt-04-fni" id="ZSq-vh-90w"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
@@ -40,6 +59,13 @@
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="BalancedGymWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="no0-BV-qVV">
+            <objects>
+                <controller id="a2T-V1-CwD" customClass="NotificationController" customModule="BalancedGymWatch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

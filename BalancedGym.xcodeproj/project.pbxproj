@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46355F5D1F88394900526234 /* RoutineTableRowController.swift */; };
 		46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */; };
 		46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */; };
 		46B5A2491F87C53000FC01DD /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2481F87C53000FC01DD /* Routine.swift */; };
@@ -18,6 +19,7 @@
 		46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2611F87D75700FC01DD /* NotificationController.swift */; };
 		46B5A2641F87D75700FC01DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A2631F87D75700FC01DD /* Assets.xcassets */; };
 		46B5A2691F87D75700FC01DD /* BalancedGymWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */; };
+		46B5A2761F882CC100FC01DD /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2741F882CB800FC01DD /* Routine.swift */; };
 		46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF617E1F7DD71600DFA93F /* AppDelegate.swift */; };
 		46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF61801F7DD71600DFA93F /* ViewController.swift */; };
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
@@ -68,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46355F5D1F88394900526234 /* RoutineTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableRowController.swift; sourceTree = "<group>"; };
 		46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
 		46B5A2481F87C53000FC01DD /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		46B5A2631F87D75700FC01DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46B5A2651F87D75700FC01DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		46B5A2741F882CB800FC01DD /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = "BalancedGymWatch Extension/Routine.swift"; sourceTree = SOURCE_ROOT; };
 		46BF617B1F7DD71600DFA93F /* BalancedGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF617E1F7DD71600DFA93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF61801F7DD71600DFA93F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		46B5A25C1F87D75700FC01DD /* BalancedGymWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				46355F5D1F88394900526234 /* RoutineTableRowController.swift */,
+				46B5A2741F882CB800FC01DD /* Routine.swift */,
 				46B5A25D1F87D75700FC01DD /* InterfaceController.swift */,
 				46B5A25F1F87D75700FC01DD /* ExtensionDelegate.swift */,
 				46B5A2611F87D75700FC01DD /* NotificationController.swift */,
@@ -303,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */,
+				46B5A2761F882CC100FC01DD /* Routine.swift in Sources */,
 				46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */,
 				46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */,
 				46B5A25E1F87D75700FC01DD /* InterfaceController.swift in Sources */,
