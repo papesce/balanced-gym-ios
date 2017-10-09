@@ -25,6 +25,7 @@
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
 		46BF61861F7DD71600DFA93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61851F7DD71600DFA93F /* Assets.xcassets */; };
 		46BF61891F7DD71600DFA93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */; };
+		46E6DEF81F88F1E700752025 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6DEF71F88F1E700752025 /* RoutineDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		46BF61851F7DD71600DFA93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46BF61881F7DD71600DFA93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46BF618A1F7DD71600DFA93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46E6DEF71F88F1E700752025 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */,
 				46BF618A1F7DD71600DFA93F /* Info.plist */,
 				46B5A2481F87C53000FC01DD /* Routine.swift */,
+				46E6DEF71F88F1E700752025 /* RoutineDetailsViewController.swift */,
 			);
 			path = BalancedGym;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				46B5A2491F87C53000FC01DD /* Routine.swift in Sources */,
 				46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */,
+				46E6DEF81F88F1E700752025 /* RoutineDetailsViewController.swift in Sources */,
 				46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */,
 				46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */,
 				46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8D-bZ-ctu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l2t-ZI-Ue4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Routine Details View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RoutineDetailsViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Funciono2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P4-FU-Plo">
-                                <rect key="frame" x="99" y="170" width="81" height="21"/>
+                                <rect key="frame" x="16" y="170" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -28,10 +28,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="0P4-FU-Plo" id="DPw-zx-UI6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="9"/>
+            <point key="canvasLocation" x="1864.8" y="95.802098950524751"/>
         </scene>
         <!--Routine Table View Controller-->
         <scene sceneID="fMu-El-Znh">
@@ -42,14 +45,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineTableViewCell" rowHeight="90" id="cJU-Ws-Lmt" userLabel="RoutineTableViewCell" customClass="RoutineTableViewCell" customModule="BalancedGym" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoutineTableViewCell" rowHeight="90" id="cJU-Ws-Lmt" userLabel="RoutineTableViewCell" customClass="RoutineTableViewCell" customModule="BalancedGym" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cJU-Ws-Lmt" id="Ld5-TG-EIj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="AFe-fb-W4A">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="routine1" translatesAutoresizingMaskIntoConstraints="NO" id="AFe-fb-W4A">
                                             <rect key="frame" x="8" y="0.0" width="93" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -65,6 +68,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="iUG-Nu-DrQ" id="MpM-cQ-kgZ"/>
                                     <outlet property="photoImageView" destination="AFe-fb-W4A" id="RWo-9A-Zt6"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mySegue" id="wd0-Zh-D0N"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,13 +77,32 @@
                             <outlet property="delegate" destination="n8D-bZ-ctu" id="Q3j-eT-IUl"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="wnt-T6-qoD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xii-gh-eSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189.59999999999999" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1041" y="108"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ts8-CD-Nrd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l2t-ZI-Ue4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VHh-CX-ur7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n8D-bZ-ctu" kind="relationship" relationship="rootViewController" id="uVp-ca-gqz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqt-cN-JgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188.80000000000001" y="115.14242878560721"/>
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="16" height="16"/>
+        <image name="routine1" width="250" height="166"/>
     </resources>
 </document>

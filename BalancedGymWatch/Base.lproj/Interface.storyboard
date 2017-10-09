@@ -14,7 +14,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BalancedGymWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Funciono" id="9fM-fj-WN5"/>
                         <table alignment="left" id="Ikt-04-fni">
                             <items>
                                 <tableRow identifier="RoutineTableRowController" id="cHm-YC-ymq" customClass="RoutineTableRowController" customModule="BalancedGymWatch_Extension">
@@ -23,6 +22,9 @@
                                             <imageView width="40" height="40" alignment="left" image="routine1" id="0tS-re-wEt"/>
                                             <label width="85" height="20" alignment="left" text="Label" id="ORA-hF-wZP"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="Z3W-Og-PT5" kind="push" id="Y56-7s-mjb"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="image" destination="0tS-re-wEt" id="ceJ-rx-6ZO"/>
@@ -38,6 +40,17 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="WdX-oZ-iEl">
+            <objects>
+                <controller id="Z3W-Og-PT5">
+                    <items>
+                        <label alignment="left" text="Funciono" id="9cE-2J-UYp"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="492" y="353"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

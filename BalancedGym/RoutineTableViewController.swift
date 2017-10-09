@@ -21,7 +21,11 @@ class RoutineTableViewController: UITableViewController {
             fatalError("Unable to instantiate routine1")
         }
         
-        routines += [routine1]
+        guard let routine2 = Routine(name: "Back and Biceps", photo: photo1) else {
+            fatalError("Unable to instantiate routine2")
+        }
+        
+        routines += [routine1, routine2]
     }
     
     override func viewDidLoad() {
@@ -103,14 +107,21 @@ class RoutineTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "mySegue"{
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+            
+            let vc = segue.destination as! RoutineDetailsViewController
+            vc.labelText = routines[indexPath.row].name
+            }
+        }
     }
-    */
+    
 
 }
