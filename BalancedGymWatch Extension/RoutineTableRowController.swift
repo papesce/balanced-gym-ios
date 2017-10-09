@@ -10,5 +10,5 @@ import WatchKit
 
 class RoutineTableRowController: NSObject {
     @IBOutlet weak var label: WKInterfaceLabel!
-    @IBOutlet weak var image: WKInterfaceImage!
+   
 }

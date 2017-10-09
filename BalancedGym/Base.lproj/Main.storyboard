@@ -52,12 +52,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="routine1" translatesAutoresizingMaskIntoConstraints="NO" id="AFe-fb-W4A">
-                                            <rect key="frame" x="8" y="0.0" width="93" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUG-Nu-DrQ">
-                                            <rect key="frame" x="109" y="7" width="258" height="21"/>
+                                            <rect key="frame" x="8" y="7" width="359" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -67,7 +63,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="iUG-Nu-DrQ" id="MpM-cQ-kgZ"/>
-                                    <outlet property="photoImageView" destination="AFe-fb-W4A" id="RWo-9A-Zt6"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="mySegue" id="wd0-Zh-D0N"/>
                                 </connections>
                             </tableViewCell>
@@ -81,7 +76,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xii-gh-eSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="108"/>
+            <point key="canvasLocation" x="1040.8" y="107.49625187406298"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ts8-CD-Nrd">
@@ -102,7 +97,4 @@
             <point key="canvasLocation" x="188.80000000000001" y="115.14242878560721"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="routine1" width="250" height="166"/>
-    </resources>
 </document>

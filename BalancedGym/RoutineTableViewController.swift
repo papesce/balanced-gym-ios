@@ -15,17 +15,23 @@ class RoutineTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func loadSampleRoutines() {
-        let photo1 = UIImage(named: "routine1" )
+        //let photo1 = UIImage(named: "routine1" )
+        //let photo2 = UIImage(named: "routine2" )
+        //let photo3 = UIImage(named: "routine3" )
         
-        guard let routine1 = Routine(name: "Chest and Triceps", photo: photo1) else {
+        guard let routine1 = Routine(name: "Chest and Triceps") else {
             fatalError("Unable to instantiate routine1")
         }
         
-        guard let routine2 = Routine(name: "Back and Biceps", photo: photo1) else {
+        guard let routine2 = Routine(name: "Back and Biceps") else {
             fatalError("Unable to instantiate routine2")
         }
         
-        routines += [routine1, routine2]
+        guard let routine3 = Routine(name: "Legs and Shoulders") else {
+            fatalError("Unable to instantiate routine1")
+        }
+        
+        routines += [routine1, routine2, routine3]
     }
     
     override func viewDidLoad() {
@@ -66,7 +72,7 @@ class RoutineTableViewController: UITableViewController {
         let routine = routines[indexPath.row]
         // Configure the cell
         cell.nameLabel.text = routine.name;
-        cell.photoImageView.image = routine.photo;
+        //cell.photoImageView.image = routine.photo;
 
         return cell
     }

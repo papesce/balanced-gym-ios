@@ -20,11 +20,14 @@ class InterfaceController: WKInterfaceController {
     //MARK: Private Methods
     private func loadSampleRoutines() {
         
-        guard let routine1 = Routine(name: "Chest and Triceps", photo: "routine2") else {
+        guard let routine1 = Routine(name: "Chest and Triceps") else {
             fatalError("Unable to instantiate routine1")
         }
-        
-        routines += [routine1]
+        guard let routine2 = Routine(name: "Back and Biceps") else {
+            fatalError("Unable to instantiate routine1")
+        }
+
+        routines += [routine1, routine2]
     }
     
     
@@ -33,7 +36,7 @@ class InterfaceController: WKInterfaceController {
             for index in 0 ..< routineTable.numberOfRows {
                 let row = routineTable.rowController(at: index) as! RoutineTableRowController
                 row.label.setText(routines[index].name)
-                row.image.setImageNamed(routines[index].photo)
+                //row.image.setImageNamed(routines[index].photo)
 
             }
     }
