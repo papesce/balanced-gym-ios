@@ -1,41 +1,20 @@
 //
-//  RoutineTableViewController.swift
+//  DetailsTableViewController.swift
 //  BalancedGym
 //
-//  Created by Pablou on 10/6/17.
+//  Created by Pablou on 10/10/17.
 //  Copyright © 2017 Pablou. All rights reserved.
 //
 
 import UIKit
 
-class RoutineTableViewController: UITableViewController {
+class ExerciseTableViewController: UITableViewController {
 
-    //MARK: Properties
-    var routines = [Routine]();
-    
-    //MARK: Private Methods
-    private func loadSampleRoutines() {
-        //let photo1 = UIImage(named: "routine1" )
-        //let photo2 = UIImage(named: "routine2" )
-        //let photo3 = UIImage(named: "routine3" )
-        
-        let exercises1 = [Exercise(name: "Bench Press")]
-        let routine1 = Routine(name: "Chest and Triceps", exercises: exercises1)
-        
-        let exercises2 = [Exercise(name: "Deadlift")]
-        let routine2 = Routine(name: "Back and Biceps", exercises: exercises2)
-        
-        let exercises3 = [Exercise(name: "Barbell Squat")]
-        let routine3 = Routine(name: "Legs and Shoulders", exercises: exercises3)
-        
-        routines += [routine1, routine2, routine3]
-    }
+    var routine = Routine(name: "Default", exercises: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Load sample data
-        loadSampleRoutines()
-        
+        self.title = routine.name
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,28 +32,27 @@ class RoutineTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routines.count
+        return routine.exercises.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "RoutineTableViewCell"
+        let cellIdentifier = "ExerciseTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
-         for: indexPath) as? RoutineTableViewCell else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+               for: indexPath) as? ExerciseTableViewCell else {
+           fatalError("The dequeued cell is not an instance of ExerciseTableViewCell.")
         }
-        let routine = routines[indexPath.row]
+        let exercise = routine.exercises[indexPath.row]
         // Configure the cell
-        cell.nameLabel.text = routine.name;
+        cell.nameLabel.text = exercise.name;
         //cell.photoImageView.image = routine.photo;
-
+        
         return cell
     }
-    
-
+  
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -110,21 +88,14 @@ class RoutineTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "mySegue"{
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let vc = segue.destination as! ExerciseTableViewController
-                let selectedRoutine = routines[indexPath.row]
-                vc.routine = selectedRoutine
-            }
-        }
     }
-    
+    */
 
 }

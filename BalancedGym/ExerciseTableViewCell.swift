@@ -1,17 +1,17 @@
 //
-//  RoutineTableViewCell.swift
+//  DetailsTableViewCell.swift
 //  BalancedGym
 //
-//  Created by Pablou on 10/6/17.
+//  Created by Pablou on 10/10/17.
 //  Copyright © 2017 Pablou. All rights reserved.
 //
 
 import UIKit
 
-class RoutineTableViewCell: UITableViewCell {
+class ExerciseTableViewCell: UITableViewCell {
 
-    //MARK Properties
     @IBOutlet weak var nameLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

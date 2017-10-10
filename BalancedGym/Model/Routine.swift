@@ -6,24 +6,22 @@
 //  Copyright © 2017 Pablou. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Routine {
 
     //MARK: Properties
     var name: String
+    var exercises = [Exercise(name: "Default")]
    
     
     //MARK: Initialization
-    init?(name: String) {
-        // Initialization should fail if there is no name or if the rating is negative.
-        if name.isEmpty  {
-            return nil
-        }
-        
+    init(name: String, exercises: [Exercise]) {
         //initialize stored properties
         self.name = name
+        self.exercises = exercises
        
     }
-    
 }
+    
+
