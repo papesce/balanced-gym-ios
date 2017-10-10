@@ -12,7 +12,7 @@ class Routine {
 
     //MARK: Properties
     var name: String
-   
+    var delegate:AnyObject? = nil
     
     //MARK: Initialization
     init?(name: String) {

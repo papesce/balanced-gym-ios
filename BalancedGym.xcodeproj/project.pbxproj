@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46355F5D1F88394900526234 /* RoutineTableRowController.swift */; };
+		46751BC91F8C4FE300949BB7 /* DetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BC81F8C4FE300949BB7 /* DetailsInterfaceController.swift */; };
 		46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */; };
 		46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */; };
 		46B5A2491F87C53000FC01DD /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2481F87C53000FC01DD /* Routine.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		46355F5D1F88394900526234 /* RoutineTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableRowController.swift; sourceTree = "<group>"; };
+		46751BC81F8C4FE300949BB7 /* DetailsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInterfaceController.swift; sourceTree = "<group>"; };
 		46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
 		46B5A2481F87C53000FC01DD /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				46B5A2631F87D75700FC01DD /* Assets.xcassets */,
 				46B5A2651F87D75700FC01DD /* Info.plist */,
 				46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */,
+				46751BC81F8C4FE300949BB7 /* DetailsInterfaceController.swift */,
 			);
 			path = "BalancedGymWatch Extension";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				46B5A2761F882CC100FC01DD /* Routine.swift in Sources */,
 				46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */,
 				46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */,
+				46751BC91F8C4FE300949BB7 /* DetailsInterfaceController.swift in Sources */,
 				46B5A25E1F87D75700FC01DD /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

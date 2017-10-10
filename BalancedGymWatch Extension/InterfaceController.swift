@@ -63,4 +63,10 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+      if segueIdentifier == "WatchSegue" {
+             return routines[rowIndex].name
+        }
+        return nil
+    }
 }

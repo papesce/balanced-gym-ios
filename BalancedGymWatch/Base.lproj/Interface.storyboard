@@ -22,7 +22,7 @@
                                             <label width="132" height="20" alignment="left" text="Label" id="ORA-hF-wZP"/>
                                         </items>
                                         <connections>
-                                            <segue destination="Z3W-Og-PT5" kind="push" id="Y56-7s-mjb"/>
+                                            <segue destination="Z3W-Og-PT5" kind="push" identifier="WatchSegue" id="Y56-7s-mjb"/>
                                         </connections>
                                     </group>
                                     <connections>
@@ -39,13 +39,16 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Details Interface Controller-->
         <scene sceneID="WdX-oZ-iEl">
             <objects>
-                <controller id="Z3W-Og-PT5">
+                <controller id="Z3W-Og-PT5" customClass="DetailsInterfaceController" customModule="BalancedGymWatch_Extension">
                     <items>
-                        <label alignment="left" text="Funciono" id="9cE-2J-UYp"/>
+                        <label width="136" alignment="left" text="Funciono" id="9cE-2J-UYp"/>
                     </items>
+                    <connections>
+                        <outlet property="labelView" destination="9cE-2J-UYp" id="vj0-dF-4xh"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="492" y="353"/>
