@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RoutineTableViewController: UITableViewController {
 
@@ -31,11 +32,36 @@ class RoutineTableViewController: UITableViewController {
         routines += [routine1, routine2, routine3]
     }
     
+    private func downloadData() {
+        //RestApiManager.sharedInstance.getAllRoutines(self)
+        Alamofire.request("https://balanced-gym-api.herokuapp.com/routine").responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+           
+            guard let value = response.result.value as? [String: Any],
+                let rows = value["data"] as? [[String: Any]] else {
+                    print("Malformed data received from fetchAllRooms service")
+                    //completion(nil)
+                    return
+            }
+            let rooms = rows.flatMap({ (roomDict) -> Routine? in
+                let exercises1 = [Exercise(name: "Bench Press")]
+                let routineName = roomDict["name"] as! String
+                let routine1 = Routine(name: routineName, exercises: exercises1)
+                return routine1
+                })
+            self.routines = rooms
+            self.tableView.reloadData()
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Load sample data
-        loadSampleRoutines()
-        
+        // loadSampleRoutines()
+        downloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
