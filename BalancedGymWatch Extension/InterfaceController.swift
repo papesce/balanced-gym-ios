@@ -18,24 +18,33 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var routineTable: WKInterfaceTable!
     
     //MARK: Private Methods
-    private func loadSampleRoutines() {
+    private func loadRoutines() {
+        RestApiManager.sharedInstance.executeRequest(completionHandler: { routines in
+            self.routines = routines
+            //if active
+            // tableRefresh()
+        })
         
-        guard let routine1 = Routine(name: "Chest and Triceps") else {
-            fatalError("Unable to instantiate routine1")
-        }
-        guard let routine2 = Routine(name: "Back and Biceps") else {
-            fatalError("Unable to instantiate routine1")
-        }
-
-        routines += [routine1, routine2]
+//
+//        guard let routine1 = Routine(name: "Chest and Triceps") else {
+//            fatalError("Unable to instantiate routine1")
+//        }
+//        guard let routine2 = Routine(name: "Back and Biceps") else {
+//            fatalError("Unable to instantiate routine1")
+//        }
+//
+//        routines += [routine1, routine2]
     }
     
     
     func tableRefresh() {
-            routineTable.setNumberOfRows(routines.count, withRowType: "RoutineTableRowController")
+            routineTable.setNumberOfRows(routines.count, withRowType: "RoutineTableRowControllerID")
             for index in 0 ..< routineTable.numberOfRows {
-                let row = routineTable.rowController(at: index) as! RoutineTableRowController
-                row.label.setText(routines[index].name)
+                let row = routineTable.rowController(at: index)
+                if (row is RoutineTableRowController) {
+                    let row2 = row as! RoutineTableRowController
+                    row2.routineName.setText(routines[index].name)
+                }
                 //row.image.setImageNamed(routines[index].photo)
 
             }
@@ -45,8 +54,9 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         //Load sample data
-        loadSampleRoutines()
+        loadRoutines()
         // Configure interface objects here.
+        
     }
     
     
@@ -65,7 +75,7 @@ class InterfaceController: WKInterfaceController {
 
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
       if segueIdentifier == "WatchSegue" {
-             return routines[rowIndex].name
+             return routines[rowIndex]
         }
         return nil
     }

@@ -33,38 +33,13 @@ class RoutineTableViewController: UITableViewController {
     }
     
     private func downloadData() {
-        //RestApiManager.sharedInstance.getAllRoutines(self)
-        Alamofire.request("https://balanced-gym-api.herokuapp.com/routine").responseJSON {
-            response in
-                print(response)
-                //to get status code
-                if let status = response.response?.statusCode {
-                    switch(status){
-                    case 201:
-                        print("example success")
-                    default:
-                        print("error with response status: \(status)")
-                    }
-                }
-                //to get JSON return value
-                if let result = response.result.value {
-                    let jsonRoutines = result as! [NSDictionary]
-                    let routines = jsonRoutines.flatMap({ (jsonRoutine) -> Routine? in
-                         let routineName = jsonRoutine["name"] as! String
-                         //let convertedExercises = [] as [Exercise]
-                         let jsonExercises = jsonRoutine["exercises"] as! [NSDictionary]
-                         let convertedExercises = jsonExercises.flatMap({ (jsonExercise) -> Exercise? in
-                            let exerciseName = jsonExercise["name"] as! String
-                            return Exercise(name: exerciseName)
-                         })
-                         return Routine(name: routineName, exercises: convertedExercises)
-                    })
-                    //print(JSON)
-                    self.routines = routines
-                    self.tableView.reloadData()
-                }
+        RestApiManager.sharedInstance.executeRequest(completionHandler: { routines in
+            self.routines = routines
+            self.tableView.reloadData()
+        })
+        
             
-        }
+        
     }
     
     override func viewDidLoad() {

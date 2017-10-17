@@ -9,24 +9,24 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--InterfaceControllerID-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BalancedGymWatch" customModuleProvider="target">
+                <controller identifier="InterfaceControllerID" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BalancedGymWatch" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="Ikt-04-fni">
                             <items>
-                                <tableRow identifier="RoutineTableRowController" id="cHm-YC-ymq" customClass="RoutineTableRowController" customModule="BalancedGymWatch_Extension">
+                                <tableRow identifier="RoutineTableRowControllerID" id="cHm-YC-ymq" customClass="RoutineTableRowController" customModule="BalancedGymWatch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="gwf-8y-h93">
                                         <items>
-                                            <label width="132" height="20" alignment="left" text="Label" id="ORA-hF-wZP"/>
+                                            <label width="132" height="20" alignment="left" text="Routines" id="ORA-hF-wZP"/>
                                         </items>
                                         <connections>
                                             <segue destination="Z3W-Og-PT5" kind="push" identifier="WatchSegue" id="Y56-7s-mjb"/>
                                         </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="label" destination="ORA-hF-wZP" id="LnD-PF-Pcs"/>
+                                        <outlet property="routineName" destination="ORA-hF-wZP" id="YAO-av-g9V"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -39,15 +39,28 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Details Interface Controller-->
+        <!--DetailsInterfaceControllerID-->
         <scene sceneID="WdX-oZ-iEl">
             <objects>
-                <controller id="Z3W-Og-PT5" customClass="DetailsInterfaceController" customModule="BalancedGymWatch_Extension">
+                <controller identifier="DetailsInterfaceControllerID" id="Z3W-Og-PT5" customClass="DetailsInterfaceController" customModule="BalancedGymWatch_Extension">
                     <items>
-                        <label width="136" alignment="left" text="Funciono" id="9cE-2J-UYp"/>
+                        <table alignment="left" id="Tqe-5B-UIW" userLabel="Exercise Table">
+                            <items>
+                                <tableRow identifier="ExerciseTableRowControllerID" id="MDL-aW-u7F" customClass="ExerciseTableRowController" customModule="BalancedGymWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="fjn-ue-x6D">
+                                        <items>
+                                            <label alignment="left" text="Exercises" id="Tww-l9-nx2"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="exerciseName" destination="Tww-l9-nx2" id="th0-qU-lMG"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
-                        <outlet property="labelView" destination="9cE-2J-UYp" id="vj0-dF-4xh"/>
+                        <outlet property="exerciseTable" destination="Tqe-5B-UIW" id="ir7-ta-tBl"/>
                     </connections>
                 </controller>
             </objects>

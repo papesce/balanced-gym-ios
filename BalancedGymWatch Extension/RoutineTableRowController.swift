@@ -8,7 +8,7 @@
 
 import WatchKit
 
-class RoutineTableRowController: NSObject {
-    @IBOutlet weak var label: WKInterfaceLabel!
+class RoutineTableRowController:NSObject {
+    @IBOutlet weak var routineName: WKInterfaceLabel!
    
 }
