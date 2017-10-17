@@ -34,25 +34,35 @@ class RoutineTableViewController: UITableViewController {
     
     private func downloadData() {
         //RestApiManager.sharedInstance.getAllRoutines(self)
-        Alamofire.request("https://balanced-gym-api.herokuapp.com/routine").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-           
-            guard let value = response.result.value as? [String: Any],
-                let rows = value["data"] as? [[String: Any]] else {
-                    print("Malformed data received from fetchAllRooms service")
-                    //completion(nil)
-                    return
-            }
-            let rooms = rows.flatMap({ (roomDict) -> Routine? in
-                let exercises1 = [Exercise(name: "Bench Press")]
-                let routineName = roomDict["name"] as! String
-                let routine1 = Routine(name: routineName, exercises: exercises1)
-                return routine1
-                })
-            self.routines = rooms
-            self.tableView.reloadData()
+        Alamofire.request("https://balanced-gym-api.herokuapp.com/routine").responseJSON {
+            response in
+                print(response)
+                //to get status code
+                if let status = response.response?.statusCode {
+                    switch(status){
+                    case 201:
+                        print("example success")
+                    default:
+                        print("error with response status: \(status)")
+                    }
+                }
+                //to get JSON return value
+                if let result = response.result.value {
+                    let jsonRoutines = result as! [NSDictionary]
+                    let routines = jsonRoutines.flatMap({ (jsonRoutine) -> Routine? in
+                         let routineName = jsonRoutine["name"] as! String
+                         //let convertedExercises = [] as [Exercise]
+                         let jsonExercises = jsonRoutine["exercises"] as! [NSDictionary]
+                         let convertedExercises = jsonExercises.flatMap({ (jsonExercise) -> Exercise? in
+                            let exerciseName = jsonExercise["name"] as! String
+                            return Exercise(name: exerciseName)
+                         })
+                         return Routine(name: routineName, exercises: convertedExercises)
+                    })
+                    //print(JSON)
+                    self.routines = routines
+                    self.tableView.reloadData()
+                }
             
         }
     }
