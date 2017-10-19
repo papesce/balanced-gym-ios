@@ -10,10 +10,14 @@
 
 class Exercise {
     
-    var name: String 
+    var id: String
+    var name: String
+    var series: [Serie]
     
-    init(name: String) {
+    init(id: String, name: String, series: [Serie]) {
+        self.id = id
         self.name = name
+        self.series = series
     }
     
 }

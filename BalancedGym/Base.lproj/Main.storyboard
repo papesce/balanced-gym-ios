@@ -70,18 +70,12 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Rep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb6-1L-lnS">
                                 <rect key="frame" x="10" y="106" width="45" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="Tru-jv-qDf"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ue-nH-ggV">
                                 <rect key="frame" x="177" y="105" width="21" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="21" id="Wgh-ef-6p3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -122,8 +116,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Current" id="HYt-ee-3a8"/>
                     <connections>
-                        <outlet property="editableField" destination="7Ij-kQ-veB" id="Hbb-Ar-BDy"/>
-                        <outlet property="titleLabel" destination="ZgL-vJ-eYj" id="bmz-te-JA9"/>
+                        <outlet property="repsField" destination="7Ij-kQ-veB" id="p0h-SM-WT7"/>
+                        <outlet property="titleLabel" destination="ZgL-vJ-eYj" id="09O-bs-wpo"/>
+                        <outlet property="weightField" destination="oM1-DU-h2h" id="5fD-cl-Ppo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUz-j5-XzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,6 +207,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ll3-fn-CvG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E8T-ok-SPa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

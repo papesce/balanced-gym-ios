@@ -10,13 +10,15 @@ import UIKit
 
 class CurrentViewController: UIViewController, UITextFieldDelegate {
 
-    var exercise: Exercise = Exercise(name: "default")
+    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [])
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var editableField: UITextField!
+  
+    @IBOutlet weak var repsField: UITextField!
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @IBOutlet weak var weightField: UITextField!
+    //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        // limit to 4 characters
 //        let characterCountLimit = 4
 //
@@ -37,7 +39,11 @@ class CurrentViewController: UIViewController, UITextFieldDelegate {
    // }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.titleLabel.text = editableField.text
+        //self.titleLabel.text = editableField.text
+        self.exercise.series[0].rep = Int(repsField.text!)!
+        self.exercise.series[0].weight = Int(weightField.text!)!
+        RestApiManager.sharedInstance.updateRequest(exercise: self.exercise);
+        
     }
    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -54,7 +60,8 @@ class CurrentViewController: UIViewController, UITextFieldDelegate {
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
         //setting toolbar as inputAccessoryView
-        self.editableField.inputAccessoryView = toolbar
+        self.repsField.inputAccessoryView = toolbar
+        self.weightField.inputAccessoryView = toolbar
     }
  
     @objc func doneButtonAction() {
@@ -72,6 +79,10 @@ class CurrentViewController: UIViewController, UITextFieldDelegate {
         
         //init toolbar
         self.addAccessoryView()
+        
+        //init textfields
+         repsField.text = String(self.exercise.series[0].rep)
+         weightField.text = String(self.exercise.series[0].weight)
         
     }
     

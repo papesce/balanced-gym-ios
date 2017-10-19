@@ -11,8 +11,8 @@ import Foundation
 
 class DetailsInterfaceController: WKInterfaceController {
     
-    var routine: Routine = Routine(name: "It is wrokgin",
-            exercises: [Exercise(name: "ex1")])
+    var routine: Routine = Routine(name: "It is working",
+                                   exercises: [Exercise(id: "id0", name: "ex1", series:[])])
     
     @IBOutlet var exerciseTable: WKInterfaceTable!
     

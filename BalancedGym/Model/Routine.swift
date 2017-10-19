@@ -12,7 +12,7 @@ class Routine {
 
     //MARK: Properties
     var name: String
-    var exercises = [Exercise(name: "Default")]
+    var exercises = [Exercise(id:"id0", name: "Default", series: [])]
    
     
     //MARK: Initialization
