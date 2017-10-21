@@ -1,35 +1,20 @@
 //
-//  RoutineTableViewController.swift
+//  SerieTableViewController.swift
 //  BalancedGym
 //
-//  Created by Pablou on 10/6/17.
+//  Created by Pablou on 10/21/17.
 //  Copyright © 2017 Pablou. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class RoutineTableViewController: UITableViewController {
+class SerieTableViewController: UITableViewController {
 
-    //MARK: Properties
-    var routines = [Routine]();
-    
-    
-    private func downloadData() {
-        RestApiManager.sharedInstance.executeRequest(completionHandler: { routines in
-            self.routines = routines
-            self.tableView.reloadData()
-        })
-        
-            
-        
-    }
+    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Load sample data
-        // loadSampleRoutines()
-        downloadData()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,18 +34,20 @@ class RoutineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routines.count
+        // return the number of rows
+        return exercise.series.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineTableViewCellID",
-         for: indexPath) as! RoutineTableViewCell
-        let routine = routines[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SerieTableViewCellID",
+                         for: indexPath) as! SerieTableViewCell
+        let serie = exercise.series[indexPath.row]
         // Configure the cell
-        cell.nameLabel.text = routine.name;
+        cell.setSerie(newSerie: serie)
         //cell.photoImageView.image = routine.photo;
+
         return cell
     }
     
@@ -100,21 +87,14 @@ class RoutineTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showRoutineSegueID"{
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let vc = segue.destination as! ExerciseTableViewController
-                let selectedRoutine = routines[indexPath.row]
-                vc.routine = selectedRoutine
-            }
-        }
     }
-    
+    */
 
 }

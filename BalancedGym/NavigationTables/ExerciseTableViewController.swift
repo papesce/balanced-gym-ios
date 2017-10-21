@@ -39,11 +39,8 @@ class ExerciseTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "ExerciseTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
-               for: indexPath) as? ExerciseTableViewCell else {
-           fatalError("The dequeued cell is not an instance of ExerciseTableViewCell.")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCellID",
+               for: indexPath) as! ExerciseTableViewCell 
         let exercise = routine.exercises[indexPath.row]
         // Configure the cell
         cell.nameLabel.text = exercise.name;
@@ -95,16 +92,19 @@ class ExerciseTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "currentSegueID" {
+        if segue.identifier == "showExerciseSegueID" {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedExercise = routine.exercises[indexPath.row]
                 let barViewControllers = segue.destination as! UITabBarController
                 let destinationViewController = barViewControllers.viewControllers![0] as! CurrentViewController
                 destinationViewController.exercise = selectedExercise
+                let serieTableViewController = barViewControllers.viewControllers![1] as! SerieTableViewController
+                serieTableViewController.exercise = selectedExercise
             }
         }
     }
     
 
 }
+

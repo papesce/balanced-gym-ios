@@ -14,12 +14,12 @@
         <scene sceneID="q6X-Lp-DNw">
             <objects>
                 <tableViewController id="zsu-w6-Dcx" customClass="ExerciseTableViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QdW-Xr-2tb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QdW-Xr-2tb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExerciseTableViewCell" rowHeight="90" id="FzU-Ia-cWR" customClass="ExerciseTableViewCell" customModule="BalancedGym" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExerciseTableViewCellID" rowHeight="90" id="FzU-Ia-cWR" customClass="ExerciseTableViewCell" customModule="BalancedGym" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FzU-Ia-cWR" id="BuR-pb-PKy">
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thp-bK-wbz">
-                                            <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="294" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -37,7 +37,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="thp-bK-wbz" id="cfr-5N-nlO"/>
-                                    <segue destination="ll3-fn-CvG" kind="show" identifier="currentSegueID" id="qSu-7L-FYv"/>
+                                    <segue destination="ll3-fn-CvG" kind="show" identifier="showExerciseSegueID" id="qSu-7L-FYv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,7 +49,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ln-5T-ywx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525.5999999999999" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2523.75" y="105.63380281690141"/>
         </scene>
         <!--Current-->
         <scene sceneID="D1O-9Z-gHs">
@@ -125,21 +125,77 @@
             </objects>
             <point key="canvasLocation" x="4376.25" y="129.92957746478874"/>
         </scene>
-        <!--History-->
-        <scene sceneID="ci3-Ye-Uwe">
+        <!--Item-->
+        <scene sceneID="gsV-NH-9yJ">
             <objects>
-                <viewController id="ktA-4F-TLG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ggn-WU-R9X">
+                <tableViewController id="Hme-YY-JeS" customClass="SerieTableViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sdy-WI-Gfe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="hgA-Io-cuW"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="History" id="oej-vZ-qaV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bTY-Dq-zTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SerieTableViewCellID" rowHeight="90" id="muB-6F-YqT" customClass="SerieTableViewCell" customModule="BalancedGym" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="muB-6F-YqT" id="ZHI-vP-210">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-De-nrU">
+                                            <rect key="frame" x="10" y="28" width="300" height="30"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Rep:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5y-YH-zV3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="49.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5y7-pR-foA">
+                                                    <rect key="frame" x="59.5" y="0.0" width="81" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I99-bl-Du6">
+                                                    <rect key="frame" x="150.5" y="0.0" width="58.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dJW-dw-meg">
+                                                    <rect key="frame" x="219" y="0.0" width="81" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dJW-dw-meg" firstAttribute="width" secondItem="5y7-pR-foA" secondAttribute="width" id="BVA-xc-jCu"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AZb-De-nrU" firstAttribute="leading" secondItem="ZHI-vP-210" secondAttribute="leading" constant="10" id="IYW-dL-qZQ"/>
+                                        <constraint firstItem="AZb-De-nrU" firstAttribute="top" secondItem="ZHI-vP-210" secondAttribute="topMargin" constant="20" id="um5-Rm-M5o"/>
+                                        <constraint firstAttribute="trailing" secondItem="AZb-De-nrU" secondAttribute="trailing" constant="10" id="vYR-0f-FD6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="repsTextField" destination="5y7-pR-foA" id="jrJ-CP-vOu"/>
+                                    <outlet property="weightTextField" destination="dJW-dw-meg" id="K8A-YM-bhn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hme-YY-JeS" id="OoI-1R-FGF"/>
+                            <outlet property="delegate" destination="Hme-YY-JeS" id="RI4-Do-N9Y"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="csE-lz-dv5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PlS-Pp-Sk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4303" y="901"/>
+            <point key="canvasLocation" x="4416" y="961"/>
         </scene>
         <!--Routine Table View Controller-->
         <scene sceneID="fMu-El-Znh">
@@ -150,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoutineTableViewCell" rowHeight="90" id="cJU-Ws-Lmt" userLabel="RoutineTableViewCell" customClass="RoutineTableViewCell" customModule="BalancedGym" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoutineTableViewCellID" rowHeight="90" id="cJU-Ws-Lmt" userLabel="RoutineTableViewCell" customClass="RoutineTableViewCell" customModule="BalancedGym" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cJU-Ws-Lmt" id="Ld5-TG-EIj">
@@ -168,7 +224,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="iUG-Nu-DrQ" id="MpM-cQ-kgZ"/>
-                                    <segue destination="zsu-w6-Dcx" kind="show" identifier="mySegue" id="Xo9-yG-i7d"/>
+                                    <segue destination="zsu-w6-Dcx" kind="show" identifier="showRoutineSegueID" id="Xo9-yG-i7d"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -213,7 +269,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="EVA-z4-d6R" kind="relationship" relationship="viewControllers" id="GUF-nI-vq6"/>
-                        <segue destination="ktA-4F-TLG" kind="relationship" relationship="viewControllers" id="3sc-dF-Mdj"/>
+                        <segue destination="Hme-YY-JeS" kind="relationship" relationship="viewControllers" id="jmR-YW-uVM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yO9-rV-K0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
