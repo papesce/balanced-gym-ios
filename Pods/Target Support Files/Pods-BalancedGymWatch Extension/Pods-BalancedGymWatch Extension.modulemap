@@ -1,0 +1,6 @@
+framework module Pods_BalancedGymWatch_Extension {
+  umbrella header "Pods-BalancedGymWatch Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

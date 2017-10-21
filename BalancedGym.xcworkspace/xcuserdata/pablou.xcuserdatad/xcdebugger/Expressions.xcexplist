@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ExerciseTabBarController.viewDidLoad():ExerciseTabBarController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentViewController.viewDidLoad():CurrentViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExerciseTableViewController.prepare(for:sender:):ExerciseTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RoutineTableViewController.downloadData():RoutineTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.result.value as NSDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
