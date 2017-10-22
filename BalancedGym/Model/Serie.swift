@@ -9,10 +9,12 @@
 import Foundation
 
 class Serie {
+    var id:String
     var rep: Int
     var weight: Int
     
-    init(rep: Int, weight: Int) {
+    init(id: String, rep: Int, weight: Int) {
+        self.id = id
         self.rep = rep
         self.weight = weight
     }

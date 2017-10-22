@@ -17,10 +17,11 @@ class ExerciseTableViewController: UITableViewController {
         self.title = routine.name
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,9 +98,9 @@ class ExerciseTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedExercise = routine.exercises[indexPath.row]
                 let barViewControllers = segue.destination as! UITabBarController
-                let destinationViewController = barViewControllers.viewControllers![0] as! CurrentViewController
-                destinationViewController.exercise = selectedExercise
-                let serieTableViewController = barViewControllers.viewControllers![1] as! SerieTableViewController
+                //let destinationViewController = barViewControllers.viewControllers![0] as! CurrentViewController
+                //destinationViewController.exercise = selectedExercise
+                let serieTableViewController = barViewControllers.viewControllers![0] as! SerieTableViewController
                 serieTableViewController.exercise = selectedExercise
             }
         }

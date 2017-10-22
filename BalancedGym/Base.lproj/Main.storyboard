@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,80 +50,6 @@
             </objects>
             <point key="canvasLocation" x="2523.75" y="105.63380281690141"/>
         </scene>
-        <!--Current-->
-        <scene sceneID="D1O-9Z-gHs">
-            <objects>
-                <viewController id="EVA-z4-d6R" customClass="CurrentViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eWN-09-Rof">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ij-kQ-veB">
-                                <rect key="frame" x="65" y="102" width="102" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                                <connections>
-                                    <outlet property="delegate" destination="EVA-z4-d6R" id="ZRf-XH-Bbm"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Rep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb6-1L-lnS">
-                                <rect key="frame" x="10" y="106" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ue-nH-ggV">
-                                <rect key="frame" x="177" y="105" width="21" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgL-vJ-eYj">
-                                <rect key="frame" x="10" y="77" width="349" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oM1-DU-h2h">
-                                <rect key="frame" x="208" y="100" width="102" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="EVA-z4-d6R" id="X8k-mS-rHb"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7Ue-nH-ggV" firstAttribute="centerY" secondItem="oM1-DU-h2h" secondAttribute="centerY" id="1Pd-SB-Qhi"/>
-                            <constraint firstItem="zb6-1L-lnS" firstAttribute="top" secondItem="ZgL-vJ-eYj" secondAttribute="bottom" constant="8" symbolic="YES" id="1v7-AP-z9p"/>
-                            <constraint firstItem="OP3-8E-kfa" firstAttribute="trailing" secondItem="oM1-DU-h2h" secondAttribute="trailing" constant="10" id="6Rd-xt-SQY"/>
-                            <constraint firstItem="zb6-1L-lnS" firstAttribute="leading" secondItem="OP3-8E-kfa" secondAttribute="leading" constant="10" id="6dq-mb-gW0"/>
-                            <constraint firstItem="ZgL-vJ-eYj" firstAttribute="top" secondItem="OP3-8E-kfa" secondAttribute="top" constant="13" id="FEf-SF-NSg"/>
-                            <constraint firstItem="oM1-DU-h2h" firstAttribute="leading" secondItem="7Ue-nH-ggV" secondAttribute="trailing" constant="10" id="J5q-Xy-E6M"/>
-                            <constraint firstItem="7Ij-kQ-veB" firstAttribute="leading" secondItem="zb6-1L-lnS" secondAttribute="trailing" constant="10" id="Oew-Cw-kJW"/>
-                            <constraint firstItem="7Ue-nH-ggV" firstAttribute="leading" secondItem="7Ij-kQ-veB" secondAttribute="trailing" constant="10" id="OfM-hY-CEj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZgL-vJ-eYj" secondAttribute="trailing" constant="-55" id="SyB-th-JDz"/>
-                            <constraint firstItem="7Ij-kQ-veB" firstAttribute="baseline" secondItem="7Ue-nH-ggV" secondAttribute="baseline" id="WQ9-bL-3Jk"/>
-                            <constraint firstItem="zb6-1L-lnS" firstAttribute="centerY" secondItem="7Ij-kQ-veB" secondAttribute="centerY" id="Y0d-ge-JKa"/>
-                            <constraint firstItem="ZgL-vJ-eYj" firstAttribute="leading" secondItem="zb6-1L-lnS" secondAttribute="leading" id="g24-hP-776"/>
-                            <constraint firstItem="7Ij-kQ-veB" firstAttribute="width" secondItem="oM1-DU-h2h" secondAttribute="width" id="wsr-2Z-Fvy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="OP3-8E-kfa"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Current" id="HYt-ee-3a8"/>
-                    <connections>
-                        <outlet property="repsField" destination="7Ij-kQ-veB" id="p0h-SM-WT7"/>
-                        <outlet property="titleLabel" destination="ZgL-vJ-eYj" id="09O-bs-wpo"/>
-                        <outlet property="weightField" destination="oM1-DU-h2h" id="5fD-cl-Ppo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LUz-j5-XzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4376.25" y="129.92957746478874"/>
-        </scene>
         <!--Item-->
         <scene sceneID="gsV-NH-9yJ">
             <objects>
@@ -155,6 +80,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="muB-6F-YqT" id="DSm-Ne-9uF"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I99-bl-Du6">
                                                     <rect key="frame" x="150.5" y="0.0" width="58.5" height="30"/>
@@ -167,6 +95,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="muB-6F-YqT" id="VbV-lk-tmg"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -268,7 +199,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EVA-z4-d6R" kind="relationship" relationship="viewControllers" id="GUF-nI-vq6"/>
                         <segue destination="Hme-YY-JeS" kind="relationship" relationship="viewControllers" id="jmR-YW-uVM"/>
                     </connections>
                 </tabBarController>

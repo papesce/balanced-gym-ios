@@ -37,20 +37,45 @@ class RestApiManager {
                     let convertedExercises = jsonExercises.flatMap({ (jsonExercise) -> Exercise? in
                         let exerciseID = jsonExercise["_id"] as!String
                         let exerciseName = jsonExercise["name"] as! String
-                        let jsonSeries  = jsonExercise["series"] as! [NSDictionary]
-                        let convertedSeries = jsonSeries.flatMap({(jsonSerie) -> Serie?
-                            in
-                               let rep = jsonSerie["reps"] as! Int
-                               let weight = jsonSerie["weight"] as! Int
-                            
-                            return Serie(rep: rep, weight: weight)
-                        })
-                        return Exercise(id: exerciseID, name: exerciseName, series: convertedSeries)
+                        return Exercise(id: exerciseID, name: exerciseName, series: [])
                     })
                     return Routine(name: routineName, exercises: convertedExercises)
                 })
                 //print(JSON)
                 completionHandler(routines)
+            }
+        }
+    }
+    
+    func executeRequest(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
+        Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseJSON {
+            response in
+            // print(response)
+            //to get status code
+            if let status = response.response?.statusCode {
+                switch(status){
+                case 201:
+                    print("example success")
+                default:
+                    print("response status: \(status)")
+                }
+            }
+            //to get JSON return value
+            if let result = response.result.value {
+                let jsonExercise = result as! NSDictionary
+                        let exerciseID = jsonExercise["_id"] as!String
+                        let exerciseName = jsonExercise["name"] as! String
+                        let jsonSeries  = jsonExercise["series"] as! [NSDictionary]
+                        let convertedSeries = jsonSeries.flatMap({(jsonSerie) -> Serie?
+                            in
+                               let serieID = jsonSerie["_id"] as! String
+                               let rep = jsonSerie["reps"] as! Int
+                               let weight = jsonSerie["weight"] as! Int
+                        
+                            return Serie(id: serieID, rep: rep, weight: weight)
+                        })
+                    let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries)
+                completionHandler(exercise)
             }
         }
     }
@@ -74,7 +99,22 @@ class RestApiManager {
         }
     }
         
-      
+    func updateRequest(serie: Serie ) {
+        let reps : Int = serie.rep
+        let weight: Int = serie.weight
+        let parameters: Parameters = [
+                "reps": reps, "weight": weight
+        ]
+        
+        let id = serie.id
+        let url = "\(baseURL)/serie/\(id)"
+        Alamofire.request(url, method: .patch, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            debugPrint(response)
+            if let json = response.result.value {
+                print("JSON: \(json)")
+            }
+        }
+    }
             
     
    

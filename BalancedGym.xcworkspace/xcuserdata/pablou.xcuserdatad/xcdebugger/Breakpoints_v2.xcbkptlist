@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BalancedGym/NavigationTables/ExerciseTableViewController.swift"
-            timestampString = "530281112.532818"
+            timestampString = "530331546.582666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BalancedGym/NavigationTables/ExerciseTableViewController.swift"
-            timestampString = "530281112.532901"
+            timestampString = "530331546.582766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -121,56 +121,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BalancedGym/RestApiManager.swift"
-            timestampString = "530122405.674616"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "executeRequest(completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.NSDictionary) -&gt; Swift.Optional&lt;BalancedGym.Exercise&gt; in closure #1 (__ObjC.NSDictionary) -&gt; Swift.Optional&lt;BalancedGym.Routine&gt; in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in BalancedGym.RestApiManager.executeRequest(completionHandler: (Swift.Array&lt;BalancedGym.Routine&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "BalancedGym"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pablou/Documents/balanced-life-ios/BalancedGym/RestApiManager.swift"
-                  timestampString = "530074421.036297"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "1445">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.NSDictionary) -&gt; Swift.Optional&lt;BalancedGym.Serie&gt; in closure #1 (__ObjC.NSDictionary) -&gt; Swift.Optional&lt;BalancedGym.Exercise&gt; in closure #1 (__ObjC.NSDictionary) -&gt; Swift.Optional&lt;BalancedGym.Routine&gt; in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in BalancedGym.RestApiManager.executeRequest(completionHandler: (Swift.Array&lt;BalancedGym.Routine&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "BalancedGym"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pablou/Documents/balanced-life-ios/BalancedGym/RestApiManager.swift"
-                  timestampString = "530074421.039993"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "17">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BalancedGym/Exercise/CurrentViewController.swift"
-            timestampString = "530281112.532996"
+            timestampString = "530324209.57629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -186,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BalancedGym/RestApiManager.swift"
-            timestampString = "530122405.675687"
+            timestampString = "530331546.582868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "updateRequest(exercise:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BalancedGym/RestApiManager.swift"
-            timestampString = "530122405.676749"
+            timestampString = "530331546.582979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -250,12 +202,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BalancedGym/Exercise/SerieTableViewController.swift"
-            timestampString = "530281112.533244"
+            timestampString = "530331546.583043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BalancedGym/Exercise/SerieTableViewCell.swift"
+            timestampString = "530331546.583231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "textFieldDidEndEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BalancedGym/RestApiManager.swift"
+            timestampString = "530331546.584004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "executeRequest(exercise:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BalancedGym/Exercise/SerieTableViewCell.swift"
+            timestampString = "530331546.584095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "textFieldDidEndEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BalancedGym/RestApiManager.swift"
+            timestampString = "530331546.584668"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "updateRequest(serie:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
