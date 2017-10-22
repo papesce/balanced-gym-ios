@@ -71,7 +71,8 @@ class SerieTableViewController: UITableViewController {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cell = tableView.dequeueReusableCell(withIdentifier: "SerieTableViewCellID",
                          for: indexPath) as! SerieTableViewCell
-        let serie = exercise.series[indexPath.row]
+        let length = exercise.series.count;
+        let serie = exercise.series[length - indexPath.row - 1]
         // Configure the cell
         cell.setSerie(newSerie: serie)
         //cell.photoImageView.image = routine.photo;
