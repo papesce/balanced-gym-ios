@@ -40,9 +40,9 @@ class CurrentViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //self.titleLabel.text = editableField.text
-        self.exercise.series[0].rep = Int(repsField.text!)!
-        self.exercise.series[0].weight = Int(weightField.text!)!
-        RestApiManager.sharedInstance.updateRequest(exercise: self.exercise);
+        //self.exercise.series[0].rep = Int(repsField.text!)!
+        //self.exercise.series[0].weight = Int(weightField.text!)!
+        //RestApiManager.sharedInstance.updateExercise(exercise: self.exercise);
         
     }
    

@@ -42,7 +42,7 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
         //self.titleLabel.text = editableField.text
         self.serie.rep = Int(repsTextField.text!)!
         self.serie.weight = Int(weightTextField.text!)!
-        RestApiManager.sharedInstance.updateRequest(serie: self.serie);
+        RestApiManager.sharedInstance.updateSerie(serie: self.serie);
         
     }
     

@@ -14,16 +14,34 @@ class SerieTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadData()
+        refresh()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        //self.navigationController!.setToolbarHidden( false, animated: true)
+//        let rightButtonItem = UIBarButtonItem.init(
+//            title: "Title",
+//            style: .done,
+//            target: self,
+//            action: #selector(RoutineTableViewController.rightButtonAction)
+//        )
+//
+//         self.navigationItem.rightBarButtonItem = rightButtonItem
+        //self.navigationItem.rightBarButtonItem = self.plusItem
+        //self.navigationController!.title = "title"
+         self.navigationItem.rightBarButtonItem = editButtonItem
+        
     }
 
-    private func downloadData() {
-        RestApiManager.sharedInstance.executeRequest(exercise: self.exercise, completionHandler: { exercise in
+    func refreshNewSerie(newSerie: Serie) {
+        self.exercise.series.append(newSerie)
+        self.tableView.reloadData();
+    }
+    
+   func refresh() {
+        RestApiManager.sharedInstance.getExercise(exercise: self.exercise, completionHandler: { exercise in
             self.exercise = exercise
             self.tableView.reloadData()
         })

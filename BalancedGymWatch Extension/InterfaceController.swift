@@ -19,7 +19,7 @@ class InterfaceController: WKInterfaceController {
     
     //MARK: Private Methods
     private func loadRoutines() {
-        RestApiManager.sharedInstance.executeRequest(completionHandler: { routines in
+        RestApiManager.sharedInstance.getRoutines(completionHandler: { routines in
             self.routines = routines
             //if active
             // tableRefresh()

@@ -16,12 +16,16 @@ class RoutineTableViewController: UITableViewController {
     
     
     private func downloadData() {
-        RestApiManager.sharedInstance.executeRequest(completionHandler: { routines in
+        RestApiManager.sharedInstance.getRoutines(completionHandler: { routines in
             self.routines = routines
             self.tableView.reloadData()
         })
         
             
+        
+    }
+    
+    @objc func rightButtonAction() {
         
     }
     
@@ -32,10 +36,19 @@ class RoutineTableViewController: UITableViewController {
         downloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        //let rightButtonItem = UIBarButtonItem.init(
+        //    title: "Title",
+        //    style: .done,
+        //    target: self,
+        //    action: #selector(RoutineTableViewController.rightButtonAction)
+        //)
+        //self.hidesBottomBarWhenPushed = true;
+        //self.navigationItem.title = rightButtonItem
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = editButtonItem
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

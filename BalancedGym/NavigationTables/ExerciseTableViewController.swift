@@ -18,7 +18,9 @@ class ExerciseTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //self.navigationController?.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
    
@@ -97,11 +99,11 @@ class ExerciseTableViewController: UITableViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedExercise = routine.exercises[indexPath.row]
-                let barViewControllers = segue.destination as! UITabBarController
+                //let barViewControllers = segue.destination as! UITabBarController
                 //let destinationViewController = barViewControllers.viewControllers![0] as! CurrentViewController
                 //destinationViewController.exercise = selectedExercise
-                let serieTableViewController = barViewControllers.viewControllers![0] as! SerieTableViewController
-                serieTableViewController.exercise = selectedExercise
+                let exerciseViewController = segue.destination as! ExerciseViewController
+                exerciseViewController.exercise = selectedExercise
             }
         }
     }

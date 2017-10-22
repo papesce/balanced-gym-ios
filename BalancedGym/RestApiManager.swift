@@ -14,7 +14,7 @@ class RestApiManager {
     
      let baseURL = "https://balanced-gym-api.herokuapp.com"
     
-    func executeRequest(completionHandler: @escaping ([Routine]) -> Void) {
+    func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
         Alamofire.request("\(baseURL)/routine").responseJSON {
             response in
             // print(response)
@@ -47,7 +47,7 @@ class RestApiManager {
         }
     }
     
-    func executeRequest(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
+    func getExercise(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
         Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseJSON {
             response in
             // print(response)
@@ -80,7 +80,7 @@ class RestApiManager {
         }
     }
     
-    func updateRequest(exercise: Exercise ) {
+    func updateExercise(exercise: Exercise ) {
         let reps : Int = exercise.series[0].rep
         let weight: Int = exercise.series[0].weight
         let parameters: Parameters = [
@@ -99,7 +99,7 @@ class RestApiManager {
         }
     }
         
-    func updateRequest(serie: Serie ) {
+    func updateSerie(serie: Serie ) {
         let reps : Int = serie.rep
         let weight: Int = serie.weight
         let parameters: Parameters = [
@@ -112,6 +112,32 @@ class RestApiManager {
             debugPrint(response)
             if let json = response.result.value {
                 print("JSON: \(json)")
+            }
+        }
+    }
+    
+    func addSerie(exercise: Exercise, completionHandler: @escaping (Serie) -> Void) {
+        let id = exercise.id
+        let url = "\(baseURL)/newSerie/\(id)"
+        Alamofire.request(url, method: .post).responseJSON { response in
+            // print(response)
+            //to get status code
+            if let status = response.response?.statusCode {
+                switch(status){
+                case 201:
+                    print("example success")
+                default:
+                    print("response status: \(status)")
+                }
+            }
+            //to get JSON return value
+            if let result = response.result.value {
+                let jsonSerie = result as! NSDictionary
+                let serieID = jsonSerie["_id"] as! String
+                let rep = jsonSerie["reps"] as! Int
+                let weight = jsonSerie["weight"] as! Int
+                let serie = Serie(id: serieID, rep: rep, weight: weight)
+                completionHandler(serie)
             }
         }
     }
