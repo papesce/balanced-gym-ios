@@ -50,8 +50,6 @@ class RestApiManager {
     func getExercise(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
         Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseJSON {
             response in
-            // print(response)
-            //to get status code
             if let status = response.response?.statusCode {
                 switch(status){
                 case 201:
@@ -61,6 +59,8 @@ class RestApiManager {
                 }
             }
             //to get JSON return value
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             if let result = response.result.value {
                 let jsonExercise = result as! NSDictionary
                         let exerciseID = jsonExercise["_id"] as!String
@@ -71,8 +71,9 @@ class RestApiManager {
                                let serieID = jsonSerie["_id"] as! String
                                let rep = jsonSerie["reps"] as! Int
                                let weight = jsonSerie["weight"] as! Int
-                        
-                            return Serie(id: serieID, rep: rep, weight: weight)
+                               let createdAt = dateFormatter.date(from: jsonSerie["createdAt"] as! String)
+                               let updatedAt = dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
+                            return Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt, createdAt: createdAt)
                         })
                     let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries)
                 completionHandler(exercise)
@@ -81,12 +82,11 @@ class RestApiManager {
     }
     
     func updateExercise(exercise: Exercise ) {
-        let reps : Int = exercise.series[0].rep
-        let weight: Int = exercise.series[0].weight
+        let series = exercise.series.map{ serie in
+            return ["_id": serie.id, "reps": serie.rep, "weight": serie.weight]}
+        
         let parameters: Parameters = [
-            "series": [[
-                "reps": reps, "weight": weight
-            ]]
+            "series": series
         ]
         
         let id = exercise.id
@@ -116,6 +116,12 @@ class RestApiManager {
         }
     }
     
+    func deleteSerie(serie: Serie) {
+        let id = serie.id
+        let url = "\(baseURL)/serie/\(id)"
+        Alamofire.request(url, method: .delete)
+    }
+    
     func addSerie(exercise: Exercise, completionHandler: @escaping (Serie) -> Void) {
         let id = exercise.id
         let url = "\(baseURL)/newSerie/\(id)"
@@ -131,12 +137,15 @@ class RestApiManager {
                 }
             }
             //to get JSON return value
+             let dateFormatter = DateFormatter()
             if let result = response.result.value {
                 let jsonSerie = result as! NSDictionary
                 let serieID = jsonSerie["_id"] as! String
                 let rep = jsonSerie["reps"] as! Int
                 let weight = jsonSerie["weight"] as! Int
-                let serie = Serie(id: serieID, rep: rep, weight: weight)
+                let updatedAt = dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
+                let createdAt = dateFormatter.date(from: jsonSerie["createdAt"] as! String)
+                let serie = Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt, createdAt: createdAt)
                 completionHandler(serie)
             }
         }

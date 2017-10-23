@@ -80,6 +80,21 @@ class SerieTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            let removedSerie = self.exercise.series.remove(at: indexPath.row)
+            RestApiManager.sharedInstance.updateExercise(exercise: self.exercise)
+            RestApiManager.sharedInstance.deleteSerie(serie: removedSerie)
+            self.tableView.reloadData()       }
+    }
+    
     
 
     /*

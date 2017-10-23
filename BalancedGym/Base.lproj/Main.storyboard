@@ -105,6 +105,13 @@
                                                 <constraint firstItem="dJW-dw-meg" firstAttribute="width" secondItem="5y7-pR-foA" secondAttribute="width" id="BVA-xc-jCu"/>
                                             </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxo-ag-ULp">
+                                            <rect key="frame" x="10" y="66" width="278" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="AZb-De-nrU" firstAttribute="leading" secondItem="ZHI-vP-210" secondAttribute="leading" constant="10" id="IYW-dL-qZQ"/>
@@ -113,6 +120,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="Jxo-ag-ULp" id="CEq-5B-s18"/>
                                     <outlet property="repsTextField" destination="5y7-pR-foA" id="jrJ-CP-vOu"/>
                                     <outlet property="weightTextField" destination="dJW-dw-meg" id="K8A-YM-bhn"/>
                                 </connections>
@@ -131,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PlS-Pp-Sk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4759" y="60"/>
+            <point key="canvasLocation" x="4758.75" y="59.154929577464792"/>
         </scene>
         <!--Routine Table View Controller-->
         <scene sceneID="fMu-El-Znh">

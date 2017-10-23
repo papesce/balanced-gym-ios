@@ -10,10 +10,11 @@ import UIKit
 
 class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
 
-    var serie : Serie = Serie(id: "x", rep:3, weight: 3)
+    var serie : Serie = Serie(id: "x", rep:3, weight: 3, updatedAt: Date.init(), createdAt: Date.init())
     
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,8 +75,13 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
     }
     
     func refresh() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.full
+        dateFormatter.timeStyle = .short
+        //dateFormatter.dateFormat = "MM-dd-yyyy"
         repsTextField.text = String(serie.rep)
         weightTextField.text = String(serie.weight)
+        self.dateLabel.text = dateFormatter.string(from: serie.updatedAt!)
     }
 
 }
