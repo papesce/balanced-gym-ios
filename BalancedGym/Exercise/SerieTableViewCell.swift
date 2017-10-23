@@ -81,7 +81,7 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
         //dateFormatter.dateFormat = "MM-dd-yyyy"
         repsTextField.text = String(serie.rep)
         weightTextField.text = String(serie.weight)
-        self.dateLabel.text = dateFormatter.string(from: serie.updatedAt!)
+        self.dateLabel.text = dateFormatter.string(from: serie.updatedAt)
     }
 
 }

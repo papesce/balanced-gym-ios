@@ -13,6 +13,11 @@ class RestApiManager {
     static let sharedInstance = RestApiManager()
     
      let baseURL = "https://balanced-gym-api.herokuapp.com"
+     var dateFormatter = DateFormatter()
+
+    init() {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    }
     
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
         Alamofire.request("\(baseURL)/routine").responseJSON {
@@ -50,17 +55,7 @@ class RestApiManager {
     func getExercise(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
         Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseJSON {
             response in
-            if let status = response.response?.statusCode {
-                switch(status){
-                case 201:
-                    print("example success")
-                default:
-                    print("response status: \(status)")
-                }
-            }
-            //to get JSON return value
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            
             if let result = response.result.value {
                 let jsonExercise = result as! NSDictionary
                         let exerciseID = jsonExercise["_id"] as!String
@@ -71,9 +66,9 @@ class RestApiManager {
                                let serieID = jsonSerie["_id"] as! String
                                let rep = jsonSerie["reps"] as! Int
                                let weight = jsonSerie["weight"] as! Int
-                               let createdAt = dateFormatter.date(from: jsonSerie["createdAt"] as! String)
-                               let updatedAt = dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
-                            return Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt, createdAt: createdAt)
+                               let createdAt = self.dateFormatter.date(from: jsonSerie["createdAt"] as! String)
+                               let updatedAt = self.dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
+                            return Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt!, createdAt: createdAt!)
                         })
                     let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries)
                 completionHandler(exercise)
@@ -128,29 +123,18 @@ class RestApiManager {
         Alamofire.request(url, method: .post).responseJSON { response in
             // print(response)
             //to get status code
-            if let status = response.response?.statusCode {
-                switch(status){
-                case 201:
-                    print("example success")
-                default:
-                    print("response status: \(status)")
-                }
-            }
-            //to get JSON return value
-             let dateFormatter = DateFormatter()
             if let result = response.result.value {
                 let jsonSerie = result as! NSDictionary
                 let serieID = jsonSerie["_id"] as! String
                 let rep = jsonSerie["reps"] as! Int
                 let weight = jsonSerie["weight"] as! Int
-                let updatedAt = dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
-                let createdAt = dateFormatter.date(from: jsonSerie["createdAt"] as! String)
-                let serie = Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt, createdAt: createdAt)
+                let updatedAt = self.dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
+                let createdAt = self.dateFormatter.date(from: jsonSerie["createdAt"] as! String)
+                let serie = Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt!, createdAt: createdAt!)
                 completionHandler(serie)
             }
         }
+        
     }
-            
-    
    
 }
