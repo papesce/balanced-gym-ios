@@ -65,7 +65,7 @@ class RestApiManager {
                             in
                                let serieID = jsonSerie["_id"] as! String
                                let rep = jsonSerie["reps"] as! Int
-                               let weight = jsonSerie["weight"] as! Int
+                               let weight = jsonSerie["weight"] as! Float
                                let createdAt = self.dateFormatter.date(from: jsonSerie["createdAt"] as! String)
                                let updatedAt = self.dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
                             return Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt!, createdAt: createdAt!)
@@ -96,7 +96,7 @@ class RestApiManager {
         
     func updateSerie(serie: Serie ) {
         let reps : Int = serie.rep
-        let weight: Int = serie.weight
+        let weight: Float = serie.weight
         let parameters: Parameters = [
                 "reps": reps, "weight": weight
         ]
@@ -127,7 +127,7 @@ class RestApiManager {
                 let jsonSerie = result as! NSDictionary
                 let serieID = jsonSerie["_id"] as! String
                 let rep = jsonSerie["reps"] as! Int
-                let weight = jsonSerie["weight"] as! Int
+                let weight = jsonSerie["weight"] as! Float
                 let updatedAt = self.dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
                 let createdAt = self.dateFormatter.date(from: jsonSerie["createdAt"] as! String)
                 let serie = Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt!, createdAt: createdAt!)

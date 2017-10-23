@@ -42,7 +42,8 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
     func textFieldDidEndEditing(_ textField: UITextField) {
         //self.titleLabel.text = editableField.text
         self.serie.rep = Int(repsTextField.text!)!
-        self.serie.weight = Int(weightTextField.text!)!
+        let number = NumberFormatter().number(from: weightTextField.text!)
+        self.serie.weight = ((Float(truncating: number!) * 1000).rounded()) / 1000
         RestApiManager.sharedInstance.updateSerie(serie: self.serie);
         
     }
