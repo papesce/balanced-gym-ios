@@ -12,7 +12,8 @@ import Alamofire
 class RestApiManager {
     static let sharedInstance = RestApiManager()
     
-     let baseURL = "https://balanced-gym-api.herokuapp.com"
+     //let baseURL = "https://balanced-gym-api.herokuapp.com"
+    let baseURL = "http://localhost:5000"
      var dateFormatter = DateFormatter()
 
     init() {
@@ -22,7 +23,9 @@ class RestApiManager {
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
         Alamofire.request("\(baseURL)/routine").responseJSON {
             response in
-            // print(response)
+            //print("Request: \(String(describing: response.request))")   // original url request
+            //print("Response: \(String(describing: response.response))") // http url response
+            //print("Result: \(response.result)")                         // response serialization result
             //to get JSON return value
             if let result = response.result.value {
                 let jsonRoutines = result as! [NSDictionary]
@@ -35,7 +38,11 @@ class RestApiManager {
                         let exerciseName = jsonExercise["name"] as! String
                         let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
                         let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
-                        return Exercise(id: exerciseID, name: exerciseName, series: [],
+                        let jsonSeries  = jsonExercise["series"] as! [String]
+                        let series = jsonSeries.map({(id) -> Serie in
+                            return Serie(id: id, rep:0, weight:0, updatedAt: Date.init(), createdAt: Date.init())
+                        })
+                        return Exercise(id: exerciseID, name: exerciseName, series: series,
                          updatedAt: updatedAt!, createdAt: createdAt!)
                     })
                     return Routine(name: routineName, exercises: convertedExercises)

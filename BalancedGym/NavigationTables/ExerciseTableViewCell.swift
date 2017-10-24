@@ -27,11 +27,22 @@ class ExerciseTableViewCell: UITableViewCell {
     
     func refresh(withExercise: Exercise) {
         self.nameLabel.text = withExercise.name;
-        self.daysLabel.text = self.format(date: withExercise.updatedAt)
+        self.daysLabel.text = self.numberOfDays(exercise: withExercise)
     }
     
-    func format(date: Date) -> String {
-        return "1 days"
+    func numberOfDays(exercise: Exercise) -> String {
+        if exercise.series.isEmpty {
+            return ""
+        }
+        let date = exercise.updatedAt;
+        let calendar = NSCalendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: date)
+        let date2 = calendar.startOfDay(for: Date.init())
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return "\(components.day!) days"
     }
 
 }
