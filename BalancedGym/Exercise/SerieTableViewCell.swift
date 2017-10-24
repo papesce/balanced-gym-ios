@@ -41,11 +41,14 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //self.titleLabel.text = editableField.text
-        self.serie.rep = Int(repsTextField.text!)!
+        let newrep = Int(repsTextField.text!)!
         let number = NumberFormatter().number(from: weightTextField.text!)
-        self.serie.weight = ((Float(truncating: number!) * 1000).rounded()) / 1000
-        RestApiManager.sharedInstance.updateSerie(serie: self.serie);
+        let newweight = ((Float(truncating: number!) * 1000).rounded()) / 1000
+        if (self.serie.rep != newrep || self.serie.weight != newweight) {
+            self.serie.rep = newrep
+            self.serie.weight = newweight
+            RestApiManager.sharedInstance.updateSerie(serie: self.serie);
+        }
         
     }
     
@@ -82,8 +85,8 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
         dateFormatter.timeStyle = .short
         //dateFormatter.dateFormat = "MM-dd-yyyy"
         repsTextField.text = String(serie.rep)
-        weightTextField.text = String(serie.weight)
-        self.dateLabel.text = dateFormatter.string(from: serie.updatedAt)
+        weightTextField.text = String(format: "%g", serie.weight)
+        self.dateLabel.text = dateFormatter.string(from: serie.createdAt)
     }
 
 }
