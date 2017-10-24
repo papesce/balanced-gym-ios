@@ -46,7 +46,7 @@ class ExerciseTableViewController: UITableViewController {
                for: indexPath) as! ExerciseTableViewCell 
         let exercise = routine.exercises[indexPath.row]
         // Configure the cell
-        cell.nameLabel.text = exercise.name;
+        cell.refresh(withExercise: exercise);
         //cell.photoImageView.image = routine.photo;
         
         return cell

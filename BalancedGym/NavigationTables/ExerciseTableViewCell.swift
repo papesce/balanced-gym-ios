@@ -11,6 +11,7 @@ import UIKit
 class ExerciseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -22,6 +23,15 @@ class ExerciseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func refresh(withExercise: Exercise) {
+        self.nameLabel.text = withExercise.name;
+        self.daysLabel.text = self.format(date: withExercise.updatedAt)
+    }
+    
+    func format(date: Date) -> String {
+        return "1 days"
     }
 
 }

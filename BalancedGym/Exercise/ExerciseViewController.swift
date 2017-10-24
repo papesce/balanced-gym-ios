@@ -10,7 +10,8 @@ import UIKit
 
 class ExerciseViewController: UIViewController {
 
-     var exercise: Exercise = Exercise(id: "id0", name: "default", series: [])
+    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [],
+                                      updatedAt: Date.init(), createdAt: Date.init())
     var serieTableViewController : SerieTableViewController?
     
     @IBOutlet weak var containerView: UIView!

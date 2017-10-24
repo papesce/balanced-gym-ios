@@ -23,15 +23,6 @@ class RestApiManager {
         Alamofire.request("\(baseURL)/routine").responseJSON {
             response in
             // print(response)
-            //to get status code
-            if let status = response.response?.statusCode {
-                switch(status){
-                case 201:
-                    print("example success")
-                default:
-                    print("error with response status: \(status)")
-                }
-            }
             //to get JSON return value
             if let result = response.result.value {
                 let jsonRoutines = result as! [NSDictionary]
@@ -42,7 +33,10 @@ class RestApiManager {
                     let convertedExercises = jsonExercises.flatMap({ (jsonExercise) -> Exercise? in
                         let exerciseID = jsonExercise["_id"] as!String
                         let exerciseName = jsonExercise["name"] as! String
-                        return Exercise(id: exerciseID, name: exerciseName, series: [])
+                        let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
+                        let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
+                        return Exercise(id: exerciseID, name: exerciseName, series: [],
+                         updatedAt: updatedAt!, createdAt: createdAt!)
                     })
                     return Routine(name: routineName, exercises: convertedExercises)
                 })
@@ -70,7 +64,9 @@ class RestApiManager {
                                let updatedAt = self.dateFormatter.date(from: jsonSerie["updatedAt"] as! String)
                             return Serie(id: serieID, rep: rep, weight: weight, updatedAt: updatedAt!, createdAt: createdAt!)
                         })
-                    let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries)
+                        let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
+                        let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
+                    let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries, updatedAt: updatedAt!, createdAt: createdAt!)
                 completionHandler(exercise)
             }
         }

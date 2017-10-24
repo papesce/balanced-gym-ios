@@ -33,9 +33,17 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU2-xF-DfL">
+                                            <rect key="frame" x="14" y="34" width="132" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="daysLabel" destination="YU2-xF-DfL" id="4pC-ac-RXh"/>
                                     <outlet property="nameLabel" destination="thp-bK-wbz" id="cfr-5N-nlO"/>
                                     <segue destination="3v4-bR-4cV" kind="show" identifier="showExerciseSegueID" id="COn-cc-Uey"/>
                                 </connections>

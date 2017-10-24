@@ -10,7 +10,8 @@ import UIKit
 
 class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
 
-    var serie : Serie = Serie(id: "x", rep:3, weight: 3, updatedAt: Date.init(), createdAt: Date.init())
+    var serie : Serie = Serie(id: "x", rep:3, weight: 3,
+                              updatedAt: Date.init(), createdAt: Date.init())
     
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -58,7 +59,7 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
         let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.contentView.frame.size.width, height: 30))
         //create left side empty space so that done button set on right side
         let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
-        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(CurrentViewController.doneButtonAction))
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(SerieTableViewCell.doneButtonAction))
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
         //setting toolbar as inputAccessoryView

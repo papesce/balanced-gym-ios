@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		392D071193BFD688894BFDAD /* Pods_BalancedGym.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996F2B6D808EF682E6F18BF7 /* Pods_BalancedGym.framework */; };
-		4606442F1F96B1EB0000A0B7 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606442E1F96B1EB0000A0B7 /* CurrentViewController.swift */; };
 		460644331F98457A0000A0B7 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460644321F98457A0000A0B7 /* Serie.swift */; };
 		460644341F9849B10000A0B7 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460644321F98457A0000A0B7 /* Serie.swift */; };
 		46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46355F5D1F88394900526234 /* RoutineTableRowController.swift */; };
@@ -87,7 +86,6 @@
 
 /* Begin PBXFileReference section */
 		315030AE2B904E14F61B41E2 /* Pods-BalancedGym.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.debug.xcconfig"; sourceTree = "<group>"; };
-		4606442E1F96B1EB0000A0B7 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
 		460644321F98457A0000A0B7 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
 		46355F5D1F88394900526234 /* RoutineTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableRowController.swift; sourceTree = "<group>"; };
 		4649582F1F93FBCC004D31DB /* RestApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		4606442D1F96B12B0000A0B7 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				4606442E1F96B1EB0000A0B7 /* CurrentViewController.swift */,
 				4672C17C1F9B687300FB1180 /* SerieTableViewController.swift */,
 				4672C17E1F9B689A00FB1180 /* SerieTableViewCell.swift */,
 				46F23D081F9D310C008F7467 /* ExerciseViewController.swift */,
@@ -538,7 +535,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4672C17D1F9B687300FB1180 /* SerieTableViewController.swift in Sources */,
-				4606442F1F96B1EB0000A0B7 /* CurrentViewController.swift in Sources */,
 				4672C17F1F9B689A00FB1180 /* SerieTableViewCell.swift in Sources */,
 				46B5A2491F87C53000FC01DD /* Routine.swift in Sources */,
 				46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */,

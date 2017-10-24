@@ -10,7 +10,8 @@ import UIKit
 
 class SerieTableViewController: UITableViewController {
 
-    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [])
+    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [],
+                                      updatedAt: Date.init(), createdAt: Date.init())
     
     override func viewDidLoad() {
         super.viewDidLoad()
