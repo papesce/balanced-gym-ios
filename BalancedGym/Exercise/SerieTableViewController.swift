@@ -90,7 +90,8 @@ class SerieTableViewController: UITableViewController {
     {
         if editingStyle == .delete
         {
-            let removedSerie = self.exercise.series.remove(at: indexPath.row)
+            let length = exercise.series.count;
+            let removedSerie = self.exercise.series.remove(at: (length - indexPath.row - 1))
             RestApiManager.sharedInstance.updateExercise(exercise: self.exercise)
             RestApiManager.sharedInstance.deleteSerie(serie: removedSerie)
             self.tableView.reloadData()       }

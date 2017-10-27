@@ -12,8 +12,8 @@ import Alamofire
 class RestApiManager {
     static let sharedInstance = RestApiManager()
     
-     let baseURL = "https://balanced-gym-api.herokuapp.com"
-    //let baseURL = "http://localhost:5000"
+    // let baseURL = "https://balanced-gym-api.herokuapp.com"
+    let baseURL = "http://localhost:5000"
      var dateFormatter = DateFormatter()
 
     init() {
