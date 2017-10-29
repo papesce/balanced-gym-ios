@@ -10,10 +10,16 @@ import Foundation
 
 class Serie {
     var id:String
-    var rep: Int
-    var weight: Float
-    var updatedAt: Date
-    var createdAt: Date
+    var isloaded: Bool = true
+    var rep: Int?
+    var weight: Float?
+    var updatedAt: Date?
+    var createdAt: Date?
+    
+    init(id: String) {
+        self.id = id
+        self.isloaded = false
+    }
     
     init(id: String, rep: Int, weight: Float, updatedAt: Date, createdAt: Date) {
         self.id = id

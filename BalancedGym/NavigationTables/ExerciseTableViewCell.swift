@@ -31,10 +31,10 @@ class ExerciseTableViewCell: UITableViewCell {
     }
     
     func numberOfDays(exercise: Exercise) -> String {
-        if exercise.series.isEmpty {
+        if exercise.series.count == 0 {
             return ""
         }
-        let date = exercise.updatedAt;
+        let date = exercise.lastUpdated;
         let calendar = NSCalendar.current
         
         // Replace the hour (time) of both dates with 00:00

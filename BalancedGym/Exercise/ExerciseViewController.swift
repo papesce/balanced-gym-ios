@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ExerciseViewController: UIViewController {
+class ExerciseViewController: UIViewController, SerieChangeProtocol {
+    
+    
 
-    var exercise: Exercise = Exercise(id: "id0", name: "default", series: [],
-                                      updatedAt: Date.init(), createdAt: Date.init())
+    var delegate: SerieChangeProtocol?
+    
+    var exercise: Exercise?
+    
     var serieTableViewController : SerieTableViewController?
     
     @IBOutlet weak var containerView: UIView!
@@ -21,9 +25,8 @@ class ExerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = exercise.name
+        self.title = exercise!.name
         self.navigationItem.rightBarButtonItem = addButton
-
         // Do any additional setup after loading the view.
     }
 
@@ -34,12 +37,16 @@ class ExerciseViewController: UIViewController {
     
     @IBAction func addSerie(_ sender: Any) {
         //add a new serie at the top of the list
-        RestApiManager.sharedInstance.addSerie(exercise: exercise, completionHandler: { newSerie in
+        RestApiManager.sharedInstance.addSerie(exercise: exercise!, completionHandler: { newSerie in
             self.serieTableViewController?.refreshNewSerie(newSerie: newSerie)
+            self.delegate?.serieModelChanged()
         })
         //
     }
     
+    func serieModelChanged() {
+        self.delegate?.serieModelChanged();
+    }
     
     // MARK: - Navigation
 
@@ -50,6 +57,7 @@ class ExerciseViewController: UIViewController {
         if segue.identifier == "showExerciseTableSegueID" {
                 self.serieTableViewController = segue.destination as? SerieTableViewController
                 self.serieTableViewController?.exercise = self.exercise
+                self.serieTableViewController?.delegate = self;
             
         }
     }

@@ -13,8 +13,10 @@ class Exercise {
     var id: String
     var name: String
     var series: [Serie]
+    //var seriesSize: Int
     var updatedAt: Date
     var createdAt: Date
+    var lastUpdated: Date
     
     
     init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date) {
@@ -23,6 +25,16 @@ class Exercise {
         self.series = series
         self.updatedAt = updatedAt
         self.createdAt = createdAt
+        self.lastUpdated = createdAt
+    }
+    
+    init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date, lastUpdated: Date) {
+        self.id = id
+        self.name = name
+        self.series = series
+        self.updatedAt = updatedAt
+        self.createdAt = createdAt
+        self.lastUpdated = lastUpdated
     }
     
 }

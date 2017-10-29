@@ -11,25 +11,20 @@ import Foundation
 
 class DetailsInterfaceController: WKInterfaceController {
     
-    var routine: Routine = Routine(name: "Default",
-                                   exercises: [])
+    var routine: Routine?
     
     @IBOutlet var exerciseTable: WKInterfaceTable!
     
     
     override func awake(withContext context: Any?) {
-        //let label = context as! String
-        self.routine = context as! Routine
-        //labelView.setText(label)
-        //label = "Triceps"
-        //labelView.setText(label)
+        self.routine = context as? Routine
     }
     
     func tableRefresh() {
-        exerciseTable.setNumberOfRows(routine.exercises.count, withRowType: "ExerciseTableRowControllerID")
+        exerciseTable.setNumberOfRows(routine!.exercises.count, withRowType: "ExerciseTableRowControllerID")
         for index in 0 ..< exerciseTable.numberOfRows {
             let row = exerciseTable.rowController(at: index) as! ExerciseTableRowController
-            row.exerciseName.setText(routine.exercises[index].name)
+            row.exerciseName.setText(routine!.exercises[index].name)
             //row.image.setImageNamed(routines[index].photo)
             
         }
