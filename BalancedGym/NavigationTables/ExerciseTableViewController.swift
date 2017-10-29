@@ -11,10 +11,9 @@ import UIKit
 class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
     
-   
+    var delegate: RoutineChangeProtocol?
     
     var routine : Routine?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +51,12 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         RestApiManager.sharedInstance.getRoutine(routineId: self.routine!.id, completionHandler: { routine in
             self.routine = routine
             self.tableView.reloadData()
+            self.delegate?.routineModelChanged(routine: self.routine!)
         })
     }
   
     func serieModelChanged() {
-        reloadRoutine();
+        self.reloadRoutine();
     }
     
     // MARK: - Navigation

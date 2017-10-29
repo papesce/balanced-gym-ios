@@ -18,10 +18,15 @@ class JsonConverter {
 
     
     func getRoutines(jsonRoutines : [NSDictionary]) -> [Routine] {
-        let routines = jsonRoutines.flatMap({ (jsonRoutine) -> Routine? in
-            return getRoutine(jsonRoutine: jsonRoutine)
-        })
-        return routines;
+        //let routines = jsonRoutines.reduce([:]) { (result, jsonRoutine) -> Dictionary<String,Routine> in
+        //    let routine : Routine = getRoutine(jsonRoutine: jsonRoutine)
+        //    var ret = result;
+        //    ret[routine.id] = routine
+        //    return ret;
+        //}
+        return jsonRoutines.map({ (jsonRoutine) -> Routine in
+            return self.getRoutine(jsonRoutine: jsonRoutine)
+        });
     }
     
     func getRoutine(jsonRoutine : NSDictionary) -> Routine {

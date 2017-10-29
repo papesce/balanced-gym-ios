@@ -15,7 +15,7 @@ class RestApiManager {
     
     let jsonConverter : JsonConverter = JsonConverter()
     
-    // let baseURL = "https://balanced-gym-api.herokuapp.com"
+    //let baseURL = "https://balanced-gym-api.herokuapp.com"
     let baseURL = "http://localhost:5000"
 
     
@@ -27,7 +27,7 @@ class RestApiManager {
             //print("Result: \(response.result)")                         // response serialization result
             //to get JSON return value
             if let result = response.result.value {
-                let routines = self.jsonConverter.getRoutines(jsonRoutines: result as! [NSDictionary]);
+                let routines : [Routine] = self.jsonConverter.getRoutines(jsonRoutines: result as! [NSDictionary]);
                 completionHandler(routines)
             }
         }

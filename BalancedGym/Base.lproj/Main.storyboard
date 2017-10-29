@@ -174,9 +174,17 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuu-hI-MXc">
+                                            <rect key="frame" x="15" y="36" width="259" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="daysLabel" destination="yuu-hI-MXc" id="g4u-g1-w4r"/>
                                     <outlet property="nameLabel" destination="iUG-Nu-DrQ" id="MpM-cQ-kgZ"/>
                                     <segue destination="zsu-w6-Dcx" kind="show" identifier="showRoutineSegueID" id="Xo9-yG-i7d"/>
                                 </connections>
@@ -191,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xii-gh-eSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="114"/>
+            <point key="canvasLocation" x="1741.875" y="113.02816901408451"/>
         </scene>
         <!--Log-->
         <scene sceneID="Ts8-CD-Nrd">

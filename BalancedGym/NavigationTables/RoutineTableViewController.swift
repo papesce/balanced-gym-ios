@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 
-class RoutineTableViewController: UITableViewController {
+class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
+    
+    
 
-    //MARK: Properties
-    var routines = [Routine]();
+    var routines : [Routine] = []
     
     
     private func downloadData() {
@@ -54,9 +55,42 @@ class RoutineTableViewController: UITableViewController {
         let routine = routines[indexPath.row]
         // Configure the cell
         cell.nameLabel.text = routine.name;
+        cell.daysLabel.text = self.numberOfDays(routine: routine)
         //cell.photoImageView.image = routine.photo;
         return cell
     }
+    
+    func reloadRoutine(routine: Routine) {
+        RestApiManager.sharedInstance.getRoutine(routineId: routine.id, completionHandler: { routine in
+            let index = self.routines.index(where: { (theRoutine) -> Bool in
+                return theRoutine.id == routine.id
+            })
+            self.routines[index!] = routine
+            self.tableView.reloadData()
+            
+        })
+    }
+    
+    func routineModelChanged(routine: Routine) {
+        self.reloadRoutine(routine: routine);
+    }
+
+    func numberOfDays(routine: Routine) -> String {
+        if routine.exercises.count == 0 {
+            return ""
+        }
+        let exercise = routine.exercises.max {ex1, ex2 in ex1.lastUpdated < ex2.lastUpdated }
+        let date = exercise!.lastUpdated;
+        let calendar = NSCalendar.current
+    
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: date)
+        let date2 = calendar.startOfDay(for: Date.init())
+    
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return "\(components.day!) days"
+    }
+
     
     // MARK: - Navigation
 
@@ -69,6 +103,7 @@ class RoutineTableViewController: UITableViewController {
                 let vc = segue.destination as! ExerciseTableViewController
                 let selectedRoutine = routines[indexPath.row]
                 vc.routine = selectedRoutine
+                vc.delegate = self
             }
         }
     }
