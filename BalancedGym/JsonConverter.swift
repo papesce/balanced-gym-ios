@@ -48,23 +48,26 @@ class JsonConverter {
         let exerciseID = jsonExercise["_id"] as! String
         let exerciseName = jsonExercise["name"] as! String
         
-        var convertedSeries : [Serie] = [];
+        var convertedSeries : [Serie] = []
+        var exercise : Exercise
+        let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
+        let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
         if (loadSeries) {
             let jsonSeries  = jsonExercise["series"] as! [NSDictionary]
             convertedSeries = jsonSeries.flatMap({(jsonSerie) -> Serie? in
                 return getSerie(jsonSerie: jsonSerie)
             })
+            exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
+                                updatedAt: updatedAt!, createdAt: createdAt!)
         } else {
             let idSeries  = jsonExercise["series"] as! [String]
             convertedSeries = idSeries.flatMap({(idSt) -> Serie? in
                 return Serie(id: idSt)
             })
-        }
-        let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
-        let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
-        let lastUpdated =  self.dateFormatter.date(from: jsonExercise["lastUpdated"] as! String)
-        let exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
+            let lastUpdated =  self.dateFormatter.date(from: jsonExercise["lastUpdated"] as! String)
+            exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
                                 updatedAt: updatedAt!, createdAt: createdAt!, lastUpdated: lastUpdated!)
+        }
         return exercise
     }
     
