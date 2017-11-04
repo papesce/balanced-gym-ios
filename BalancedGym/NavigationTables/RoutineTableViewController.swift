@@ -11,15 +11,13 @@ import Alamofire
 
 class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
     
-    
-
     var routines : [Routine] = []
     
-    
-    private func downloadData() {
+    private func downloadData(completionHandler:  @escaping () -> Void) {
         RestApiManager.sharedInstance.getRoutines(completionHandler: { routines in
             self.routines = routines
-            self.tableView.reloadData()
+            self.tableView.reloadData();
+            completionHandler();
         })
     }
     
@@ -29,8 +27,16 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadData()
-        self.navigationItem.rightBarButtonItem = editButtonItem
+        downloadData{}
+        //self.navigationItem.rightBarButtonItem = editButtonItem
+        self.refreshControl?.addTarget(self, action: #selector(RoutineTableViewController.refresh), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        // Updating your data here...
+        downloadData {
+            self.refreshControl?.endRefreshing()
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,7 +18,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = routine!.name
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
   
     override func didReceiveMemoryWarning() {

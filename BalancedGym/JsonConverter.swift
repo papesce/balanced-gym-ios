@@ -52,13 +52,14 @@ class JsonConverter {
         var exercise : Exercise
         let createdAt = self.dateFormatter.date(from: jsonExercise["createdAt"] as! String)
         let updatedAt = self.dateFormatter.date(from: jsonExercise["updatedAt"] as! String)
+        let muscleGroup = jsonExercise["muscleGroup"] as! String
         if (loadSeries) {
             let jsonSeries  = jsonExercise["series"] as! [NSDictionary]
             convertedSeries = jsonSeries.flatMap({(jsonSerie) -> Serie? in
                 return getSerie(jsonSerie: jsonSerie)
             })
             exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
-                                updatedAt: updatedAt!, createdAt: createdAt!)
+                                updatedAt: updatedAt!, createdAt: createdAt!, muscleGroup: muscleGroup)
         } else {
             let idSeries  = jsonExercise["series"] as! [String]
             convertedSeries = idSeries.flatMap({(idSt) -> Serie? in
@@ -66,7 +67,8 @@ class JsonConverter {
             })
             let lastUpdated =  self.dateFormatter.date(from: jsonExercise["lastUpdated"] as! String)
             exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
-                                updatedAt: updatedAt!, createdAt: createdAt!, lastUpdated: lastUpdated!)
+                                updatedAt: updatedAt!, createdAt: createdAt!, lastUpdated: lastUpdated!,
+                                muscleGroup : muscleGroup)
         }
         return exercise
     }
