@@ -52,7 +52,7 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
             self.serie?.weight = newweight
             RestApiManager.sharedInstance.updateSerie(serie: self.serie!,
                                                       completionHandler: {
-                                                        //self.delegate?.serieModelChanged()
+                                                        self.delegate?.serieModelChanged()
                                                         
             } );
         }

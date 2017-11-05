@@ -87,6 +87,7 @@ class SerieTableViewController: UITableViewController, SerieChangeProtocol {
     
     //serie has changed
     func serieModelChanged() {
+        //todo: udpate the local exercise
         self.delegate?.serieModelChanged();
     }
 

@@ -47,6 +47,7 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
     }
     
     func serieModelChanged() {
+        //todo update the exercise lastrep and lastweigth
         self.delegate?.serieModelChanged();
     }
     

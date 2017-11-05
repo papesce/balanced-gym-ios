@@ -56,6 +56,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     }
   
     func serieModelChanged() {
+        //todo knowing the new exercise update only the exercise
         self.reloadRoutine();
     }
     
