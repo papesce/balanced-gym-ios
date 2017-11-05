@@ -14,6 +14,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var daysLabel: UILabel!
     
     @IBOutlet weak var muscleGroupLabel: UILabel!
+    @IBOutlet weak var lastLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,12 @@ class ExerciseTableViewCell: UITableViewCell {
         self.nameLabel.text = withExercise.name;
         self.daysLabel.text = self.numberOfDays(exercise: withExercise)
         self.muscleGroupLabel.text = withExercise.muscleGroup
+        if (withExercise.lastReps > 0) {
+            self.lastLabel.text = "r:" + String(withExercise.lastReps) +
+            " w:" + String(format: "%g", withExercise.lastWeight) + " t:" + String(withExercise.series.count)
+        } else {
+            self.lastLabel.text = ""
+        }
     }
     
     func numberOfDays(exercise: Exercise) -> String {

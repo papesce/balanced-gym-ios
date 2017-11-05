@@ -18,19 +18,11 @@ class Exercise {
     var createdAt: Date
     var lastUpdated: Date
     var muscleGroup: String
+    var lastReps: Int
+    var lastWeight: Float
     
-    
-    init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date, muscleGroup: String) {
-        self.id = id
-        self.name = name
-        self.series = series
-        self.updatedAt = updatedAt
-        self.createdAt = createdAt
-        self.lastUpdated = createdAt
-        self.muscleGroup = muscleGroup
-    }
-    
-    init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date, lastUpdated: Date, muscleGroup: String) {
+    init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date, lastUpdated: Date,
+         muscleGroup: String, lastReps: Int, lastWeight: Float) {
         self.id = id
         self.name = name
         self.series = series
@@ -38,6 +30,8 @@ class Exercise {
         self.createdAt = createdAt
         self.lastUpdated = lastUpdated
         self.muscleGroup = muscleGroup
+        self.lastReps = lastReps
+        self.lastWeight = lastWeight
     }
     
 }

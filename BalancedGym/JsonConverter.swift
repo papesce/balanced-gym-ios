@@ -59,16 +59,19 @@ class JsonConverter {
                 return getSerie(jsonSerie: jsonSerie)
             })
             exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
-                                updatedAt: updatedAt!, createdAt: createdAt!, muscleGroup: muscleGroup)
+                                updatedAt: updatedAt!, createdAt: createdAt!, lastUpdated: createdAt!,
+                                muscleGroup: muscleGroup, lastReps: 0, lastWeight: 0)
         } else {
             let idSeries  = jsonExercise["series"] as! [String]
             convertedSeries = idSeries.flatMap({(idSt) -> Serie? in
                 return Serie(id: idSt)
             })
             let lastUpdated =  self.dateFormatter.date(from: jsonExercise["lastUpdated"] as! String)
+            let lastReps = jsonExercise["lastReps"] as! Int
+            let lastWeight = jsonExercise["lastWeight"] as! Float
             exercise = Exercise(id: exerciseID, name: exerciseName, series: convertedSeries,
                                 updatedAt: updatedAt!, createdAt: createdAt!, lastUpdated: lastUpdated!,
-                                muscleGroup : muscleGroup)
+                                muscleGroup : muscleGroup, lastReps: lastReps, lastWeight: lastWeight)
         }
         return exercise
     }
