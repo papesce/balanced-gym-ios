@@ -13,7 +13,6 @@ import UIKit
 class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
 
     var delegate: SerieChangeProtocol?
-    
     var serie : Serie?
     
     @IBOutlet weak var repsTextField: UITextField!
@@ -47,8 +46,8 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
         let newrep = Int(repsTextField.text!)!
         let number = NumberFormatter().number(from: weightTextField.text!)
         let newweight = ((Float(truncating: number!) * 1000).rounded()) / 1000
-        if (self.serie?.rep != newrep || self.serie?.weight != newweight) {
-            self.serie?.rep = newrep
+        if (self.serie?.reps != newrep || self.serie?.weight != newweight) {
+            self.serie?.reps = newrep
             self.serie?.weight = newweight
             RestApiManager.sharedInstance.updateSerie(serie: self.serie!,
                                                       completionHandler: {
@@ -87,15 +86,15 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
     }
     
     func refresh() {
-        if (serie!.isloaded) {
+        //if (serie!.isloaded) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = DateFormatter.Style.full
             dateFormatter.timeStyle = .short
             //dateFormatter.dateFormat = "MM-dd-yyyy"
-            repsTextField.text = String(self.serie!.rep!)
-            weightTextField.text = String(format: "%g", self.serie!.weight!)
-            self.dateLabel.text = dateFormatter.string(from: self.serie!.createdAt!)
-        }
+            repsTextField.text = String(self.serie!.reps)
+            weightTextField.text = String(format: "%g", self.serie!.weight)
+            self.dateLabel.text = dateFormatter.string(from: self.serie!.createdAt)
+       // }
     }
 
 }

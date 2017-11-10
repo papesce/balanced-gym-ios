@@ -8,6 +8,7 @@ target 'BalancedGym' do
 
   # Pods for BalancedGym
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireObjectMapper', '~> 5.0'
 end
 
 target 'BalancedGymWatch Extension' do
@@ -17,4 +18,5 @@ target 'BalancedGymWatch Extension' do
 
   # Pods for BalancedGymWatch Extension
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireObjectMapper', '~> 5.0'
 end

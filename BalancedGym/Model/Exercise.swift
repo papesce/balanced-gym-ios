@@ -7,31 +7,35 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Exercise {
+class Exercise : Mappable {
     
-    var id: String
-    var name: String
-    var series: [Serie]
-    //var seriesSize: Int
-    var updatedAt: Date
-    var createdAt: Date
-    var lastUpdated: Date
-    var muscleGroup: String
-    var lastReps: Int
-    var lastWeight: Float
+    var id: String = ""
+    var name: String = ""
+    var series: [Serie] = []
+    var updatedAt: Date = Date.init()
+    var createdAt: Date = Date.init()
+    var lastUpdated: Date = Date.init()
+    var muscleGroup: String = ""
+    var target: String = ""
+    var lastReps: Int = 0
+    var lastWeight: Float = 0.0
     
-    init(id: String, name: String, series: [Serie], updatedAt: Date, createdAt: Date, lastUpdated: Date,
-         muscleGroup: String, lastReps: Int, lastWeight: Float) {
-        self.id = id
-        self.name = name
-        self.series = series
-        self.updatedAt = updatedAt
-        self.createdAt = createdAt
-        self.lastUpdated = lastUpdated
-        self.muscleGroup = muscleGroup
-        self.lastReps = lastReps
-        self.lastWeight = lastWeight
+    required init?(map: Map){
+    }
+    
+    func mapping(map: Map) {
+        id <- map["_id"]
+        name <- map["name"]
+        series <- map["series"]
+        createdAt <- (map["createdAt"], BDateTransform())
+        updatedAt <- (map["updatedAt"], BDateTransform())
+        lastUpdated <- (map["lastUpdated"], BDateTransform())
+        muscleGroup <- map["muscleGroup"]
+        target <- map["target"]
+        lastReps <- map["lastReps"]
+        lastWeight <- map["lastWeight"]
     }
     
 }

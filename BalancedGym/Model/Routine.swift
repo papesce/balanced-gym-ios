@@ -7,22 +7,26 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Routine {
+
+
+class Routine : Mappable {
 
     //MARK: Properties
     var id: String
     var name: String
     var exercises: [Exercise] = []
-   
     
-    //MARK: Initialization
-    init(id: String, name: String, exercises: [Exercise]) {
-        //initialize stored properties
-        self.id = id
-        self.name = name
-        self.exercises = exercises
-       
+    required init?(map: Map){
+        self.id = ""
+        self.name = ""
+    }
+    
+    func mapping(map: Map) {
+        id <- map["_id"]
+        name <- map["name"]
+        exercises <- map["exercises"]
     }
 }
     

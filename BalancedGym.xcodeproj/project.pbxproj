@@ -22,6 +22,7 @@
 		46751BCB1F8D6B9400949BB7 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BCA1F8D6B9400949BB7 /* ExerciseTableViewController.swift */; };
 		46751BCD1F8D6C8900949BB7 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BCC1F8D6C8900949BB7 /* ExerciseTableViewCell.swift */; };
 		46751BD01F8D714E00949BB7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BCF1F8D714E00949BB7 /* Exercise.swift */; };
+		46A4DC261FB54F5500DD995A /* BDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4DC251FB54F5500DD995A /* BDateTransform.swift */; };
 		46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */; };
 		46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */; };
 		46B5A2491F87C53000FC01DD /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A2481F87C53000FC01DD /* Routine.swift */; };
@@ -40,6 +41,7 @@
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
 		46BF61861F7DD71600DFA93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61851F7DD71600DFA93F /* Assets.xcassets */; };
 		46BF61891F7DD71600DFA93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */; };
+		46C811761FB552A400EADC0C /* BDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4DC251FB54F5500DD995A /* BDateTransform.swift */; };
 		46EA96761FA4FEAD00C3E448 /* JsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE76291FA4E4CC0061B178 /* JsonConverter.swift */; };
 		46EA96781FA6849500C3E448 /* RoutineChangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA96771FA6849500C3E448 /* RoutineChangeProtocol.swift */; };
 		46F23D091F9D310C008F7467 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F23D081F9D310C008F7467 /* ExerciseViewController.swift */; };
@@ -92,6 +94,7 @@
 		315030AE2B904E14F61B41E2 /* Pods-BalancedGym.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.debug.xcconfig"; sourceTree = "<group>"; };
 		460644321F98457A0000A0B7 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
 		46355F5D1F88394900526234 /* RoutineTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableRowController.swift; sourceTree = "<group>"; };
+		46429F3F1FB5305300403070 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4649582F1F93FBCC004D31DB /* RestApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		464A487B1F967D8C001F53E0 /* ExerciseTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableRowController.swift; sourceTree = "<group>"; };
 		4672C17C1F9B687300FB1180 /* SerieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieTableViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		46751BCA1F8D6B9400949BB7 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		46751BCC1F8D6C8900949BB7 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		46751BCF1F8D714E00949BB7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		46A4DC251FB54F5500DD995A /* BDateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDateTransform.swift; sourceTree = "<group>"; };
 		46B5A2441F87BE2C00FC01DD /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		46B5A2461F87C44300FC01DD /* RoutineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
 		46B5A2481F87C53000FC01DD /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				46B5A2481F87C53000FC01DD /* Routine.swift */,
 				46751BCF1F8D714E00949BB7 /* Exercise.swift */,
 				460644321F98457A0000A0B7 /* Serie.swift */,
+				46A4DC251FB54F5500DD995A /* BDateTransform.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 		671F025E235697D9FB279478 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46429F3F1FB5305300403070 /* ObjectMapper.framework */,
 				996F2B6D808EF682E6F18BF7 /* Pods_BalancedGym.framework */,
 				4A95BFA4D11653DB6C3C5AA6 /* Pods_BalancedGymWatch.framework */,
 				589E54EE8317C736ED6F0F6F /* Pods_BalancedGymWatch_Extension.framework */,
@@ -426,10 +432,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-iOS/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -444,10 +454,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BalancedGymWatch Extension/Pods-BalancedGymWatch Extension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-watchOS/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper-watchOS/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,6 +544,7 @@
 				46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */,
 				464A487A1F967B86001F53E0 /* Exercise.swift in Sources */,
 				464A48761F9663F7001F53E0 /* Routine.swift in Sources */,
+				46C811761FB552A400EADC0C /* BDateTransform.swift in Sources */,
 				46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */,
 				460644341F9849B10000A0B7 /* Serie.swift in Sources */,
 				464A487C1F967D8C001F53E0 /* ExerciseTableRowController.swift in Sources */,
@@ -556,6 +571,7 @@
 				46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */,
 				46751BCB1F8D6B9400949BB7 /* ExerciseTableViewController.swift in Sources */,
 				46F23D091F9D310C008F7467 /* ExerciseViewController.swift in Sources */,
+				46A4DC261FB54F5500DD995A /* BDateTransform.swift in Sources */,
 				460644331F98457A0000A0B7 /* Serie.swift in Sources */,
 				46751BCD1F8D6C8900949BB7 /* ExerciseTableViewCell.swift in Sources */,
 				46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */,

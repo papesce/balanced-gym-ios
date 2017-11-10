@@ -88,7 +88,7 @@
             <objects>
                 <tableViewController id="Hme-YY-JeS" userLabel="History" customClass="SerieTableViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sdy-WI-Gfe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="397"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -281,30 +281,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n1q-SK-99j">
-                                <rect key="frame" x="16" y="9" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n1q-SK-99j">
+                                <rect key="frame" x="10" y="10" width="113" height="29"/>
                                 <segments>
                                     <segment title="Log"/>
                                     <segment title="Details"/>
                                 </segments>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9L-LQ-Nkd">
-                                <rect key="frame" x="0.0" y="45" width="320" height="410"/>
+                                <rect key="frame" x="0.0" y="58" width="320" height="397"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Hme-YY-JeS" kind="embed" identifier="showExerciseTableSegueID" id="Ire-jd-Ifb"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-uS-Cag">
-                                <rect key="frame" x="155" y="9" width="137" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3r-Gu-X7x">
+                                <rect key="frame" x="143" y="29" width="34" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="muscleGroup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-uS-Cag">
+                                <rect key="frame" x="143" y="5" width="75.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n1q-SK-99j" firstAttribute="leading" secondItem="9VH-DO-QmR" secondAttribute="leading" constant="10" id="DE2-Tx-kmX"/>
+                            <constraint firstItem="0aQ-uS-Cag" firstAttribute="leading" secondItem="n1q-SK-99j" secondAttribute="trailing" constant="20" id="Ndc-kD-z40"/>
+                            <constraint firstItem="c3r-Gu-X7x" firstAttribute="leading" secondItem="n1q-SK-99j" secondAttribute="trailing" constant="20" id="XeP-Mg-52F"/>
+                            <constraint firstItem="c3r-Gu-X7x" firstAttribute="top" secondItem="0aQ-uS-Cag" secondAttribute="bottom" constant="10" id="gyP-lW-4W1"/>
+                            <constraint firstItem="0aQ-uS-Cag" firstAttribute="top" secondItem="9VH-DO-QmR" secondAttribute="top" constant="5" id="hHY-to-nrl"/>
+                            <constraint firstItem="n1q-SK-99j" firstAttribute="top" secondItem="9VH-DO-QmR" secondAttribute="top" constant="10" id="hdx-kD-Dw4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9VH-DO-QmR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Details" id="Wdq-gB-AzA"/>
@@ -320,6 +332,7 @@
                         <outlet property="addButton" destination="fQG-oC-Mrr" id="0Hl-l7-8I6"/>
                         <outlet property="containerView" destination="w9L-LQ-Nkd" id="rC3-GO-Vle"/>
                         <outlet property="muscleGroupLabel" destination="0aQ-uS-Cag" id="VqX-zC-pJn"/>
+                        <outlet property="targetLabel" destination="c3r-Gu-X7x" id="q1N-HS-Fni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ3-Mi-j0k" userLabel="First Responder" sceneMemberID="firstResponder"/>

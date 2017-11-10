@@ -7,26 +7,24 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Serie {
-    var id:String
-    var isloaded: Bool = true
-    var rep: Int?
-    var weight: Float?
-    var updatedAt: Date?
-    var createdAt: Date?
+class Serie : Mappable {
+    var id:String = ""
+    var reps: Int = 0
+    var weight: Float = 0.0
+    var updatedAt: Date = Date.init()
+    var createdAt: Date = Date.init()
     
-    init(id: String) {
-        self.id = id
-        self.isloaded = false
+    required init?(map: Map){
+        
     }
-    
-    init(id: String, rep: Int, weight: Float, updatedAt: Date, createdAt: Date) {
-        self.id = id
-        self.rep = rep
-        self.weight = weight
-        self.updatedAt = updatedAt
-        self.createdAt = createdAt
+    func mapping(map: Map) {
+        id <- map["_id"]
+        reps <- map["reps"]
+        weight <- map["weight"]
+        createdAt <- (map["createdAt"], BDateTransform())
+        updatedAt <- (map["updatedAt"], BDateTransform())
         
     }
 }

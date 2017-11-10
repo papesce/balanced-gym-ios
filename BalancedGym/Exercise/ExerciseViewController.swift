@@ -23,12 +23,14 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     @IBOutlet weak var muscleGroupLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = exercise!.name
         self.navigationItem.rightBarButtonItem = addButton
         self.muscleGroupLabel.text = exercise!.muscleGroup
+        self.targetLabel.text = exercise!.target
         // Do any additional setup after loading the view.
     }
 
