@@ -10,20 +10,23 @@ import UIKit
 
 class ExerciseViewController: UIViewController, SerieChangeProtocol {
     
-    
 
     var delegate: SerieChangeProtocol?
     
     var exercise: Exercise?
     
     var serieTableViewController : SerieTableViewController?
+    var exerciseDetailsViewController:  ExerciseDetailsViewController?
     
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewLog: UIView!
+    @IBOutlet weak var containerViewDetails: UIView!
     
     @IBOutlet weak var addButton: UIBarButtonItem!
-    
+
     @IBOutlet weak var muscleGroupLabel: UILabel!
     @IBOutlet weak var targetLabel: UILabel!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +56,35 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
         self.delegate?.serieModelChanged();
     }
     
+    @IBAction func segmentedButtonChanged(_ sender: UISegmentedControl) {
+            if sender.selectedSegmentIndex == 0 {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.containerViewLog.alpha = 1
+                    self.containerViewDetails.alpha = 0
+                })
+            } else {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.containerViewLog.alpha = 0
+                    self.containerViewDetails.alpha = 1
+                })
+            }
+        }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showExerciseTableSegueID" {
+        if segue.identifier == "showExerciseLogSegueID" {
                 self.serieTableViewController = segue.destination as? SerieTableViewController
                 self.serieTableViewController?.exercise = self.exercise
                 self.serieTableViewController?.delegate = self;
+            
+        } else if segue.identifier == "showExerciseDetailsSegueID" {
+            self.exerciseDetailsViewController = segue.destination as? ExerciseDetailsViewController
+            self.exerciseDetailsViewController?.exercise = self.exercise
             
         }
     }

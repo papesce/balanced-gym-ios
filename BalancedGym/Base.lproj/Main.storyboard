@@ -287,12 +287,15 @@
                                     <segment title="Log"/>
                                     <segment title="Details"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedButtonChanged:" destination="3v4-bR-4cV" eventType="valueChanged" id="i3K-9e-Swk"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9L-LQ-Nkd">
                                 <rect key="frame" x="0.0" y="58" width="320" height="397"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="Hme-YY-JeS" kind="embed" identifier="showExerciseTableSegueID" id="Ire-jd-Ifb"/>
+                                    <segue destination="Hme-YY-JeS" kind="embed" identifier="showExerciseLogSegueID" id="Ire-jd-Ifb"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3r-Gu-X7x">
@@ -307,6 +310,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-TG-xen">
+                                <rect key="frame" x="0.0" y="58" width="320" height="353"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="LZM-av-RY3" kind="embed" identifier="showExerciseDetailsSegueID" id="c7V-ys-bgQ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -330,7 +340,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="fQG-oC-Mrr" id="0Hl-l7-8I6"/>
-                        <outlet property="containerView" destination="w9L-LQ-Nkd" id="rC3-GO-Vle"/>
+                        <outlet property="containerViewDetails" destination="eDE-TG-xen" id="E5Y-V4-J10"/>
+                        <outlet property="containerViewLog" destination="w9L-LQ-Nkd" id="rC3-GO-Vle"/>
                         <outlet property="muscleGroupLabel" destination="0aQ-uS-Cag" id="VqX-zC-pJn"/>
                         <outlet property="targetLabel" destination="c3r-Gu-X7x" id="q1N-HS-Fni"/>
                     </connections>
@@ -357,6 +368,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnK-2c-IzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-583" y="107"/>
+        </scene>
+        <!--Exercise Details View Controller-->
+        <scene sceneID="3e8-8R-T64">
+            <objects>
+                <viewController id="LZM-av-RY3" customClass="ExerciseDetailsViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Dy-ui-4lN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="353"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-92-Rcv">
+                                <rect key="frame" x="0.0" y="34" width="320" height="319"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Vus-iI-GDk"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="UBl-92-Rcv" id="sVG-kg-3ix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNV-0l-h6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5028.75" y="700.88028169014081"/>
         </scene>
     </scenes>
 </document>

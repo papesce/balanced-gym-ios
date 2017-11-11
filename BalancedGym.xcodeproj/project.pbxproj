@@ -35,14 +35,13 @@
 		46B5A2641F87D75700FC01DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A2631F87D75700FC01DD /* Assets.xcassets */; };
 		46B5A2691F87D75700FC01DD /* BalancedGymWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */; };
 		46BB78EF1FA4D4C5004C6BDB /* SerieChangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */; };
-		46BE762A1FA4E4CC0061B178 /* JsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE76291FA4E4CC0061B178 /* JsonConverter.swift */; };
 		46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF617E1F7DD71600DFA93F /* AppDelegate.swift */; };
 		46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF61801F7DD71600DFA93F /* ViewController.swift */; };
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
 		46BF61861F7DD71600DFA93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61851F7DD71600DFA93F /* Assets.xcassets */; };
 		46BF61891F7DD71600DFA93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */; };
+		46C741741FB781B200C349B7 /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C741731FB781B200C349B7 /* ExerciseDetailsViewController.swift */; };
 		46C811761FB552A400EADC0C /* BDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4DC251FB54F5500DD995A /* BDateTransform.swift */; };
-		46EA96761FA4FEAD00C3E448 /* JsonConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE76291FA4E4CC0061B178 /* JsonConverter.swift */; };
 		46EA96781FA6849500C3E448 /* RoutineChangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA96771FA6849500C3E448 /* RoutineChangeProtocol.swift */; };
 		46F23D091F9D310C008F7467 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F23D081F9D310C008F7467 /* ExerciseViewController.swift */; };
 		4B61B326DE5BF894CBB62692 /* Pods_BalancedGymWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 589E54EE8317C736ED6F0F6F /* Pods_BalancedGymWatch_Extension.framework */; };
@@ -119,7 +118,6 @@
 		46B5A2651F87D75700FC01DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieChangeProtocol.swift; sourceTree = "<group>"; };
-		46BE76291FA4E4CC0061B178 /* JsonConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConverter.swift; sourceTree = "<group>"; };
 		46BF617B1F7DD71600DFA93F /* BalancedGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF617E1F7DD71600DFA93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF61801F7DD71600DFA93F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +125,7 @@
 		46BF61851F7DD71600DFA93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46BF61881F7DD71600DFA93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46BF618A1F7DD71600DFA93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46C741731FB781B200C349B7 /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		46EA96771FA6849500C3E448 /* RoutineChangeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineChangeProtocol.swift; sourceTree = "<group>"; };
 		46F23D081F9D310C008F7467 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		4A95BFA4D11653DB6C3C5AA6 /* Pods_BalancedGymWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalancedGymWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +182,7 @@
 				4672C17E1F9B689A00FB1180 /* SerieTableViewCell.swift */,
 				46F23D081F9D310C008F7467 /* ExerciseViewController.swift */,
 				46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */,
+				46C741731FB781B200C349B7 /* ExerciseDetailsViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -259,7 +259,6 @@
 				46BF61871F7DD71600DFA93F /* LaunchScreen.storyboard */,
 				46BF618A1F7DD71600DFA93F /* Info.plist */,
 				4649582F1F93FBCC004D31DB /* RestApiManager.swift */,
-				46BE76291FA4E4CC0061B178 /* JsonConverter.swift */,
 			);
 			path = BalancedGym;
 			sourceTree = "<group>";
@@ -551,7 +550,6 @@
 				46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */,
 				46751BC91F8C4FE300949BB7 /* DetailsInterfaceController.swift in Sources */,
 				464A48751F9661CF001F53E0 /* RestApiManager.swift in Sources */,
-				46EA96761FA4FEAD00C3E448 /* JsonConverter.swift in Sources */,
 				46B5A25E1F87D75700FC01DD /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,8 +559,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4672C17D1F9B687300FB1180 /* SerieTableViewController.swift in Sources */,
-				46BE762A1FA4E4CC0061B178 /* JsonConverter.swift in Sources */,
 				46BB78EF1FA4D4C5004C6BDB /* SerieChangeProtocol.swift in Sources */,
+				46C741741FB781B200C349B7 /* ExerciseDetailsViewController.swift in Sources */,
 				4672C17F1F9B689A00FB1180 /* SerieTableViewCell.swift in Sources */,
 				46EA96781FA6849500C3E448 /* RoutineChangeProtocol.swift in Sources */,
 				46B5A2491F87C53000FC01DD /* Routine.swift in Sources */,

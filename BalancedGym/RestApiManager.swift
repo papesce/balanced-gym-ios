@@ -14,10 +14,8 @@ import AlamofireObjectMapper
 class RestApiManager {
     static let sharedInstance = RestApiManager()
     
-    let jsonConverter : JsonConverter = JsonConverter()
-    
-    //let baseURL = "https://balanced-gym-api.herokuapp.com"
-    let baseURL = "http://localhost:5000"
+    let baseURL = "https://balanced-gym-api.herokuapp.com"
+   // let baseURL = "http://localhost:5000"
 
     
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
