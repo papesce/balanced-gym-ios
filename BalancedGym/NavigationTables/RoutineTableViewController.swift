@@ -60,9 +60,7 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
          for: indexPath) as! RoutineTableViewCell
         let routine = routines[indexPath.row]
         // Configure the cell
-        cell.nameLabel.text = routine.name;
-        cell.daysLabel.text = self.numberOfDays(routine: routine)
-        //cell.photoImageView.image = routine.photo;
+        cell.refresh(with: routine)
         return cell
     }
     
@@ -81,21 +79,7 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
         self.reloadRoutine(routine: routine);
     }
 
-    func numberOfDays(routine: Routine) -> String {
-        if routine.exercises.count == 0 {
-            return ""
-        }
-        let exercise = routine.exercises.max {ex1, ex2 in ex1.lastUpdated < ex2.lastUpdated }
-        let date = exercise!.lastUpdated;
-        let calendar = NSCalendar.current
     
-        // Replace the hour (time) of both dates with 00:00
-        let date1 = calendar.startOfDay(for: date)
-        let date2 = calendar.startOfDay(for: Date.init())
-    
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
-        return "\(components.day!) days"
-    }
 
     
     // MARK: - Navigation
