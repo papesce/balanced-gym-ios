@@ -106,7 +106,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-iOS/AlamofireObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS/ObjectMapper.framework"
 fi
+if [[ "$CONFIGURATION" == "Local" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-iOS/AlamofireObjectMapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS/ObjectMapper.framework"
+fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-iOS/AlamofireObjectMapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS/ObjectMapper.framework"
+fi
+if [[ "$CONFIGURATION" == "Production" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper-iOS/AlamofireObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS/ObjectMapper.framework"

@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 
 
-
 class Routine : Mappable {
 
     //MARK: Properties
     var id: String
     var name: String
     var exercises: [Exercise] = []
+    var groupedExercises: [GroupedExercise] = []
     
     required init?(map: Map){
         self.id = ""
@@ -27,6 +27,7 @@ class Routine : Mappable {
         id <- map["_id"]
         name <- map["name"]
         exercises <- map["exercises"]
+        groupedExercises <- map["groupedExercises"]
     }
 }
     

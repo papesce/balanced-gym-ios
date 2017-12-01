@@ -14,12 +14,13 @@ import AlamofireObjectMapper
 class RestApiManager {
     static let sharedInstance = RestApiManager()
     
-    let baseURL = "https://balanced-gym-api.herokuapp.com"
-   // let baseURL = "http://localhost:5000"
+    let baseURL = Bundle.main.infoDictionary!["BASE_URL"] as! String
+    //let baseURL = "https://balanced-gym-api.herokuapp.com"
+    //let baseURL2 = "http://localhost:5000"
 
     
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
-        Alamofire.request("\(baseURL)/routine").responseArray { (response : DataResponse<[Routine]>) in
+        Alamofire.request("\(baseURL)/routine2").responseArray { (response : DataResponse<[Routine]>) in
            let routines = response.result.value
             completionHandler(routines!)
             
@@ -27,7 +28,7 @@ class RestApiManager {
     }
     
     func getRoutine(routineId: String, completionHandler: @escaping (Routine) -> Void) {
-        Alamofire.request("\(baseURL)/routine/\(routineId)").responseObject {
+        Alamofire.request("\(baseURL)/routine2/\(routineId)").responseObject {
             (response: DataResponse<Routine>) in
             let routine = response.result.value
              completionHandler(routine!)

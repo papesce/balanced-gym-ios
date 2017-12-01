@@ -29,18 +29,23 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return routine!.groupedExercises.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routine!.exercises.count
+        return routine!.groupedExercises[section].exercises.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return routine!.groupedExercises[section].muscleGroup
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCellID",
                for: indexPath) as! ExerciseTableViewCell 
-        let exercise = routine!.exercises[indexPath.row]
+        let exercise = routine!.groupedExercises[indexPath.section].exercises[indexPath.row]
         // Configure the cell
         cell.refresh(withExercise: exercise);
         //cell.photoImageView.image = routine.photo;
@@ -69,7 +74,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         if segue.identifier == "showExerciseSegueID" {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedExercise = routine!.exercises[indexPath.row]
+                let selectedExercise = routine!.groupedExercises[indexPath.section].exercises[indexPath.row]
                 let exerciseViewController = segue.destination as! ExerciseViewController
                 exerciseViewController.exercise = selectedExercise
                 exerciseViewController.delegate = self;

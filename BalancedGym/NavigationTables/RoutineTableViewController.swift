@@ -12,21 +12,32 @@ import Alamofire
 class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
     
     var routines : [Routine] = []
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
     private func downloadData(completionHandler:  @escaping () -> Void) {
+        activityIndicator.startAnimating()
         RestApiManager.sharedInstance.getRoutines(completionHandler: { routines in
             self.routines = routines
+            self.activityIndicator.stopAnimating()
             self.tableView.reloadData();
             completionHandler();
         })
     }
-    
-    @objc func rightButtonAction() {
-        
+
+    private func addActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor.black
+        let horizontalConstraint = NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        view.addConstraint(horizontalConstraint)
+        let verticalConstraint = NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+        view.addConstraint(verticalConstraint)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addActivityIndicator();
         downloadData{}
         //self.navigationItem.rightBarButtonItem = editButtonItem
         self.refreshControl?.addTarget(self, action: #selector(RoutineTableViewController.refresh), for: UIControlEvents.valueChanged)
