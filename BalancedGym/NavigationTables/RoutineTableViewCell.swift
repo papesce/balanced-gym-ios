@@ -27,11 +27,8 @@ class RoutineTableViewCell: UITableViewCell {
     }
     
     func numberOfDays(routine: Routine) -> String {
-        if routine.exercises.count == 0 {
-            return ""
-        }
-        let exercise = routine.exercises.max {ex1, ex2 in ex1.lastUpdated < ex2.lastUpdated }
-        let date = exercise!.lastUpdated;
+        if routine.groupedExercises.count == 0 { return "" }
+        let date = routine.lastUpdated;
         let calendar = NSCalendar.current
         
         // Replace the hour (time) of both dates with 00:00

@@ -19,6 +19,8 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         super.viewDidLoad()
         self.title = routine!.name
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.refreshControl?.addTarget(self, action: #selector(ExerciseTableViewController.refresh), for: UIControlEvents.valueChanged)
+        
     }
   
     override func didReceiveMemoryWarning() {
@@ -52,17 +54,18 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         return cell
     }
     
-    func reloadRoutine() {
+    func reloadRoutine(completionHandler:  @escaping () -> Void) {
         RestApiManager.sharedInstance.getRoutine(routineId: self.routine!.id, completionHandler: { routine in
-            self.routine = routine
+            self.setRoutine(routine: routine)
             self.tableView.reloadData()
             self.delegate?.routineModelChanged(routine: self.routine!)
+            completionHandler();
         })
     }
   
     func serieModelChanged() {
         //todo knowing the new exercise update only the exercise
-        self.reloadRoutine();
+        self.reloadRoutine(completionHandler: {});
     }
     
     // MARK: - Navigation
@@ -82,6 +85,31 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         }
     }
     
+    func setRoutine(routine: Routine) {
+        
+        self.routine = sortExercises(routine: routine);
+    }
+    
+    func sortExercises(routine: Routine) -> Routine {
+        
+        //routine.groupedExercises.forEach{ group in
+        //    group.exercises = group.exercises.sorted(by: self.criteria)
+        //}
+        return routine
+    }
+    
+    func criteria(ex1: Exercise, ex2: Exercise ) -> Bool {
+        return true
+    }
+    
+
+    
+    @objc func refresh(sender:AnyObject) {
+        // Updating your data here...
+        self.reloadRoutine {
+            self.refreshControl?.endRefreshing()
+        }
+    }
 
 }
 

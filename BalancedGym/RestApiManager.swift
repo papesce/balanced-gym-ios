@@ -15,12 +15,12 @@ class RestApiManager {
     static let sharedInstance = RestApiManager()
     
     let baseURL = Bundle.main.infoDictionary!["BASE_URL"] as! String
-    //let baseURL = "https://balanced-gym-api.herokuapp.com"
+    //let baseURL = "https://balanced-gym.herokuapp.com"
     //let baseURL2 = "http://localhost:5000"
 
     
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
-        Alamofire.request("\(baseURL)/routine2").responseArray { (response : DataResponse<[Routine]>) in
+        Alamofire.request("\(baseURL)/routine").responseArray { (response : DataResponse<[Routine]>) in
            let routines = response.result.value
             completionHandler(routines!)
             
@@ -28,21 +28,21 @@ class RestApiManager {
     }
     
     func getRoutine(routineId: String, completionHandler: @escaping (Routine) -> Void) {
-        Alamofire.request("\(baseURL)/routine2/\(routineId)").responseObject {
+        Alamofire.request("\(baseURL)/routine/\(routineId)").responseObject {
             (response: DataResponse<Routine>) in
             let routine = response.result.value
              completionHandler(routine!)
         }
     }
     
-    func getExercise(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
-        Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseObject {
-            (response: DataResponse<Exercise>) in
-             let exercise = response.result.value
-              completionHandler(exercise!)
-            
-        }
-    }
+//    func getExercise(exercise: Exercise, completionHandler: @escaping (Exercise) -> Void) {
+//        Alamofire.request("\(baseURL)/exercise/\(exercise.id)").responseObject {
+//            (response: DataResponse<Exercise>) in
+//             let exercise = response.result.value
+//              completionHandler(exercise!)
+//
+//        }
+//    }
     
     func updateExercise(exercise: Exercise ) {
         let series = exercise.series.map{ serie in

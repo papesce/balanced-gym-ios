@@ -37,6 +37,7 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Routines"
         addActivityIndicator();
         downloadData{}
         //self.navigationItem.rightBarButtonItem = editButtonItem
@@ -103,7 +104,7 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! ExerciseTableViewController
                 let selectedRoutine = routines[indexPath.row]
-                vc.routine = selectedRoutine
+                vc.setRoutine(routine: selectedRoutine);
                 vc.delegate = self
             }
         }
