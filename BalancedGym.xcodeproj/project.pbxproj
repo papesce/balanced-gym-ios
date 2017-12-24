@@ -33,6 +33,7 @@
 		46B5A2641F87D75700FC01DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B5A2631F87D75700FC01DD /* Assets.xcassets */; };
 		46B5A2691F87D75700FC01DD /* BalancedGymWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 46B5A24C1F87D75700FC01DD /* BalancedGymWatch.app */; };
 		46BB78EF1FA4D4C5004C6BDB /* SerieChangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */; };
+		46BF46211FE47C4100389346 /* iOSDevCenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF46201FE47C4100389346 /* iOSDevCenters.swift */; };
 		46BF617F1F7DD71600DFA93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF617E1F7DD71600DFA93F /* AppDelegate.swift */; };
 		46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF61801F7DD71600DFA93F /* ViewController.swift */; };
 		46BF61841F7DD71600DFA93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF61821F7DD71600DFA93F /* Main.storyboard */; };
@@ -123,6 +124,7 @@
 		46B5A2651F87D75700FC01DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B5A2661F87D75700FC01DD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieChangeProtocol.swift; sourceTree = "<group>"; };
+		46BF46201FE47C4100389346 /* iOSDevCenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDevCenters.swift; sourceTree = "<group>"; };
 		46BF617B1F7DD71600DFA93F /* BalancedGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BF617E1F7DD71600DFA93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BF61801F7DD71600DFA93F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				46BF618A1F7DD71600DFA93F /* Info.plist */,
 				4649582F1F93FBCC004D31DB /* RestApiManager.swift */,
 				46C741751FB7DA3D00C349B7 /* Utils.swift */,
+				46BF46201FE47C4100389346 /* iOSDevCenters.swift */,
 			);
 			path = BalancedGym;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				46EA96781FA6849500C3E448 /* RoutineChangeProtocol.swift in Sources */,
 				46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */,
 				46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */,
+				46BF46211FE47C4100389346 /* iOSDevCenters.swift in Sources */,
 				46B5A2451F87BE2C00FC01DD /* RoutineTableViewCell.swift in Sources */,
 				46751BCB1F8D6B9400949BB7 /* ExerciseTableViewController.swift in Sources */,
 				46F23D091F9D310C008F7467 /* ExerciseViewController.swift in Sources */,

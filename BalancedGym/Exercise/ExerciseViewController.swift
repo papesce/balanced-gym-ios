@@ -26,7 +26,8 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
     @IBOutlet weak var muscleGroupLabel: UILabel!
     @IBOutlet weak var targetLabel: UILabel!
     
-
+    @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,17 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
         self.navigationItem.rightBarButtonItem = addButton
         self.muscleGroupLabel.text = exercise!.muscleGroup
         self.targetLabel.text = exercise!.target
+        
+        if let serie = exercise!.suggestedSerie {
+            self.repsLabel.text = String(serie.reps);
+            self.weightLabel.text = String(format: "%g", serie.weight)
+        } else {
+            self.repsLabel.text = ""
+            self.weightLabel.text = ""
+        }
         // Do any additional setup after loading the view.
+        self.containerViewLog.alpha = 0
+        self.containerViewDetails.alpha = 1
     }
 
     override func didReceiveMemoryWarning() {

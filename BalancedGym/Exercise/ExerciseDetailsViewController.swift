@@ -13,6 +13,9 @@ class ExerciseDetailsViewController: UIViewController {
 
     //model that holds the series
     var exercise: Exercise?
+    @IBOutlet weak var normalizedWeight: UILabel!
+    @IBOutlet weak var multiplier: UILabel!
+    @IBOutlet weak var equipment: UILabel!
     
     @IBOutlet weak var webView: WKWebView!
     
@@ -21,14 +24,22 @@ class ExerciseDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         let urlSt = exercise!.gifURL;
         if (urlSt != "")  {
-            self.setGifURL(string: urlSt)
+            self.setGifURL(gifURL: urlSt)
         }
+        self.multiplier.text = String(exercise!.multiplier)
+        self.equipment.text = exercise!.equipment
+        self.normalizedWeight.text = String(exercise!.normalizedWeight)
     }
     
-    func setGifURL(string : String) {
-        let url = URL (string: string)
-        let requestObj = URLRequest(url: url!)
-        webView.load(requestObj)
+    func setGifURL(gifURL : String) {
+        //let url = URL (string: string)
+        //let requestObj = URLRequest(url: url!)
+        //webView.load(requestObj)
+        let imageURL = UIImage.gifImageWithURL(gifURL)
+        let imageView3 = UIImageView(image: imageURL)
+        imageView3.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 200.0)
+        view.addSubview(imageView3)
+        
     }
 
     override func didReceiveMemoryWarning() {
