@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15199A401FF29891001C86E3 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BCF1F8D714E00949BB7 /* Exercise.swift */; };
 		392D071193BFD688894BFDAD /* Pods_BalancedGym.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996F2B6D808EF682E6F18BF7 /* Pods_BalancedGym.framework */; };
 		460644331F98457A0000A0B7 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460644321F98457A0000A0B7 /* Serie.swift */; };
 		460644341F9849B10000A0B7 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460644321F98457A0000A0B7 /* Serie.swift */; };
 		46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46355F5D1F88394900526234 /* RoutineTableRowController.swift */; };
 		464958301F93FBCC004D31DB /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649582F1F93FBCC004D31DB /* RestApiManager.swift */; };
 		464A48751F9661CF001F53E0 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649582F1F93FBCC004D31DB /* RestApiManager.swift */; };
-		464A487A1F967B86001F53E0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46751BCF1F8D714E00949BB7 /* Exercise.swift */; };
 		464A487C1F967D8C001F53E0 /* ExerciseTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A487B1F967D8C001F53E0 /* ExerciseTableRowController.swift */; };
 		4672C17D1F9B687300FB1180 /* SerieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4672C17C1F9B687300FB1180 /* SerieTableViewController.swift */; };
 		4672C17F1F9B689A00FB1180 /* SerieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4672C17E1F9B689A00FB1180 /* SerieTableViewCell.swift */; };
@@ -144,8 +144,10 @@
 		996F2B6D808EF682E6F18BF7 /* Pods_BalancedGym.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BalancedGym.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C783C6CEB3F3C849633812 /* Pods-BalancedGymWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGymWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGymWatch Extension/Pods-BalancedGymWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		AF659AC0BFA07CF4E41ADED0 /* Pods-BalancedGymWatch Extension.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGymWatch Extension.local.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGymWatch Extension/Pods-BalancedGymWatch Extension.local.xcconfig"; sourceTree = "<group>"; };
+		BEDC18C63CDA355DC2B32A24 /* Pods-BalancedGym.remotedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.remotedev.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.remotedev.xcconfig"; sourceTree = "<group>"; };
 		CF9E62B4130D728B483EC1D3 /* Pods-BalancedGymWatch Extension.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGymWatch Extension.production.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGymWatch Extension/Pods-BalancedGymWatch Extension.production.xcconfig"; sourceTree = "<group>"; };
 		D70E4159625A8C9A57DD7CD1 /* Pods-BalancedGym.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.local.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.local.xcconfig"; sourceTree = "<group>"; };
+		E959DB1D9F898639D2530D66 /* Pods-BalancedGymWatch Extension.remotedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGymWatch Extension.remotedev.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGymWatch Extension/Pods-BalancedGymWatch Extension.remotedev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,8 @@
 				26E977DD389B817D658BE3D6 /* Pods-BalancedGym.production.xcconfig */,
 				AF659AC0BFA07CF4E41ADED0 /* Pods-BalancedGymWatch Extension.local.xcconfig */,
 				CF9E62B4130D728B483EC1D3 /* Pods-BalancedGymWatch Extension.production.xcconfig */,
+				BEDC18C63CDA355DC2B32A24 /* Pods-BalancedGym.remotedev.xcconfig */,
+				E959DB1D9F898639D2530D66 /* Pods-BalancedGymWatch Extension.remotedev.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -561,11 +565,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				46355F5F1F88394E00526234 /* RoutineTableRowController.swift in Sources */,
-				464A487A1F967B86001F53E0 /* Exercise.swift in Sources */,
 				46E32A3A1FD1B034007CC285 /* Routine.swift in Sources */,
 				46C811761FB552A400EADC0C /* BDateTransform.swift in Sources */,
 				46B5A2621F87D75700FC01DD /* NotificationController.swift in Sources */,
 				460644341F9849B10000A0B7 /* Serie.swift in Sources */,
+				15199A401FF29891001C86E3 /* Exercise.swift in Sources */,
 				46E32A3D1FD1B50C007CC285 /* GroupedExercise.swift in Sources */,
 				464A487C1F967D8C001F53E0 /* ExerciseTableRowController.swift in Sources */,
 				46B5A2601F87D75700FC01DD /* ExtensionDelegate.swift in Sources */,
@@ -645,6 +649,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		15A1C9801FF284AC00B2E9E7 /* RemoteDev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "https://balanced-gym-dev.herokuapp.com";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = RemoteDev;
+		};
+		15A1C9811FF284AC00B2E9E7 /* RemoteDev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEDC18C63CDA355DC2B32A24 /* Pods-BalancedGym.remotedev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				INFOPLIST_FILE = BalancedGym/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = RemoteDev;
+		};
+		15A1C9821FF284AC00B2E9E7 /* RemoteDev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				IBSC_MODULE = BalancedGymWatch_Extension;
+				INFOPLIST_FILE = BalancedGymWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = RemoteDev;
+		};
+		15A1C9831FF284AC00B2E9E7 /* RemoteDev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E959DB1D9F898639D2530D66 /* Pods-BalancedGymWatch Extension.remotedev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3A6HG54Y5;
+				INFOPLIST_FILE = "BalancedGymWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DD.BalancedGym.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = RemoteDev;
+		};
 		46B5A26A1F87D75700FC01DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -866,7 +982,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BASE_URL = "https://balanced-gym-api.herokuapp.com";
+				BASE_URL = "https://balanced-gym.herokuapp.com";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1087,6 +1203,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46B5A26C1F87D75700FC01DD /* Debug */,
+				15A1C9831FF284AC00B2E9E7 /* RemoteDev */,
 				46E32A311FCDDC39007CC285 /* Local */,
 				46B5A26D1F87D75700FC01DD /* Release */,
 				46E32A2D1FCDDC31007CC285 /* Production */,
@@ -1098,6 +1215,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46B5A26A1F87D75700FC01DD /* Debug */,
+				15A1C9821FF284AC00B2E9E7 /* RemoteDev */,
 				46E32A301FCDDC39007CC285 /* Local */,
 				46B5A26B1F87D75700FC01DD /* Release */,
 				46E32A2C1FCDDC31007CC285 /* Production */,
@@ -1109,6 +1227,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46BF618B1F7DD71600DFA93F /* Debug */,
+				15A1C9801FF284AC00B2E9E7 /* RemoteDev */,
 				46E32A2E1FCDDC39007CC285 /* Local */,
 				46BF618C1F7DD71600DFA93F /* Release */,
 				46E32A2A1FCDDC31007CC285 /* Production */,
@@ -1120,6 +1239,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46BF618E1F7DD71600DFA93F /* Debug */,
+				15A1C9811FF284AC00B2E9E7 /* RemoteDev */,
 				46E32A2F1FCDDC39007CC285 /* Local */,
 				46BF618F1F7DD71600DFA93F /* Release */,
 				46E32A2B1FCDDC31007CC285 /* Production */,
