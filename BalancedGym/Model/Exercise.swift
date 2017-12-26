@@ -23,7 +23,6 @@ class Exercise : Mappable {
     var lastReps: Int = 0
     var lastWeight: Float = 0.0
     var suggestedSerie: Serie?
-    var multiplier: Int = 1
     var equipment: String = "None"
     var normalizedWeight: Float = 0.0
     
@@ -43,7 +42,6 @@ class Exercise : Mappable {
         lastReps <- map["lastReps"]
         lastWeight <- map["lastWeight"]
         suggestedSerie <- map["suggestedSerie"]
-        multiplier <- map["multiplier"]
         equipment <- map["equipment"]
         normalizedWeight <- map["normalizedWeight"]
     }

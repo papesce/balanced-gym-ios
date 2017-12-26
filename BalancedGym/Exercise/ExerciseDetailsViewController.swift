@@ -14,7 +14,6 @@ class ExerciseDetailsViewController: UIViewController {
     //model that holds the series
     var exercise: Exercise?
     @IBOutlet weak var normalizedWeight: UILabel!
-    @IBOutlet weak var multiplier: UILabel!
     @IBOutlet weak var equipment: UILabel!
     
     @IBOutlet weak var webView: WKWebView!
@@ -26,7 +25,6 @@ class ExerciseDetailsViewController: UIViewController {
         if (urlSt != "")  {
             self.setGifURL(gifURL: urlSt)
         }
-        self.multiplier.text = String(exercise!.multiplier)
         self.equipment.text = exercise!.equipment
         self.normalizedWeight.text = String(exercise!.normalizedWeight)
     }

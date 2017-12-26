@@ -17,7 +17,7 @@ class Routine : Mappable {
     var name: String
     var exercises: [Exercise] = []
     var groupedExercises: [GroupedExercise] = []
-    var lastUpdated: Date = Date.init()
+    var lastUpdated: Date?
     
     required init?(map: Map){
         self.id = ""

@@ -26,17 +26,22 @@ class RoutineTableViewCell: UITableViewCell {
         self.setLineColor(color: Utils.getLabelColor(text: self.daysLabel.text!))
     }
     
+    func countExercises(collection: Array<GroupedExercise>) -> Int {
+        return collection.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + group.exercises.count})
+    }
+    
     func numberOfDays(routine: Routine) -> String {
-        if routine.groupedExercises.count == 0 { return "" }
+        let count = countExercises(collection: routine.groupedExercises);
+        if (count == 0 || routine.lastUpdated == nil) {return "\(count) exercises"}
         let date = routine.lastUpdated;
         let calendar = NSCalendar.current
         
         // Replace the hour (time) of both dates with 00:00
-        let date1 = calendar.startOfDay(for: date)
+        let date1 = calendar.startOfDay(for: date!)
         let date2 = calendar.startOfDay(for: Date.init())
         
         let components = calendar.dateComponents([.day], from: date1, to: date2)
-        return "\(components.day!) days"
+        return "\(components.day!) days \(count) exercises"
     }
 
     func setLineColor(color: UIColor) {
