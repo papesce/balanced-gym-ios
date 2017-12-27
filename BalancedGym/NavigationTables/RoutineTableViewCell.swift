@@ -27,7 +27,7 @@ class RoutineTableViewCell: UITableViewCell {
     }
     
     func countExercises(collection: Array<GroupedExercise>) -> Int {
-        return collection.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + group.exercises.count})
+        return collection.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + group.targets.count})
     }
     
     func numberOfDays(routine: Routine) -> String {

@@ -14,7 +14,7 @@ import ObjectMapper
 class GroupedExercise : Mappable {
     
     var muscleGroup: String
-    var exercises: [Exercise] = []
+    var targets: [Targets] = []
     
     required init?(map: Map){
         self.muscleGroup = ""
@@ -22,6 +22,6 @@ class GroupedExercise : Mappable {
     
     func mapping(map: Map) {
         muscleGroup <- map["muscleGroup"]
-        exercises <- map["exercises"]
+        targets <- map["targets"]
     }
 }

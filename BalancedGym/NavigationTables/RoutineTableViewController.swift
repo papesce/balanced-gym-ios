@@ -102,7 +102,7 @@ class RoutineTableViewController: UITableViewController, RoutineChangeProtocol {
         // Pass the selected object to the new view controller.
         if segue.identifier == "showRoutineSegueID"{
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let vc = segue.destination as! ExerciseTableViewController
+                let vc = segue.destination as! MuscleGroupTableViewController
                 let selectedRoutine = routines[indexPath.row]
                 vc.setRoutine(routine: selectedRoutine);
                 vc.delegate = self

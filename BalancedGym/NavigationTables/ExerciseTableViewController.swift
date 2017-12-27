@@ -13,14 +13,27 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
     var delegate: RoutineChangeProtocol?
     
-    var routine : Routine?
+    var groupedExercises: GroupedExercise?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = routine!.name
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.refreshControl?.addTarget(self, action: #selector(ExerciseTableViewController.refresh), for: UIControlEvents.valueChanged)
+        self.title = groupedExercises!.muscleGroup
+        // self.tableView.sectionHeaderHeight = 40
         
+  //      self.refreshControl?.addTarget(self, action: #selector(ExerciseTableViewController.refresh), for: UIControlEvents.valueChanged)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView()
+        let label = UILabel(frame: CGRect(x: 5, y: -5, width: tableView.frame.size.width, height: 35))
+        label.text = groupedExercises!.targets[section].target
+        label.textColor = UIColor.white
+        headerView.addSubview(label)
+        headerView.backgroundColor = UIColor(red: 84/255, green: 155/255, blue: 68/255, alpha: 1.0) /* #549b44 */
+        return headerView
     }
   
     override func didReceiveMemoryWarning() {
@@ -31,23 +44,24 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return routine!.groupedExercises.count
+        return groupedExercises!.targets.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routine!.groupedExercises[section].exercises.count
+        return groupedExercises!.targets[section].exercises.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return routine!.groupedExercises[section].muscleGroup
-        
-    }
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return groupedExercises!.targets[section].target
+//
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCellID",
-               for: indexPath) as! ExerciseTableViewCell 
-        let exercise = routine!.groupedExercises[indexPath.section].exercises[indexPath.row]
+               for: indexPath) as! ExerciseTableViewCell
+        let exercise = groupedExercises!.targets[indexPath.section].exercises[indexPath.row]
         // Configure the cell
         cell.refresh(withExercise: exercise);
         //cell.photoImageView.image = routine.photo;
@@ -55,12 +69,12 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     }
     
     func reloadRoutine(completionHandler:  @escaping () -> Void) {
-        RestApiManager.sharedInstance.getRoutine(routineId: self.routine!.id, completionHandler: { routine in
-            self.setRoutine(routine: routine)
-            self.tableView.reloadData()
-            self.delegate?.routineModelChanged(routine: self.routine!)
-            completionHandler();
-        })
+//        RestApiManager.sharedInstance.getRoutine(routineId: self.routine!.id, completionHandler: { routine in
+//            self.setRoutine(routine: routine)
+//            self.tableView.reloadData()
+//            self.delegate?.routineModelChanged(routine: self.routine!)
+//            completionHandler();
+//        })
     }
   
     func serieModelChanged() {
@@ -75,9 +89,8 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showExerciseSegueID" {
-            
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedExercise = routine!.groupedExercises[indexPath.section].exercises[indexPath.row]
+                let selectedExercise = groupedExercises!.targets[indexPath.section].exercises[indexPath.row]
                 let exerciseViewController = segue.destination as! ExerciseViewController
                 exerciseViewController.exercise = selectedExercise
                 exerciseViewController.delegate = self;
@@ -85,18 +98,11 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         }
     }
     
-    func setRoutine(routine: Routine) {
-        
-        self.routine = sortExercises(routine: routine);
+    func setGroupedExercise(group: GroupedExercise) {
+        self.groupedExercises = group;
     }
     
-    func sortExercises(routine: Routine) -> Routine {
-        
-        //routine.groupedExercises.forEach{ group in
-        //    group.exercises = group.exercises.sorted(by: self.criteria)
-        //}
-        return routine
-    }
+
     
     func criteria(ex1: Exercise, ex2: Exercise ) -> Bool {
         return true
@@ -106,9 +112,9 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
     @objc func refresh(sender:AnyObject) {
         // Updating your data here...
-        self.reloadRoutine {
+       // self.reloadRoutine {
             self.refreshControl?.endRefreshing()
-        }
+       // }
     }
 
 }

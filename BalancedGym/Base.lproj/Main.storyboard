@@ -85,7 +85,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ln-5T-ywx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921.25" y="105.63380281690141"/>
+            <point key="canvasLocation" x="3936" y="83"/>
         </scene>
         <!--History-->
         <scene sceneID="gsV-NH-9yJ">
@@ -196,7 +196,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUG-Nu-DrQ">
-                                            <rect key="frame" x="8" y="7" width="359" height="21"/>
+                                            <rect key="frame" x="8" y="7" width="290" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -214,7 +214,7 @@
                                 <connections>
                                     <outlet property="daysLabel" destination="yuu-hI-MXc" id="g4u-g1-w4r"/>
                                     <outlet property="nameLabel" destination="iUG-Nu-DrQ" id="MpM-cQ-kgZ"/>
-                                    <segue destination="zsu-w6-Dcx" kind="show" identifier="showRoutineSegueID" id="Xo9-yG-i7d"/>
+                                    <segue destination="igo-Dg-pmq" kind="show" identifier="showRoutineSegueID" id="GQF-zY-nLh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -232,6 +232,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xii-gh-eSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741.875" y="113.02816901408451"/>
+        </scene>
+        <!--Muscle Group Table View Controller-->
+        <scene sceneID="E3m-Ab-gHt">
+            <objects>
+                <tableViewController id="igo-Dg-pmq" customClass="MuscleGroupTableViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mMj-PW-Jvh" customClass="muscle">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MuscleGroupTableViewCellId" id="IaL-11-UcL" customClass="MuscleGroupTableViewCell" customModule="BalancedGym" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IaL-11-UcL" id="PmM-QK-Zxz">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGN-Yg-BBB">
+                                            <rect key="frame" x="16" y="11" width="288" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Y-Jp-HfU">
+                                            <rect key="frame" x="16" y="38" width="271" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="eGN-Yg-BBB" id="g0g-af-j5t"/>
+                                    <outlet property="subLabel" destination="Z2Y-Jp-HfU" id="dlr-NH-c05"/>
+                                    <segue destination="zsu-w6-Dcx" kind="show" identifier="showMuscleGroupSegueID" id="qlA-fH-IK0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="igo-Dg-pmq" id="Kcx-5u-g3C"/>
+                            <outlet property="delegate" destination="igo-Dg-pmq" id="xWn-aZ-6jp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vd8-kh-27I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853.75" y="106.69014084507042"/>
         </scene>
         <!--Log-->
         <scene sceneID="Ts8-CD-Nrd">
