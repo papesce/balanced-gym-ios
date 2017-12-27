@@ -16,12 +16,7 @@ class MuscleGroupTableViewController: UITableViewController, SerieChangeProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = routine!.name
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.refreshControl?.addTarget(self, action: #selector(MuscleGroupTableViewController.refresh), for: UIControlEvents.valueChanged)
     }
 
   
@@ -68,7 +63,12 @@ class MuscleGroupTableViewController: UITableViewController, SerieChangeProtocol
         return cell
     }
     
-
+    @objc func refresh(sender:AnyObject) {
+        // Updating your data here...
+        self.reloadRoutine {
+            self.refreshControl?.endRefreshing()
+        }
+    }
     
 
     // MARK: - Navigation
@@ -86,5 +86,6 @@ class MuscleGroupTableViewController: UITableViewController, SerieChangeProtocol
             }
         }
     }
+    
 
 }

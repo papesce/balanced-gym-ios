@@ -55,14 +55,7 @@ class ExerciseTableViewCell: UITableViewCell {
             return
         }
         let date = exercise.lastUpdated;
-        let calendar = NSCalendar.current
-        
-        // Replace the hour (time) of both dates with 00:00
-        let date1 = calendar.startOfDay(for: date)
-        let date2 = calendar.startOfDay(for: Date.init())
-        
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
-        let days = components.day!
+        let days = Utils.getNumberOfDays(date: date)
         self.daysLabel.text =  "\(days) days"
         self.setLineColor(color: Utils.getLabelColor(count: days))
     }

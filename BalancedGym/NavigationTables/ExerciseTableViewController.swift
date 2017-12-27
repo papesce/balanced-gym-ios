@@ -19,9 +19,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = groupedExercises!.muscleGroup
-        // self.tableView.sectionHeaderHeight = 40
-        
-  //      self.refreshControl?.addTarget(self, action: #selector(ExerciseTableViewController.refresh), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(ExerciseTableViewController.refresh), for: UIControlEvents.valueChanged)
         
     }
     
@@ -75,7 +73,31 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
   
     func serieModelChanged() {
         //todo knowing the new exercise update only the exercise
-        delegate?.serieModelChanged();
+        self.reloadMuscleGroup(completionHandler: {})
+    }
+    
+    func setGroupedExercise(group: GroupedExercise) {
+        self.groupedExercises = group;
+    }
+    
+    func reloadMuscleGroup(completionHandler:  @escaping () -> Void) {
+        if (self.groupedExercises?.muscleGroup != nil) {
+            let name = self.groupedExercises!.muscleGroup
+            RestApiManager.sharedInstance.getMuscleGroup(muscleGroup: name ,
+                                                     completionHandler: { groupedExercises in
+                                                        self.setGroupedExercise(group: groupedExercises)
+                                                        self.tableView.reloadData()
+                                                        self.delegate?.serieModelChanged()
+                                                        completionHandler();
+            })
+        }
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        // Updating your data here...
+        self.reloadMuscleGroup {
+            self.refreshControl?.endRefreshing()
+        }
     }
     
     // MARK: - Navigation
@@ -94,24 +116,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         }
     }
     
-    func setGroupedExercise(group: GroupedExercise) {
-        self.groupedExercises = group;
-    }
     
-
-    
-    func criteria(ex1: Exercise, ex2: Exercise ) -> Bool {
-        return true
-    }
-    
-
-    
-    @objc func refresh(sender:AnyObject) {
-        // Updating your data here...
-       // self.reloadRoutine {
-            self.refreshControl?.endRefreshing()
-       // }
-    }
 
 }
 

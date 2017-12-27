@@ -38,16 +38,11 @@ class RoutineTableViewCell: UITableViewCell {
             self.daysLabel.text = "\(tcount) targets"
             return
         }
-        let date = routine.lastUpdated;
-        let calendar = NSCalendar.current
-        
-        // Replace the hour (time) of both dates with 00:00
-        let date1 = calendar.startOfDay(for: date!)
-        let date2 = calendar.startOfDay(for: Date.init())
-        
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
-        self.daysLabel.textColor = Utils.getLabelColor(count: components.day!)
-        self.daysLabel.text =  "\(components.day!) days \(tcount) targets \(ecount) exercises"
+        let date = routine.lastUpdated!;
+        let days = Utils.getNumberOfDays(date: date)
+
+        self.daysLabel.textColor = Utils.getLabelColor(count: days)
+        self.daysLabel.text =  "\(days) days \(tcount) targets \(ecount) exercises"
     }
 
     

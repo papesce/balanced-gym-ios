@@ -21,4 +21,16 @@ class Utils {
         }
     }
     
+    static func getNumberOfDays(date: Date) -> Int {
+        let calendar = NSCalendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: date)
+        let date2 = calendar.startOfDay(for: Date.init())
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        let days = components.day!
+        return days
+    }
+    
 }

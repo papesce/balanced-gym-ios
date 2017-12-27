@@ -15,6 +15,7 @@ class GroupedExercise : Mappable {
     
     var muscleGroup: String
     var targets: [Targets] = []
+    var lastUpdated: Date?
     
     required init?(map: Map){
         self.muscleGroup = ""
@@ -23,5 +24,6 @@ class GroupedExercise : Mappable {
     func mapping(map: Map) {
         muscleGroup <- map["muscleGroup"]
         targets <- map["targets"]
+        lastUpdated <- (map["lastUpdated"], BDateTransform())
     }
 }
