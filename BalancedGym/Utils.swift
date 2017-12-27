@@ -13,8 +13,8 @@ class Utils {
     static let greenColor: UIColor = UIColor(red: 0, green: 0.498, blue: 0.0392, alpha: 1.0) /* #007f0a */
     static let blueColor: UIColor = UIColor.blue;
     
-    static func getLabelColor(text: String) -> UIColor {
-        if (text == "0 days") {
+    static func getLabelColor(count: Int) -> UIColor {
+        if (count == 0) {
             return  greenColor;
         } else {
             return  blueColor;

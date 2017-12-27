@@ -31,15 +31,15 @@ class ExerciseTableViewCell: UITableViewCell {
     func refresh(withExercise: Exercise) {
         
         self.nameLabel.text = withExercise.name;
-        self.daysLabel.text = self.numberOfDays(exercise: withExercise)
-        self.muscleGroupLabel.text = withExercise.target
+        setNumberOfDays(exercise: withExercise)
+        self.muscleGroupLabel.text = ""
         if (withExercise.lastReps > 0) {
             self.lastLabel.text = "r:" + String(withExercise.lastReps) +
             " w:" + String(format: "%g", withExercise.lastWeight) + " t:" + String(withExercise.series.count)
         } else {
             self.lastLabel.text = ""
         }
-        self.setLineColor(color: Utils.getLabelColor(text: self.daysLabel.text!))
+        
        
     }
 
@@ -49,9 +49,10 @@ class ExerciseTableViewCell: UITableViewCell {
         self.lastLabel.textColor = color
     }
     
-    func numberOfDays(exercise: Exercise) -> String {
+    func setNumberOfDays(exercise: Exercise)  {
         if exercise.series.count == 0 {
-            return ""
+            self.daysLabel.text = ""
+            return
         }
         let date = exercise.lastUpdated;
         let calendar = NSCalendar.current
@@ -61,7 +62,9 @@ class ExerciseTableViewCell: UITableViewCell {
         let date2 = calendar.startOfDay(for: Date.init())
         
         let components = calendar.dateComponents([.day], from: date1, to: date2)
-        return "\(components.day!) days"
+        let days = components.day!
+        self.daysLabel.text =  "\(days) days"
+        self.setLineColor(color: Utils.getLabelColor(count: days))
     }
 
 }

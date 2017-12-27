@@ -29,10 +29,10 @@ class SerieTableViewController: UITableViewController, SerieChangeProtocol {
     }
     
    func refresh() {
-        //RestApiManager.sharedInstance.getExercise(exercise: self.exercise!, completionHandler: { exercise in
-        //    self.exercise = exercise
-        //    self.tableView.reloadData()
-        //})
+//        RestApiManager.sharedInstance.getExercise(exercise: self.exercise!, completionHandler: { exercise in
+//            self.exercise = exercise
+//            self.tableView.reloadData()
+//        })
     }
     
     override func didReceiveMemoryWarning() {

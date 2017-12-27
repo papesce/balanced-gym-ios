@@ -40,7 +40,6 @@ class RestApiManager {
 //            (response: DataResponse<Exercise>) in
 //             let exercise = response.result.value
 //              completionHandler(exercise!)
-//
 //        }
 //    }
     

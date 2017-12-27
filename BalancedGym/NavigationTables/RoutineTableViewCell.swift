@@ -22,17 +22,22 @@ class RoutineTableViewCell: UITableViewCell {
     
     func refresh(with: Routine) {
         self.nameLabel.text = with.name;
-        self.daysLabel.text = self.numberOfDays(routine: with)
-        self.setLineColor(color: Utils.getLabelColor(text: self.daysLabel.text!))
+        setNumberOfDays(routine: with)
+        
     }
     
-    func countExercises(collection: Array<GroupedExercise>) -> Int {
-        return collection.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + group.targets.count})
+    func countExercises(collection: Array<Targets>) -> Int {
+        return collection.reduce(0, {(res: Int, group: Targets) -> Int in res + group.exercises.count})
     }
     
-    func numberOfDays(routine: Routine) -> String {
-        let count = countExercises(collection: routine.groupedExercises);
-        if (count == 0 || routine.lastUpdated == nil) {return "\(count) exercises"}
+    func setNumberOfDays(routine: Routine) {
+        let tcount = routine.groupedExercises.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + group.targets.count})
+        let ecount = routine.groupedExercises.reduce(0, {(res: Int, group: GroupedExercise) -> Int in res + self.countExercises(collection: group.targets)})
+        
+        if (tcount == 0 || routine.lastUpdated == nil) {
+            self.daysLabel.text = "\(tcount) targets"
+            return
+        }
         let date = routine.lastUpdated;
         let calendar = NSCalendar.current
         
@@ -41,12 +46,11 @@ class RoutineTableViewCell: UITableViewCell {
         let date2 = calendar.startOfDay(for: Date.init())
         
         let components = calendar.dateComponents([.day], from: date1, to: date2)
-        return "\(components.day!) days \(count) exercises"
+        self.daysLabel.textColor = Utils.getLabelColor(count: components.day!)
+        self.daysLabel.text =  "\(components.day!) days \(tcount) targets \(ecount) exercises"
     }
 
-    func setLineColor(color: UIColor) {
-        self.daysLabel.textColor = color
-    }
+    
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {

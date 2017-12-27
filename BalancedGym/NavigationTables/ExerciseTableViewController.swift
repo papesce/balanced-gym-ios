@@ -11,7 +11,7 @@ import UIKit
 class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
     
-    var delegate: RoutineChangeProtocol?
+    var delegate: SerieChangeProtocol?
     
     var groupedExercises: GroupedExercise?
     
@@ -68,18 +68,14 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         return cell
     }
     
-    func reloadRoutine(completionHandler:  @escaping () -> Void) {
-//        RestApiManager.sharedInstance.getRoutine(routineId: self.routine!.id, completionHandler: { routine in
-//            self.setRoutine(routine: routine)
-//            self.tableView.reloadData()
-//            self.delegate?.routineModelChanged(routine: self.routine!)
-//            completionHandler();
-//        })
+    
+    func setDelegate(delegate: SerieChangeProtocol) {
+        self.delegate = delegate
     }
   
     func serieModelChanged() {
         //todo knowing the new exercise update only the exercise
-        self.reloadRoutine(completionHandler: {});
+        delegate?.serieModelChanged();
     }
     
     // MARK: - Navigation
