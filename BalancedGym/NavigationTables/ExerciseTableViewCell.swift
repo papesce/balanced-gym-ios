@@ -54,10 +54,12 @@ class ExerciseTableViewCell: UITableViewCell {
             self.daysLabel.text = ""
             return
         }
-        let date = exercise.lastUpdated;
-        let days = Utils.getNumberOfDays(date: date)
-        self.daysLabel.text =  "\(days) days"
-        self.setLineColor(color: Utils.getLabelColor(count: days))
+        if (exercise.lastUpdated != nil) {
+            let date = exercise.lastUpdated!;
+            let days = Utils.getNumberOfDays(date: date)
+            self.daysLabel.text =  "\(days) days"
+            self.setLineColor(color: Utils.getLabelColor(count: days))
+        }
     }
 
 }

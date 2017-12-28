@@ -35,9 +35,9 @@ class RestApiManager {
         }
     }
     
-    func getMuscleGroup(muscleGroup: String, completionHandler: @escaping (GroupedExercise) -> Void) {
-        
+    func getMuscleGroup(muscleGroup: String,  routineId: String, completionHandler: @escaping (GroupedExercise) -> Void) {
         let parameters: Parameters = [
+            "routineId": routineId,
             "muscleGroup": muscleGroup
         ]
         Alamofire.request("\(baseURL)/muscleGroup", parameters: parameters).responseObject {

@@ -16,7 +16,7 @@ class Exercise : Mappable {
     var series: [Serie] = []
     var updatedAt: Date = Date.init()
     var createdAt: Date = Date.init()
-    var lastUpdated: Date = Date.init()
+    var lastUpdated: Date?
     var muscleGroup: String = ""
     var gifURL : String = ""
     var target: String = ""

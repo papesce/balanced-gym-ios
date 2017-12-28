@@ -10,9 +10,8 @@ import UIKit
 
 class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
-    
     var delegate: SerieChangeProtocol?
-    
+    var routineId: String?
     var groupedExercises: GroupedExercise?
     
     
@@ -76,16 +75,17 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         self.reloadMuscleGroup(completionHandler: {})
     }
     
-    func setGroupedExercise(group: GroupedExercise) {
-        self.groupedExercises = group;
+    func setGroupedExercise(group: GroupedExercise, routineId: String) {
+        self.groupedExercises = group
+        self.routineId = routineId
     }
     
     func reloadMuscleGroup(completionHandler:  @escaping () -> Void) {
-        if (self.groupedExercises?.muscleGroup != nil) {
+        if (self.groupedExercises?.muscleGroup != nil && self.routineId != nil) {
             let name = self.groupedExercises!.muscleGroup
-            RestApiManager.sharedInstance.getMuscleGroup(muscleGroup: name ,
+            RestApiManager.sharedInstance.getMuscleGroup(muscleGroup: name,  routineId: self.routineId!,
                                                      completionHandler: { groupedExercises in
-                                                        self.setGroupedExercise(group: groupedExercises)
+                                                        self.setGroupedExercise(group: groupedExercises, routineId: self.routineId!)
                                                         self.tableView.reloadData()
                                                         self.delegate?.serieModelChanged()
                                                         completionHandler();

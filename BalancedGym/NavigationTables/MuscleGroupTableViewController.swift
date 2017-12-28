@@ -77,11 +77,11 @@ class MuscleGroupTableViewController: UITableViewController, SerieChangeProtocol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showMuscleGroupSegueID"{
+        if segue.identifier == "showMuscleGroupSegueID" && self.routine != nil {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! ExerciseTableViewController
                 let groupedExercise: GroupedExercise = routine!.groupedExercises[indexPath.row]
-                vc.setGroupedExercise(group: groupedExercise);
+                vc.setGroupedExercise(group: groupedExercise, routineId: (self.routine?.id)!);
                 vc.setDelegate(delegate: self)
             }
         }
