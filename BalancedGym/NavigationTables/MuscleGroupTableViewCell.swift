@@ -32,16 +32,17 @@ class MuscleGroupTableViewCell: UITableViewCell {
     }
     
     func setNumberOfDays(group: GroupedExercise) {
+        let ntargets = group.targets.count
         let nexercises = group.targets.reduce(0, {(sum: Int, target: Targets) -> Int in sum + target.exercises.count})
-        if (nexercises == 0 || group.lastUpdated == nil) {
-            self.subLabel.text = "\(nexercises) targets"
+        if (ntargets == 0 || group.lastUpdated == nil) {
+            self.subLabel.text = "\(nexercises) targets \(nexercises) exercises"
+            self.subLabel.textColor = Utils.getLabelColor(count: 1)
             return
         }
         let date = group.lastUpdated!;
         let days = Utils.getNumberOfDays(date: date)
-        
         self.subLabel.textColor = Utils.getLabelColor(count: days)
-        self.subLabel.text =  "\(days) days \(group.targets.count) targets \(nexercises) exercises"
+        self.subLabel.text =  "\(days) days \(ntargets) targets \(nexercises) exercises"
     }
     
    

@@ -13,7 +13,8 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     var delegate: SerieChangeProtocol?
     var routineId: String?
     var groupedExercises: GroupedExercise?
-    
+    var collapsed: Bool = false;
+    var hidden: [Bool]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +24,38 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        let headerView = UIView()
+    {     let headerView = UIView()
         let label = UILabel(frame: CGRect(x: 5, y: -5, width: tableView.frame.size.width, height: 35))
         label.text = groupedExercises!.targets[section].target
+        label.tag = section
         label.textColor = UIColor.white
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ExerciseTableViewController.tapFunction))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tap)
         headerView.addSubview(label)
         headerView.backgroundColor = UIColor(red: 84/255, green: 155/255, blue: 68/255, alpha: 1.0) /* #549b44 */
         return headerView
     }
+    
+    @objc func tapFunction(sender:UITapGestureRecognizer) {
+        let section = sender.view!.tag
+        self.hidden![section] = !self.hidden![section]
+        // let indexPaths = (0..<3).map { i in return IndexPath(item: i, section: section)  }
+        
+        //hidden[section] = !hidden[section]
+        
+        // tableView?.beginUpdates()
+        // if self.isCollapsed(section) {
+        //    tableView?.deleteRows(at: indexPaths, with: .fade)
+        // } else {
+        //    tableView?.insertRows(at: indexPaths, with: .fade)
+        // }
+        // tableView?.endUpdates()
+        tableView?.reloadData()
+    }
   
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +67,13 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
         return groupedExercises!.targets.count
     }
     
+    func isCollapsed(section: Int) -> Bool {
+        return self.hidden![section]
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (self.isCollapsed(section: section)) { return 0 }
+        
         return groupedExercises!.targets[section].exercises.count
     }
     
@@ -77,6 +106,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     
     func setGroupedExercise(group: GroupedExercise, routineId: String) {
         self.groupedExercises = group
+        self.hidden = Array(repeating: false, count: group.targets.count)
         self.routineId = routineId
     }
     
