@@ -462,6 +462,61 @@
             </objects>
             <point key="canvasLocation" x="3935.625" y="834.50704225352115"/>
         </scene>
+        <!--Exercise Details View Controller-->
+        <scene sceneID="7mg-Vn-oDv">
+            <objects>
+                <viewController id="HwL-ak-guA" customClass="ExerciseDetailsViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J9j-lU-equ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-9k-S8s">
+                                <rect key="frame" x="15" y="0.0" width="290" height="575"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FQh-VI-sKj">
+                                        <rect key="frame" x="28" y="48" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="1s3-Mj-t5b"/>
+                                            <constraint firstAttribute="width" constant="250" id="vKi-By-tDf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-0n-reQ">
+                                        <rect key="frame" x="28" y="333" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="4GH-Yn-1Jp"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FQh-VI-sKj" secondAttribute="trailing" constant="12" id="1I1-Lv-Qi9"/>
+                                    <constraint firstItem="iWt-0n-reQ" firstAttribute="top" secondItem="FQh-VI-sKj" secondAttribute="bottom" constant="35" id="UeG-Uw-1WA"/>
+                                    <constraint firstItem="FQh-VI-sKj" firstAttribute="leading" secondItem="QE1-9k-S8s" secondAttribute="leading" constant="28" id="Yjz-mT-UKr"/>
+                                    <constraint firstItem="FQh-VI-sKj" firstAttribute="top" secondItem="QE1-9k-S8s" secondAttribute="top" constant="48" id="cbO-VP-eeM"/>
+                                    <constraint firstAttribute="bottom" secondItem="iWt-0n-reQ" secondAttribute="bottom" constant="-8" id="j2N-6E-nZg"/>
+                                    <constraint firstItem="FQh-VI-sKj" firstAttribute="leading" secondItem="iWt-0n-reQ" secondAttribute="leading" id="t2o-EC-HLE"/>
+                                    <constraint firstItem="FQh-VI-sKj" firstAttribute="trailing" secondItem="iWt-0n-reQ" secondAttribute="trailing" id="wsY-aw-7eb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QE1-9k-S8s" firstAttribute="centerX" secondItem="J9j-lU-equ" secondAttribute="centerX" id="Cxx-au-QgG"/>
+                            <constraint firstItem="QE1-9k-S8s" firstAttribute="leading" secondItem="Xx7-jU-W2I" secondAttribute="leading" constant="15" id="O7K-A3-lHG"/>
+                            <constraint firstItem="QE1-9k-S8s" firstAttribute="top" secondItem="J9j-lU-equ" secondAttribute="top" id="p4w-91-hXs"/>
+                            <constraint firstItem="Xx7-jU-W2I" firstAttribute="bottom" secondItem="QE1-9k-S8s" secondAttribute="bottom" constant="25" id="vO2-c6-IID"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xx7-jU-W2I"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="gifImageView" destination="iWt-0n-reQ" id="atg-Pa-hCh"/>
+                        <outlet property="muscleImageView" destination="FQh-VI-sKj" id="RDg-Cw-icd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOY-1O-cxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5026.875" y="699.29577464788736"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ufB-SW-4L2">
             <objects>
@@ -487,27 +542,42 @@
                 <viewController id="LZM-av-RY3" customClass="ExerciseDetailsViewController" customModule="BalancedGym" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Dy-ui-4lN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-zD-ONY">
-                                <rect key="frame" x="35" y="20" width="250" height="250"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-5d-MXQ">
+                                <rect key="frame" x="15" y="0.0" width="290" height="575"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-zD-ONY">
+                                        <rect key="frame" x="28" y="48" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="RVF-US-rAR"/>
+                                            <constraint firstAttribute="width" constant="250" id="UGR-BD-2GZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-RK-4iB">
+                                        <rect key="frame" x="28" y="300" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="BuZ-fJ-2bZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="XlZ-Mw-XcF"/>
-                                    <constraint firstAttribute="height" constant="250" id="kEN-Zp-GZP"/>
+                                    <constraint firstItem="bxG-zD-ONY" firstAttribute="top" secondItem="cVX-5d-MXQ" secondAttribute="top" constant="48" id="4v8-pS-mV1"/>
+                                    <constraint firstItem="bxG-zD-ONY" firstAttribute="trailing" secondItem="gXs-RK-4iB" secondAttribute="trailing" id="CIK-TB-dEf"/>
+                                    <constraint firstItem="bxG-zD-ONY" firstAttribute="leading" secondItem="gXs-RK-4iB" secondAttribute="leading" id="E0R-bA-Osn"/>
+                                    <constraint firstAttribute="bottom" secondItem="gXs-RK-4iB" secondAttribute="bottom" constant="25" id="ZQ8-O3-B5j"/>
+                                    <constraint firstAttribute="trailing" secondItem="bxG-zD-ONY" secondAttribute="trailing" constant="12" id="bD5-N3-p71"/>
+                                    <constraint firstItem="bxG-zD-ONY" firstAttribute="leading" secondItem="cVX-5d-MXQ" secondAttribute="leading" constant="28" id="wZM-Dw-sQj"/>
+                                    <constraint firstItem="gXs-RK-4iB" firstAttribute="top" secondItem="bxG-zD-ONY" secondAttribute="bottom" constant="2" id="y11-3W-ivY"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-RK-4iB">
-                                <rect key="frame" x="35" y="305" width="250" height="250"/>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gXs-RK-4iB" firstAttribute="height" secondItem="bxG-zD-ONY" secondAttribute="height" id="2P5-GD-02c"/>
-                            <constraint firstItem="gXs-RK-4iB" firstAttribute="top" secondItem="bxG-zD-ONY" secondAttribute="bottom" constant="35" id="F6L-yJ-Bzk"/>
-                            <constraint firstItem="gXs-RK-4iB" firstAttribute="centerX" secondItem="bxG-zD-ONY" secondAttribute="centerX" id="G8y-F4-FE1"/>
-                            <constraint firstItem="gXs-RK-4iB" firstAttribute="width" secondItem="bxG-zD-ONY" secondAttribute="width" id="Uwy-vP-jmG"/>
-                            <constraint firstItem="bxG-zD-ONY" firstAttribute="leading" secondItem="3Dy-ui-4lN" secondAttribute="leadingMargin" constant="19" id="fn6-ng-svd"/>
-                            <constraint firstItem="bxG-zD-ONY" firstAttribute="top" secondItem="3Dy-ui-4lN" secondAttribute="topMargin" constant="20" id="zdm-xG-o9k"/>
+                            <constraint firstItem="cVX-5d-MXQ" firstAttribute="centerX" secondItem="3Dy-ui-4lN" secondAttribute="centerX" id="1Tm-pM-tbs"/>
+                            <constraint firstItem="cVX-5d-MXQ" firstAttribute="top" secondItem="3Dy-ui-4lN" secondAttribute="top" id="IBR-w8-41i"/>
+                            <constraint firstItem="cVX-5d-MXQ" firstAttribute="leading" secondItem="3Dy-ui-4lN" secondAttribute="leadingMargin" constant="-1" id="OpZ-D9-ni6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cVX-5d-MXQ" secondAttribute="bottom" constant="25" id="Z9p-wG-ADI"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="320" height="600"/>
