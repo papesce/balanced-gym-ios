@@ -26,7 +26,7 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {     let headerView = UIView()
         let label = UILabel(frame: CGRect(x: 5, y: -5, width: tableView.frame.size.width, height: 35))
-        label.text = groupedExercises!.targets[section].target
+        label.text = groupedExercises!.targets[section].target?.name
         label.tag = section
         label.textColor = UIColor.white
         let tap = UITapGestureRecognizer(target: self, action: #selector(ExerciseTableViewController.tapFunction))

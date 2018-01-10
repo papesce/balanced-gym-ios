@@ -20,12 +20,13 @@ class Exercise : Mappable {
     var muscleGroup: String = ""
     var gifURL : String = ""
     var muscleURL: String = ""
-    var target: String = ""
+    var target: Muscle?
     var lastReps: Int = 0
     var lastWeight: Float = 0.0
     var suggestedSerie: Serie?
     var equipment: String = "None"
     var normalizedWeight: Float = 0.0
+    var synergists : String = ""
     
     required init?(map: Map){
     }
@@ -45,6 +46,7 @@ class Exercise : Mappable {
         lastWeight <- map["lastWeight"]
         suggestedSerie <- map["suggestedSerie"]
         equipment <- map["equipment"]
+        synergists <- map["synergists"]
         normalizedWeight <- map["normalizedWeight"]
     }
     

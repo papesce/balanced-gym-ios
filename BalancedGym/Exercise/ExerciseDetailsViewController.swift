@@ -15,6 +15,7 @@ class ExerciseDetailsViewController: UIViewController {
     var exercise: Exercise?
     @IBOutlet weak var normalizedWeight: UILabel!
     @IBOutlet weak var equipment: UILabel!
+    @IBOutlet weak var synergists: UILabel!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var webView: WKWebView!
@@ -33,7 +34,8 @@ class ExerciseDetailsViewController: UIViewController {
         if (urlSt2 != "")  {
             self.setMuscleURL(imageUrlString: urlSt2)
         }
-        //self.equipment.text = exercise!.equipment
+        self.synergists.text = exercise!.synergists
+        self.equipment.text = exercise!.equipment
         //self.normalizedWeight.text = String(exercise!.normalizedWeight)
     }
     
@@ -44,9 +46,9 @@ class ExerciseDetailsViewController: UIViewController {
          DispatchQueue.global(qos: .userInitiated).async {
             let imageURL = UIImage.gifImageWithURL(gifURL)
             DispatchQueue.main.async {
-                self.gifImageView.image = imageURL
+                self.muscleImageView.image = imageURL
                 //let imageView3 = UIImageView(image: imageURL)
-                //imageView3.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 200.0)
+                self.muscleImageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 200.0)
                 //self.scrollView.addSubview(imageView3)
             }
         }
@@ -66,7 +68,7 @@ class ExerciseDetailsViewController: UIViewController {
                 // When from background thread, UI needs to be updated on main_queue
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData as Data)
-                    self.muscleImageView.image = image
+                    self.gifImageView.image = image
                     //self.muscleimageView.contentMode = UIViewContentMode.scaleAspectFit
                     //self.scrollView.addSubview(imageView)
                 }

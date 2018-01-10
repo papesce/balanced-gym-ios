@@ -13,11 +13,10 @@ import ObjectMapper
 
 class Targets : Mappable {
     
-    var target: String
+    var target: Muscle?
     var exercises: [Exercise] = []
     
     required init?(map: Map){
-        self.target = ""
     }
     
     func mapping(map: Map) {

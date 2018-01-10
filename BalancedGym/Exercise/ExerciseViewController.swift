@@ -34,7 +34,7 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
         self.title = exercise!.name
         self.navigationItem.rightBarButtonItem = addButton
         self.muscleGroupLabel.text = exercise!.muscleGroup
-        self.targetLabel.text = exercise!.target
+        self.targetLabel.text = exercise!.target!.name
         
         if let serie = exercise!.suggestedSerie {
             self.repsLabel.text = String(serie.reps);
