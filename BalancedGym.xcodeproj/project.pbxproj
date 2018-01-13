@@ -12,6 +12,7 @@
 		152B7CF91FF2D1950047F139 /* MuscleGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152B7CF81FF2D1950047F139 /* MuscleGroupTableViewCell.swift */; };
 		152B7CFB1FF34F830047F139 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152B7CFA1FF34F830047F139 /* Targets.swift */; };
 		152B7CFC1FF350240047F139 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152B7CFA1FF34F830047F139 /* Targets.swift */; };
+		15D1B5C8200A523500E2AEDA /* ExerciseMusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D1B5C7200A523500E2AEDA /* ExerciseMusclesViewController.swift */; };
 		15FCFCED200579A600315B01 /* Muscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCFCEC200579A600315B01 /* Muscle.swift */; };
 		15FCFCEE20057A7E00315B01 /* Muscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCFCEC200579A600315B01 /* Muscle.swift */; };
 		392D071193BFD688894BFDAD /* Pods_BalancedGym.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996F2B6D808EF682E6F18BF7 /* Pods_BalancedGym.framework */; };
@@ -104,6 +105,7 @@
 		152B7CF61FF2D08F0047F139 /* MuscleGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupTableViewController.swift; sourceTree = "<group>"; };
 		152B7CF81FF2D1950047F139 /* MuscleGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupTableViewCell.swift; sourceTree = "<group>"; };
 		152B7CFA1FF34F830047F139 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
+		15D1B5C7200A523500E2AEDA /* ExerciseMusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMusclesViewController.swift; sourceTree = "<group>"; };
 		15FCFCEC200579A600315B01 /* Muscle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscle.swift; sourceTree = "<group>"; };
 		26E977DD389B817D658BE3D6 /* Pods-BalancedGym.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.production.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.production.xcconfig"; sourceTree = "<group>"; };
 		315030AE2B904E14F61B41E2 /* Pods-BalancedGym.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BalancedGym.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BalancedGym/Pods-BalancedGym.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				46F23D081F9D310C008F7467 /* ExerciseViewController.swift */,
 				46BB78EE1FA4D4C5004C6BDB /* SerieChangeProtocol.swift */,
 				46C741731FB781B200C349B7 /* ExerciseDetailsViewController.swift */,
+				15D1B5C7200A523500E2AEDA /* ExerciseMusclesViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				46C741741FB781B200C349B7 /* ExerciseDetailsViewController.swift in Sources */,
 				4672C17F1F9B689A00FB1180 /* SerieTableViewCell.swift in Sources */,
 				46E32A371FD1A5A3007CC285 /* Routine.swift in Sources */,
+				15D1B5C8200A523500E2AEDA /* ExerciseMusclesViewController.swift in Sources */,
 				46EA96781FA6849500C3E448 /* RoutineChangeProtocol.swift in Sources */,
 				46B5A2471F87C44300FC01DD /* RoutineTableViewController.swift in Sources */,
 				46BF61811F7DD71600DFA93F /* ViewController.swift in Sources */,

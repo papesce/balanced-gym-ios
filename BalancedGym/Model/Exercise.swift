@@ -19,7 +19,7 @@ class Exercise : Mappable {
     var lastUpdated: Date?
     var muscleGroup: String = ""
     var gifURL : String = ""
-    var muscleURL: String = ""
+    var exerciseURL: String = ""
     var target: Muscle?
     var lastReps: Int = 0
     var lastWeight: Float = 0.0
@@ -40,7 +40,7 @@ class Exercise : Mappable {
         lastUpdated <- (map["lastUpdated"], BDateTransform())
         muscleGroup <- map["muscleGroup"]
         gifURL <- map["gifURL"]
-        muscleURL <- map["muscleURL"]
+        exerciseURL <- map["exerciseURL"]
         target <- map["target"]
         lastReps <- map["lastReps"]
         lastWeight <- map["lastWeight"]

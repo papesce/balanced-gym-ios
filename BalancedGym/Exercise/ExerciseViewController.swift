@@ -17,14 +17,14 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
     
     var serieTableViewController : SerieTableViewController?
     var exerciseDetailsViewController:  ExerciseDetailsViewController?
+    var exerciseMusclesViewController:  ExerciseMusclesViewController?
     
     @IBOutlet weak var containerViewLog: UIView!
+    @IBOutlet weak var containerViewMuscles: UIView!
     @IBOutlet weak var containerViewDetails: UIView!
-    
     @IBOutlet weak var addButton: UIBarButtonItem!
 
-    @IBOutlet weak var muscleGroupLabel: UILabel!
-    @IBOutlet weak var targetLabel: UILabel!
+   
     
     @IBOutlet weak var repsLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -33,8 +33,6 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
         super.viewDidLoad()
         self.title = exercise!.name
         self.navigationItem.rightBarButtonItem = addButton
-        self.muscleGroupLabel.text = exercise!.muscleGroup
-        self.targetLabel.text = exercise!.target!.name
         
         if let serie = exercise!.suggestedSerie {
             self.repsLabel.text = String(serie.reps);
@@ -45,6 +43,7 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
         }
         // Do any additional setup after loading the view.
         self.containerViewLog.alpha = 0
+        self.containerViewMuscles.alpha = 0
         self.containerViewDetails.alpha = 1
     }
 
@@ -72,11 +71,17 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
                 UIView.animate(withDuration: 0.5, animations: {
                     self.containerViewLog.alpha = 1
                     self.containerViewDetails.alpha = 0
+                    self.containerViewMuscles.alpha = 0
                 })
+            } else if sender.selectedSegmentIndex == 1 {
+                self.containerViewLog.alpha = 0
+                self.containerViewDetails.alpha = 1
+                self.containerViewMuscles.alpha = 0
             } else {
                 UIView.animate(withDuration: 0.5, animations: {
                     self.containerViewLog.alpha = 0
-                    self.containerViewDetails.alpha = 1
+                    self.containerViewDetails.alpha = 0
+                    self.containerViewMuscles.alpha = 1
                 })
             }
         }
@@ -97,7 +102,11 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
             self.exerciseDetailsViewController = segue.destination as? ExerciseDetailsViewController
             self.exerciseDetailsViewController?.exercise = self.exercise
             
-        }
+        } else if segue.identifier == "showExerciseMusclesSegueID" {
+            self.exerciseMusclesViewController = segue.destination as? ExerciseMusclesViewController
+            self.exerciseMusclesViewController?.exercise = self.exercise
+    
+    }
     }
     
 
