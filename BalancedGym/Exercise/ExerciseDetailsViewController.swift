@@ -15,7 +15,9 @@ class ExerciseDetailsViewController: UIViewController {
     var exercise: Exercise?
     @IBOutlet weak var normalizedWeight: UILabel!
     @IBOutlet weak var equipment: UILabel!
-   
+    
+    @IBOutlet weak var muscleGroupLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var webView: WKWebView!
@@ -34,7 +36,8 @@ class ExerciseDetailsViewController: UIViewController {
         if (urlSt2 != "")  {
             self.setMuscleURL(imageUrlString: urlSt2)
         }
-      
+        self.muscleGroupLabel.text = exercise!.muscleGroup
+        self.targetLabel.text = exercise!.target!.name
         self.equipment.text = exercise!.equipment
         //self.normalizedWeight.text = String(exercise!.normalizedWeight)
     }

@@ -17,7 +17,7 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
     
     var serieTableViewController : SerieTableViewController?
     var exerciseDetailsViewController:  ExerciseDetailsViewController?
-    var exerciseMusclesViewController:  ExerciseMusclesViewController?
+    var exerciseMusclesViewController:  MusclesCollectionViewController?
     
     @IBOutlet weak var containerViewLog: UIView!
     @IBOutlet weak var containerViewMuscles: UIView!
@@ -103,7 +103,7 @@ class ExerciseViewController: UIViewController, SerieChangeProtocol {
             self.exerciseDetailsViewController?.exercise = self.exercise
             
         } else if segue.identifier == "showExerciseMusclesSegueID" {
-            self.exerciseMusclesViewController = segue.destination as? ExerciseMusclesViewController
+            self.exerciseMusclesViewController = segue.destination as? MusclesCollectionViewController
             self.exerciseMusclesViewController?.exercise = self.exercise
     
     }

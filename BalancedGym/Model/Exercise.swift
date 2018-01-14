@@ -26,7 +26,7 @@ class Exercise : Mappable {
     var suggestedSerie: Serie?
     var equipment: String = "None"
     var normalizedWeight: Float = 0.0
-    var synergists : String = ""
+    var synergists : [Muscle] = []
     
     required init?(map: Map){
     }
