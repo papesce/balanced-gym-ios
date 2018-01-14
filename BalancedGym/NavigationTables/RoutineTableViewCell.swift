@@ -40,9 +40,13 @@ class RoutineTableViewCell: UITableViewCell {
         }
         let date = routine.lastUpdated!;
         let days = Utils.getNumberOfDays(date: date)
-
+        
         self.daysLabel.textColor = Utils.getLabelColor(count: days)
-        self.daysLabel.text =  "\(days) days \(tcount) targets \(ecount) exercises"
+        var text = "\(days) days \(tcount) targets \(ecount) exercises "
+        if (routine.doneToday > 0) {
+            text = text + "\(routine.doneToday) done today"
+        }
+        self.daysLabel.text = text
     }
 
     

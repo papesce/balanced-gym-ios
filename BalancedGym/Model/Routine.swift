@@ -18,6 +18,7 @@ class Routine : Mappable {
     var exercises: [Exercise] = []
     var groupedExercises: [GroupedExercise] = []
     var lastUpdated: Date?
+    var doneToday: Int = 0
     
     required init?(map: Map){
         self.id = ""
@@ -30,6 +31,7 @@ class Routine : Mappable {
         exercises <- map["exercises"]
         groupedExercises <- map["groupedExercises"]
         lastUpdated <- (map["lastUpdated"], BDateTransform())
+        doneToday <- map["doneToday"]
     }
 }
     

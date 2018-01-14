@@ -21,8 +21,11 @@ class RestApiManager {
     
     func getRoutines(completionHandler: @escaping ([Routine]) -> Void) {
         Alamofire.request("\(baseURL)/routine").responseArray { (response : DataResponse<[Routine]>) in
-           let routines = response.result.value
-            completionHandler(routines!)
+            if let routines = response.result.value {
+                completionHandler(routines)
+            } else {
+                 completionHandler([])
+            }
             
         }
     }
@@ -42,8 +45,9 @@ class RestApiManager {
         ]
         Alamofire.request("\(baseURL)/muscleGroup", parameters: parameters).responseObject {
             (response: DataResponse<GroupedExercise>) in
-            let group = response.result.value
-            completionHandler(group!)
+            if let group = response.result.value {
+                completionHandler(group)
+            }
         }
     }
     

@@ -40,17 +40,6 @@ class ExerciseTableViewController: UITableViewController, SerieChangeProtocol {
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         let section = sender.view!.tag
         self.hidden![section] = !self.hidden![section]
-        // let indexPaths = (0..<3).map { i in return IndexPath(item: i, section: section)  }
-        
-        //hidden[section] = !hidden[section]
-        
-        // tableView?.beginUpdates()
-        // if self.isCollapsed(section) {
-        //    tableView?.deleteRows(at: indexPaths, with: .fade)
-        // } else {
-        //    tableView?.insertRows(at: indexPaths, with: .fade)
-        // }
-        // tableView?.endUpdates()
         tableView?.reloadData()
     }
   

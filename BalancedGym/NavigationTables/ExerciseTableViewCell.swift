@@ -13,8 +13,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
     
-    @IBOutlet weak var muscleGroupLabel: UILabel!
-   
+    @IBOutlet weak var suggestedLabel: UILabel!
     @IBOutlet weak var lastLabel: UILabel!
     
     override func awakeFromNib() {
@@ -29,15 +28,18 @@ class ExerciseTableViewCell: UITableViewCell {
     }
     
     func refresh(withExercise: Exercise) {
-        
         self.nameLabel.text = withExercise.name;
         setNumberOfDays(exercise: withExercise)
-        self.muscleGroupLabel.text = ""
+        // self.muscleGroupLabel.text = ""
         if (withExercise.lastReps > 0) {
+            if let serie = withExercise.suggestedSerie {
+                self.suggestedLabel.text = "sr:" + String(serie.reps) + " sw:" + String(format: "%g",serie.weight)
+            }
             self.lastLabel.text = "r:" + String(withExercise.lastReps) +
             " w:" + String(format: "%g", withExercise.lastWeight) + " t:" + String(withExercise.series.count)
         } else {
             self.lastLabel.text = ""
+            self.suggestedLabel.text = ""
         }
         
        
@@ -45,7 +47,7 @@ class ExerciseTableViewCell: UITableViewCell {
 
     func setLineColor(color: UIColor) {
         self.daysLabel.textColor = color
-        self.muscleGroupLabel.textColor = color
+        self.suggestedLabel.textColor = color
         self.lastLabel.textColor = color
     }
     
