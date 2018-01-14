@@ -43,16 +43,10 @@ class ExerciseDetailsViewController: UIViewController {
     }
     
     func setGifURL(gifURL : String) {
-        //let url = URL (string: string)
-        //let requestObj = URLRequest(url: url!)
-        //webView.load(requestObj)
          DispatchQueue.global(qos: .userInitiated).async {
             let imageURL = UIImage.gifImageWithURL(gifURL)
             DispatchQueue.main.async {
                 self.muscleImageView.image = imageURL
-                //let imageView3 = UIImageView(image: imageURL)
-                self.muscleImageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 200.0)
-                //self.scrollView.addSubview(imageView3)
             }
         }
         
@@ -60,20 +54,12 @@ class ExerciseDetailsViewController: UIViewController {
     
     func setMuscleURL(imageUrlString : String) {
             let imageUrl:URL = URL(string: imageUrlString)!
-            //let imageView = UIImageView(frame: CGRect(x:0, y:260, width:self.view.frame.size.width - 40, height:250))
-            // Start background thread so that image loading does not make app unresponsive
             DispatchQueue.global(qos: .userInitiated).async {
                 
                 let imageData:NSData = NSData(contentsOf: imageUrl)!
-                
-                // imageView.center = self.view.center
-                
-                // When from background thread, UI needs to be updated on main_queue
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData as Data)
                     self.gifImageView.image = image
-                    //self.muscleimageView.contentMode = UIViewContentMode.scaleAspectFit
-                    //self.scrollView.addSubview(imageView)
                 }
             }
     }
