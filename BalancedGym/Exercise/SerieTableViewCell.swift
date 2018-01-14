@@ -43,17 +43,22 @@ class SerieTableViewCell: UITableViewCell,  UITextFieldDelegate  {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let newrep = Int(repsTextField.text!)!
-        let number = NumberFormatter().number(from: weightTextField.text!)
-        let newweight = ((Float(truncating: number!) * 1000).rounded()) / 1000
-        if (self.serie?.reps != newrep || self.serie?.weight != newweight) {
-            self.serie?.reps = newrep
-            self.serie?.weight = newweight
-            RestApiManager.sharedInstance.updateSerie(serie: self.serie!,
+        if let newrep = Int(repsTextField.text!) {
+            if let number = NumberFormatter().number(from: weightTextField.text!) {
+                let newweight = ((Float(truncating: number) * 1000).rounded()) / 1000
+                if (self.serie?.reps != newrep || self.serie?.weight != newweight) {
+                    self.serie?.reps = newrep
+                    self.serie?.weight = newweight
+                    RestApiManager.sharedInstance.updateSerie(serie: self.serie!,
                                                       completionHandler: {
                                                         self.delegate?.serieModelChanged()
-                                                        
-            } );
+                    } );
+                }
+            } else {
+                //error parsing weight
+            }
+        } else {
+            //error parsing newrep
         }
         
     }
