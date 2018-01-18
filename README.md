@@ -4,7 +4,7 @@ Draft release of an app for iphone and apple watch
 
 ## Summary
 
- Smart fitness assistant and workout tracker for iOS. Revolutionary algorithm to create routines on the fly based on log history using IA. MVP targeted for product hun
+ Smart fitness assistant and workout tracker for iOS. Revolutionary algorithm to create routines on the fly based on log history using IA. MVP targeted for product hunt
 
 ## Technologies
  Xcode, Swift 4, WatchOS, Alamofire, AlamofireObjectMapper
@@ -16,7 +16,7 @@ Draft release of an app for iphone and apple watch
 
 2-Select a Muscle Group
 
-![muscle group](./muscleg.png)
+![muscle group](./muscleG.png)
 
 3- Select an exercise base on target muscle. Exercises are sorted using Smart Health Algorithm
 
