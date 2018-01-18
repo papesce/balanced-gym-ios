@@ -492,7 +492,7 @@
                                 <rect key="frame" x="15" y="0.0" width="290" height="575"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iC4-oG-pTJ">
-                                        <rect key="frame" x="10" y="10" width="250" height="576"/>
+                                        <rect key="frame" x="10" y="10" width="250" height="476"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Adt-Yk-z3U">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
@@ -557,17 +557,17 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-zD-ONY">
-                                                <rect key="frame" x="0.0" y="68" width="250" height="250"/>
+                                                <rect key="frame" x="0.0" y="68" width="250" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="88t-tN-4ku"/>
-                                                    <constraint firstAttribute="height" constant="250" id="Wwe-Jc-Gsn"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Wwe-Jc-Gsn"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-RK-4iB">
-                                                <rect key="frame" x="0.0" y="326" width="250" height="250"/>
+                                                <rect key="frame" x="0.0" y="276" width="250" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="974-dA-Bsb"/>
-                                                    <constraint firstAttribute="height" constant="250" id="Uhw-kc-176"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Uhw-kc-176"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>

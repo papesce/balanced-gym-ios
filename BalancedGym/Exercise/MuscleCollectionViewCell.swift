@@ -23,21 +23,16 @@ class MuscleCollectionViewCell: UICollectionViewCell {
     
     
     func setMuscleURL(imageUrlString : String) {
-        let imageUrl:URL = URL(string: imageUrlString)!
-        //let imageView = UIImageView(frame: CGRect(x:0, y:260, width:self.view.frame.size.width - 40, height:250))
-        // Start background thread so that image loading does not make app unresponsive
-        DispatchQueue.global(qos: .userInitiated).async {
-            
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
-            
-            // imageView.center = self.view.center
-            
-            // When from background thread, UI needs to be updated on main_queue
-            DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                self.imageView.image = image
-                //self.muscleimageView.contentMode = UIViewContentMode.scaleAspectFit
-                //self.scrollView.addSubview(imageView)
+        if (imageUrlString != "") {
+            let imageUrl:URL = URL(string: imageUrlString)!
+            // Start background thread so that image loading does not make app unresponsive
+            DispatchQueue.global(qos: .userInitiated).async {
+                let imageData:NSData = NSData(contentsOf: imageUrl)!
+                // When from background thread, UI needs to be updated on main_queue
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData as Data)
+                    self.imageView.image = image
+                }
             }
         }
     }
