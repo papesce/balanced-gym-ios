@@ -11,12 +11,15 @@ Draft release of an app for iphone and apple watch
 
 ## Screenshots
 1- Select a Routine:
+
 ![routine](./routine.png)
 
 2-Select a Muscle Group
+
 ![muscle group](./muscleg.png)
 
 3- Select an exercise base on target muscle. Exercises are sorted using Smart Health Algorithm
+
 ![exercise](./exercise.png)
 
 4-Exercise details includes execution animation, muscles (target, synergists) and log to store latest executions
