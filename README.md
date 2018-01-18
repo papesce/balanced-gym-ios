@@ -26,3 +26,4 @@ Draft release of an app for iphone and apple watch
 
 ![exercise details](./exercised.png)
 
+This tool complements with the [Balanced Gym Web app](https://github.com/papesce/balanced-gym)
